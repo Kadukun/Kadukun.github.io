@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Espetos Família França</title>
+<meta name="description" content="Espetinhos na brasa em São Pedro (SP) e churrasqueiro para eventos. Monte seu pedido, peça a barca de churrasco ou calcule o churrasco da sua festa.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0d0c0b">
+<style>
+@font-face{font-family:"Anton";font-weight:400;font-style:normal;font-display:swap;src:url("fonts/anton-400.woff2") format("woff2")}
+@font-face{font-family:"DM Sans";font-weight:400;font-style:normal;font-display:swap;src:url("fonts/dm-sans-400.woff2") format("woff2")}
+@font-face{font-family:"DM Sans";font-weight:600;font-style:normal;font-display:swap;src:url("fonts/dm-sans-600.woff2") format("woff2")}
+@font-face{font-family:"DM Sans";font-weight:700;font-style:normal;font-display:swap;src:url("fonts/dm-sans-700.woff2") format("woff2")}
+:root{--bg:#0d0c0b;--surface:#181512;--text:#f6efe6;--muted:#b8ab9a;--accent:#e9a43a;--accent-hi:#f3b752;--accent-ink:#140d03;--accent-glow:rgba(233,164,58,.45);--ember:#ff5a1f;--link:#f3b752;--focus:#f3b752;--line:rgba(246,239,230,.12);--line-strong:rgba(246,239,230,.26);--header-bg:rgba(13,12,11,.88);--badge-bg:rgba(24,21,18,.9);--open:#e9a43a;--open-ring:rgba(233,164,58,.25);--input-bg:#0d0c0b;--error:#ff9b8a;--done-bg:rgba(233,164,58,.12);--today:#e9a43a;--page-bg:transparent;--page-ink:#f6efe6;--page-line:rgba(246,239,230,.32);--page-on:#e9a43a;--page-on-ink:#140d03;--display:"Anton",Impact,sans-serif;--body:"DM Sans",system-ui,sans-serif;--r-lg:14px;--r-sm:8px;--btn-r:8px;--h2-weight:400;--h1-weight:400;--h2-track:.01em;}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--body);font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--link)}
+:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:6px}
+[hidden]{display:none!important}
+.wrap{width:min(1120px,100% - 32px);margin-inline:auto}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+.demo{background:#ffd27a;color:#2b1a00;font-size:.9rem;font-family:system-ui,sans-serif}
+.demo .wrap{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:8px 0;flex-wrap:wrap}
+.demo button{background:none;border:1.5px solid currentColor;color:inherit;font:inherit;font-weight:700;padding:3px 12px;border-radius:99px;cursor:pointer}
+.demo .notes{display:none;padding:0 0 12px}.demo .notes.open{display:block}.demo .notes ul{margin:4px 0 0;padding-left:20px}
+header.top{position:sticky;top:0;z-index:40;background:var(--header-bg);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:10px 0}
+.logo{display:flex;align-items:center;gap:10px;color:var(--text);text-decoration:none;min-width:0}
+nav.links{display:flex;gap:20px}
+nav.links a{color:var(--muted);text-decoration:none;font-weight:600;font-size:.95rem}
+nav.links a:hover{color:var(--text)}
+@media (max-width:900px){nav.links{display:none}}
+.head-ctas{display:flex;gap:8px;align-items:center;flex:none}
+@media (max-width:520px){.logo .logo-text{display:none}.head-ctas .btn{padding:8px 12px;font-size:.85rem}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:700 1rem var(--body);padding:12px 22px;border-radius:var(--btn-r,99px);border:0;cursor:pointer;text-decoration:none;transition:transform .15s ease,background .15s ease,box-shadow .15s ease,border-color .15s ease}
+.btn:active{transform:scale(.97)}
+.btn-main{background:var(--accent);color:var(--accent-ink)}
+.btn-main:hover{background:var(--accent-hi);box-shadow:0 0 22px var(--accent-glow)}
+.btn-line{background:transparent;color:var(--text);border:1.5px solid var(--line-strong)}
+.btn-line:hover{border-color:var(--accent)}
+.btn-page{background:var(--page-bg);color:var(--page-ink);border:1.5px solid var(--page-line)}
+.btn-page.on{background:var(--page-on);color:var(--page-on-ink);border-color:var(--page-on)}
+.btn-page svg{width:16px;height:16px}
+.btn-sm{padding:8px 16px;font-size:.92rem}
+section{padding:84px 0;border-top:1px solid var(--line)}
+h2{font:var(--h2-weight,700) clamp(1.8rem,4vw,2.7rem)/1.1 var(--display);margin:0 0 14px;letter-spacing:var(--h2-track,-.01em)}
+.intro{color:var(--muted);max-width:58ch;margin:0 0 34px}
+h3{font-size:1.16rem;margin:0 0 6px}
+.split{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:start}
+@media (max-width:900px){.split{grid-template-columns:1fr;gap:30px}}
+.badge{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:.92rem;padding:6px 14px;border-radius:99px;background:var(--badge-bg);color:var(--text);border:1px solid var(--line)}
+.badge .dot{width:9px;height:9px;border-radius:50%;background:var(--muted)}
+.badge.open .dot{background:var(--open);box-shadow:0 0 0 4px var(--open-ring)}
+.panel{background:var(--surface);border-radius:var(--r-lg);padding:28px;border:1px solid var(--line)}
+@media (max-width:520px){.panel{padding:20px}}
+.field{display:flex;flex-direction:column;gap:6px;margin-bottom:16px;border:0;padding:0;min-width:0}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:520px){.row{grid-template-columns:1fr}}
+label,.legend{font-weight:600;font-size:.95rem;padding:0}
+.hint{font-size:.85rem;color:var(--muted);font-weight:400}
+input,select,textarea{font:inherit;color:var(--text);background:var(--input-bg);border:1.5px solid var(--line-strong);border-radius:var(--r-sm);padding:11px 12px;width:100%}
+input:focus,select:focus,textarea:focus{border-color:var(--accent);outline:none}
+textarea{min-height:92px;resize:vertical}
+select option{background:var(--input-bg);color:var(--text)}
+input[type=checkbox]{width:18px;height:18px;padding:0;accent-color:var(--accent);flex:none}
+input[type=range]{padding:0;border:0;background:transparent;accent-color:var(--accent)}
+.check{display:flex;gap:10px;align-items:center;font-weight:500;margin:4px 0}
+.error{color:var(--error);font-size:.9rem;min-height:1.2em;margin:-6px 0 10px}
+.done{display:none;margin-top:14px;padding:12px 14px;border-radius:var(--r-sm);background:var(--done-bg);color:var(--text);font-size:.95rem}
+.done.show{display:block}
+.checks{list-style:none;padding:0;margin:0 0 24px}
+.checks li{padding:10px 0;border-bottom:1px solid var(--line);display:flex;gap:12px}
+.checks li::before{content:"";flex:none;width:10px;height:10px;margin-top:.55em;border-radius:50%;background:var(--accent)}
+.gallery{display:grid;grid-template-columns:repeat(var(--gcols,3),1fr);grid-auto-rows:var(--grow,240px);gap:12px}
+.gallery button{all:unset;cursor:zoom-in;position:relative;border-radius:var(--r-lg);overflow:hidden;background:var(--surface)}
+.gallery button:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.gallery button:hover img{transform:scale(1.04)}
+.gallery figcaption{position:absolute;left:0;right:0;bottom:0;padding:28px 14px 12px;font-weight:600;font-size:.94rem;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.72))}
+.credit{font-size:.82rem;color:var(--muted);margin-top:12px}
+dialog.lb{border:0;padding:0;background:transparent;max-width:min(1000px,96vw);width:100%;color:#fff}
+dialog.lb::backdrop{background:rgba(5,5,8,.9)}
+.lb img{width:100%;max-height:78vh;object-fit:contain;border-radius:var(--r-lg)}
+.lb .bar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:12px}
+.lb .bar p{margin:0;font-weight:600}
+.lb .ctl{display:flex;gap:8px}
+.round{width:44px;height:44px;border-radius:50%;border:1.5px solid rgba(255,255,255,.3);background:rgba(20,20,24,.8);color:#fff;font-size:1.2rem;cursor:pointer}
+.round:hover{border-color:#fff}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;list-style:none;padding:18px 0;font-weight:600;font-size:1.05rem;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font:700 1.3rem var(--display);color:var(--accent);transition:transform .2s;line-height:1}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{margin:0 0 18px;color:var(--muted);max-width:62ch}
+.hours{width:100%;border-collapse:collapse;margin:8px 0 22px}
+.hours td{padding:9px 0;border-bottom:1px solid var(--line)}
+.hours td:last-child{text-align:right;color:var(--muted)}
+.hours tr.today td{color:var(--today);font-weight:700}
+.map{width:100%;height:260px;border:0;border-radius:var(--r-lg);background:var(--surface);margin-top:20px}
+.ctas{display:flex;gap:12px;flex-wrap:wrap}
+.page-hero{padding:56px 0 46px;border-bottom:1px solid var(--line)}
+.page-hero .back{display:inline-block;color:var(--muted);text-decoration:none;font-weight:600;font-size:.95rem;margin-bottom:20px}
+.page-hero .back:hover{color:var(--text)}
+.page-hero h1{font:var(--h1-weight,800) clamp(2.1rem,6vw,3.6rem)/1.05 var(--display);margin:0 0 12px}
+.page-hero p{max-width:56ch;color:var(--muted);font-size:1.08rem;margin:0}
+.page-view section:first-of-type{border-top:0}
+footer{border-top:1px solid var(--line);padding:36px 0 110px;color:var(--muted);font-size:.92rem}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.wa-float{position:fixed;right:16px;bottom:16px;z-index:50;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+
+
+.logo .crown{width:38px;height:28px;color:var(--accent)}
+.logo-text{display:flex;flex-direction:column;line-height:1}
+.logo-text b{font:400 1.18rem var(--display);letter-spacing:.04em;text-transform:uppercase}
+.logo-text small{font:700 .62rem var(--body);letter-spacing:.24em;text-transform:uppercase;color:var(--accent);margin-top:3px}
+.hero{position:relative;overflow:hidden;padding:70px 0 76px;background:radial-gradient(120% 90% at 85% 100%,rgba(255,90,31,.22),transparent 60%)}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr;gap:28px}}
+.hero h1{font:400 clamp(2.7rem,7vw,5.4rem)/.95 var(--display);text-transform:uppercase;margin:18px 0 0;letter-spacing:.01em}
+.hero h1 em{font-style:normal;color:var(--ember);display:block}
+.hero .lede{color:var(--muted);font-size:1.13rem;max-width:46ch;margin:20px 0 26px}
+.facts{display:flex;gap:26px;flex-wrap:wrap;margin-top:34px;color:var(--muted);font-size:.94rem}
+.facts strong{display:block;color:var(--text)}
+.hero figure{margin:0;border-radius:14px;overflow:hidden;aspect-ratio:3/4;max-width:440px;justify-self:center;width:100%;box-shadow:0 30px 60px rgba(0,0,0,.5),0 0 0 1px var(--line)}
+.hero figure img{width:100%;height:100%;object-fit:cover}
+.order{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:start}
+@media (max-width:900px){.order{grid-template-columns:1fr}}
+.board{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px 24px}
+.board h3{font:400 1.5rem var(--display);text-transform:uppercase;letter-spacing:.03em;margin:4px 0 8px;color:var(--accent)}
+.board ul{list-style:none;margin:0 0 14px;padding:0}
+.board li{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px dashed var(--line-strong)}
+.board li span{font-weight:600}
+.step{display:flex;align-items:center;gap:6px}
+.step button{width:36px;height:36px;border-radius:8px;border:1.5px solid var(--line-strong);background:var(--bg);color:var(--text);font:700 1.15rem var(--body);cursor:pointer;line-height:1}
+.step button:hover{border-color:var(--accent)}
+.step output{min-width:2ch;text-align:center;font:400 1.25rem var(--display);color:var(--text)}
+.step.has output{color:var(--accent)}
+.summary{position:sticky;top:90px}
+.summary .total{font:400 1.2rem var(--display);text-transform:uppercase;letter-spacing:.03em;margin:0 0 12px}
+.summary .lines{color:var(--muted);min-height:2.4em;margin:0 0 14px;white-space:pre-line}
+.barca{display:grid;grid-template-columns:1.2fr 1fr;gap:0;margin-top:22px;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--surface)}
+.barca img{width:100%;height:100%;object-fit:cover;min-height:180px}
+.barca div{padding:20px 22px}
+.barca b{font:400 1.4rem var(--display);text-transform:uppercase;letter-spacing:.03em;color:var(--accent)}
+@media (max-width:600px){.barca{grid-template-columns:1fr}}
+.where{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:stretch}
+@media (max-width:900px){.where{grid-template-columns:1fr}}
+.facade{border-radius:var(--r-lg);min-height:300px;background:url("img/trailer.jpg") center/cover;position:relative}
+.facade span{position:absolute;left:14px;top:14px;background:rgba(13,12,11,.82);padding:6px 12px;border-radius:99px;font-weight:600;font-size:.9rem}
+.casa .gallery{grid-template-areas:"a a b" "c d b"}
+.casa .gallery button:nth-child(1){grid-area:a}.casa .gallery button:nth-child(2){grid-area:b}.casa .gallery button:nth-child(3){grid-area:c}.casa .gallery button:nth-child(4){grid-area:d}
+@media (max-width:700px){.casa .gallery{grid-template-areas:"a a" "c d" "b b";--gcols:2!important;grid-auto-rows:200px!important}.casa .gallery button:nth-child(2){grid-row:span 2}}
+.calc{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start}
+@media (max-width:860px){.calc{grid-template-columns:1fr}}
+.grill{background:linear-gradient(180deg,#1d1814,#120f0d);border:1px solid var(--line);border-radius:14px;padding:26px;position:relative;overflow:hidden}
+.grill::after{content:"";position:absolute;left:0;right:0;bottom:0;height:8px;background:repeating-linear-gradient(90deg,var(--ember) 0 14px,transparent 14px 22px);opacity:.75}
+.grill .kg{font:400 clamp(3rem,9vw,4.6rem)/1 var(--display);color:var(--accent);margin:6px 0}
+.grill .kg small{font-size:.4em;color:var(--muted)}
+.grill p{color:var(--muted);margin:0 0 6px}
+.grill ul{margin:14px 0 18px;padding-left:18px;color:var(--text)}
+.seg{display:flex;flex-wrap:wrap;gap:8px}
+.seg label{display:inline-flex;align-items:center;gap:8px;border:1.5px solid var(--line-strong);border-radius:8px;padding:8px 12px;cursor:pointer;font-weight:600}
+.seg input{width:16px;height:16px;accent-color:var(--accent)}
+.seg label:has(input:checked){border-color:var(--accent);background:rgba(233,164,58,.1)}
+
+h2{text-transform:uppercase}
+</style>
+</head>
+<body>
+<div class="demo" role="note">
+  <div class="wrap">
+    <span><strong>Proposta de site</strong> para Espetos Família França. Demonstração, ainda não é o site oficial.</span>
+    <button type="button" id="demoToggle" aria-expanded="false" aria-controls="demoNotes">Ver notas</button>
+  </div>
+  <div class="wrap notes" id="demoNotes">Feito com informações e fotos públicas do Google Maps. Antes de publicar, confirmar com a empresa:<ul><li>Uso das fotos e da marca (coroa) em alta resolução</li><li>Preços dos espetos e da barca, área de entrega e horário de sábado</li><li>Valores e regras do serviço de churrasqueiro para eventos</li></ul></div>
+</div>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#inicio" aria-label="Espetos Família França, início"><svg class="crown" viewBox="0 0 48 34" aria-hidden="true"><path d="M5 27 3 9l11 8 10-14 10 14 11-8-2 18z" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/><path d="M7 31h34" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg><span class="logo-text"><b>Família França</b><small>Espetos</small></span></a>
+    <nav class="links" aria-label="Seções"><a href="#pedido">Pedido</a><a href="#trailer">O trailer</a><a href="#eventos">Eventos</a><a href="#ajuda">Ajuda</a><a href="#onde">Onde fica</a></nav>
+    <div class="head-ctas"><a class="btn btn-page btn-sm" href="#calculadora" data-page-link="calculadora"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c2 3 5 4.5 5 9a5 5 0 0 1-10 0c0-2 1-3.5 2-4.5.3 1.5 1 2.5 2 3 0-3 .5-5 1-7.5z"/></svg>Calculadora</a><a class="btn btn-main btn-sm" href="#pedido">Fazer pedido</a></div>
+  </div>
+</header>
+<main id="inicio">
+
+<div class="hero" id="topo">
+  <canvas id="embers" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div>
+      <span class="badge" id="status"><span class="dot"></span><span class="txt">Verificando horário…</span></span>
+      <h1>O sabor da brasa <em>onde você estiver</em></h1>
+      <p class="lede">Espetinhos na brasa no trailer da Família França, em São Pedro, e churrasqueiro para a sua festa: costela no bafo, espetos e carne no ponto que você pedir.</p>
+      <div class="ctas"><a class="btn btn-main" href="#pedido">Montar meu pedido</a><a class="btn btn-line" href="#calculadora">Churrasco para festa</a></div>
+      <div class="facts">
+        <div><strong>5,0 no Google</strong>38 avaliações</div>
+        <div><strong>Quarta a sexta</strong>a partir das 17h30</div>
+        <div><strong>Churrasqueiro</strong>para eventos</div>
+      </div>
+    </div>
+    <figure><img src="img/kafta.jpg" alt="Espetos de kafta na tábua com vinagrete e cerveja, com chamas pintadas ao fundo"></figure>
+  </div>
+</div>
+
+<section id="pedido">
+  <div class="wrap">
+    <h2>Monte seu pedido</h2>
+    <p class="intro">Escolha os espetos e as bebidas e mande pelo WhatsApp. Retire no trailer sem fila ou já avise que vai comer por lá.</p>
+    <form class="order" id="pedidoForm" novalidate>
+      <div class="board">
+        <h3>Espetos</h3><ul><li><span>Carne</span><div class="step" data-group="esp" data-item="Carne"><button type="button" class="minus" aria-label="Menos Carne">−</button><output>0</output><button type="button" class="plus" aria-label="Mais Carne">+</button></div></li><li><span>Kafta</span><div class="step" data-group="esp" data-item="Kafta"><button type="button" class="minus" aria-label="Menos Kafta">−</button><output>0</output><button type="button" class="plus" aria-label="Mais Kafta">+</button></div></li><li><span>Panceta</span><div class="step" data-group="esp" data-item="Panceta"><button type="button" class="minus" aria-label="Menos Panceta">−</button><output>0</output><button type="button" class="plus" aria-label="Mais Panceta">+</button></div></li><li><span>Medalhão</span><div class="step" data-group="esp" data-item="Medalhão"><button type="button" class="minus" aria-label="Menos Medalhão">−</button><output>0</output><button type="button" class="plus" aria-label="Mais Medalhão">+</button></div></li><li><span>Frango</span><div class="step" data-group="esp" data-item="Frango"><button type="button" class="minus" aria-label="Menos Frango">−</button><output>0</output><button type="button" class="plus" aria-label="Mais Frango">+</button></div></li><li><span>Tulipa</span><div class="step" data-group="esp" data-item="Tulipa"><button type="button" class="minus" aria-label="Menos Tulipa">−</button><output>0</output><button type="button" class="plus" aria-label="Mais Tulipa">+</button></div></li><li><span>Coração</span><div class="step" data-group="esp" data-item="Coração"><button type="button" class="minus" aria-label="Menos Coração">−</button><output>0</output><button type="button" class="plus" aria-label="Mais Coração">+</button></div></li><li><span>Linguiça</span><div class="step" data-group="esp" data-item="Linguiça"><button type="button" class="minus" aria-label="Menos Linguiça">−</button><output>0</output><button type="button" class="plus" aria-label="Mais Linguiça">+</button></div></li><li><span>Queijo coalho</span><div class="step" data-group="esp" data-item="Queijo coalho"><button type="button" class="minus" aria-label="Menos Queijo coalho">−</button><output>0</output><button type="button" class="plus" aria-label="Mais Queijo coalho">+</button></div></li></ul>
+        <h3>Bebidas</h3><ul><li><span>Água</span><div class="step" data-group="beb" data-item="Água"><button type="button" class="minus" aria-label="Menos Água">−</button><output>0</output><button type="button" class="plus" aria-label="Mais Água">+</button></div></li><li><span>Suco</span><div class="step" data-group="beb" data-item="Suco"><button type="button" class="minus" aria-label="Menos Suco">−</button><output>0</output><button type="button" class="plus" aria-label="Mais Suco">+</button></div></li><li><span>Refri 350ml</span><div class="step" data-group="beb" data-item="Refri 350ml"><button type="button" class="minus" aria-label="Menos Refri 350ml">−</button><output>0</output><button type="button" class="plus" aria-label="Mais Refri 350ml">+</button></div></li><li><span>Refri 600ml</span><div class="step" data-group="beb" data-item="Refri 600ml"><button type="button" class="minus" aria-label="Menos Refri 600ml">−</button><output>0</output><button type="button" class="plus" aria-label="Mais Refri 600ml">+</button></div></li><li><span>Cerveja 350ml</span><div class="step" data-group="beb" data-item="Cerveja 350ml"><button type="button" class="minus" aria-label="Menos Cerveja 350ml">−</button><output>0</output><button type="button" class="plus" aria-label="Mais Cerveja 350ml">+</button></div></li></ul>
+      </div>
+      <div class="panel summary">
+        <p class="total" id="pTotal">Nenhum item ainda</p>
+        <p class="lines" id="pLines">Use o + para adicionar espetos.</p>
+        <div class="field"><label for="pNome">Seu nome</label><input id="pNome" autocomplete="name"></div>
+        <div class="row">
+          <div class="field"><label for="pModo">Como vai ser</label><select id="pModo"><option>Retirar no trailer</option><option>Comer no local</option></select></div>
+          <div class="field"><label for="pHora">Que horas</label><input id="pHora" type="time" value="19:00"></div>
+        </div>
+        <p class="error" id="pErr" role="alert"></p>
+        <button class="btn btn-main" type="submit" id="pSend">Enviar pedido pelo WhatsApp</button>
+        <p class="done" id="pDone" role="status">Pedido pronto no WhatsApp. É só enviar. Não abriu? <a href="#">Toque aqui</a>.</p>
+      </div>
+    </form>
+    <div class="barca">
+      <img src="img/barca.jpg" alt="Barca de churrasco com carnes, linguiça, frango e vinagrete" loading="lazy">
+      <div><b>Barca de churrasco no delivery</b><p style="color:var(--muted);margin:8px 0 14px">Tudo o que você precisa para hoje, entregue em casa. Pedidos até as 19h.</p><a class="btn btn-line btn-sm" data-wa="Olá! Quero pedir a barca de churrasco no delivery." href="#">Pedir a barca</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="trailer" class="casa">
+  <div class="wrap">
+    <h2>O trailer da família</h2>
+    <p class="intro">Toldo, mesas de madeira e brasa acesa. É assim que os espetos saem, do jeito que os clientes chamam de "o melhor espetinho da cidade".</p>
+    <div class="gallery " style="--gcols:3;--grow:230px"><button data-shot style=""><img src="img/trailer.jpg" alt="Trailer preto da Família França com chamas pintadas e mesas de madeira sob o toldo" loading="lazy"><figcaption>O trailer e as mesas</figcaption></button><button data-shot style=""><img src="img/kafta.jpg" alt="Espetos de kafta com vinagrete" loading="lazy"><figcaption>Kafta na brasa</figcaption></button><button data-shot style=""><img src="img/frango.jpg" alt="Espetos de frango com vinagrete" loading="lazy"><figcaption>Frango</figcaption></button><button data-shot style=""><img src="img/barca.jpg" alt="Barca de churrasco do delivery" loading="lazy"><figcaption>Barca de churrasco</figcaption></button></div>
+    <p class="credit">Fotos públicas do Google Maps, usadas apenas nesta demonstração.</p>
+  </div>
+</section>
+
+<section id="eventos">
+  <div class="wrap split">
+    <div>
+      <h2>Churrasqueiro para o seu evento</h2>
+      <p class="intro">É o que mais aparece nas avaliações: costela no bafo, churrasco de aniversário e um churrasqueiro "organizado e atencioso, que faz todos os pontos da carne". Conte sobre a festa e receba o orçamento.</p>
+      <ul class="checks"><li>Costela no bafo e espetos para festas</li><li>Carne no ponto de cada convidado</li><li>Não sabe quanto pedir? <a href="#calculadora">Use a calculadora de churrasco</a></li></ul>
+    </div>
+    <form class="panel" id="eventoForm" data-wa-form data-title="Olá! Gostaria de um orçamento de churrasco para evento." data-done="eventoFormDone" novalidate>
+<div class="row"><div class="field"><label for="eTipo">Tipo de festa</label><select id="eTipo" data-label="Tipo" ><option>Aniversário</option><option>Confraternização</option><option>Casamento</option><option>Chá de bebê / revelação</option><option>Outro</option></select></div><div class="field"><label for="eData">Data</label><input id="eData" type="date" data-label="Data" ></div></div><div class="field"><label for="eConv">Convidados (aproximado)</label><div style="display:flex;gap:14px;align-items:center"><input id="eConv" type="range" min="10" max="200" step="5" value="40" data-out="eConvOut" data-plus="1" data-label="Convidados"><output id="eConvOut" style="font:400 1.5rem var(--display);color:var(--accent);min-width:3.4ch;text-align:right">40</output></div></div><fieldset class="field" data-label="Quer no cardápio"><legend class="legend">Quer no cardápio</legend><label class="check"><input type="checkbox" value="Costela no bafo" checked> Costela no bafo</label><label class="check"><input type="checkbox" value="Espetos variados" checked> Espetos variados</label><label class="check"><input type="checkbox" value="Linguiça"> Linguiça</label><label class="check"><input type="checkbox" value="Frango"> Frango</label><label class="check"><input type="checkbox" value="Queijo coalho"> Queijo coalho</label></fieldset><div class="field"><label for="eLocal">Bairro ou cidade da festa</label><input id="eLocal" type="text" data-label="Local" ></div><div class="field"><label for="eNome">Seu nome</label><input id="eNome" type="text" data-label="Nome" data-required="Informe seu nome para o orçamento." autocomplete="name"></div>
+<p class="error" role="alert"></p>
+<button class="btn btn-main" type="submit">Pedir orçamento</button>
+<p class="done" id="eventoFormDone" role="status">Pedido de orçamento pronto no WhatsApp. Não abriu? <a href="#">Toque aqui</a>.</p>
+</form>
+  </div>
+</section>
+
+<section id="ajuda">
+  <div class="wrap split">
+    <div class="faq">
+      <h2>Dúvidas rápidas</h2>
+      <p class="intro">Não achou a sua? Fale com a família pelo formulário.</p>
+      <details><summary>Qual o horário?</summary><p>Quarta a sexta, das 17h30 às 22h. Sábado, das 8h às 13h, conforme o Google. Domingo, segunda e terça fechado.</p></details><details><summary>Tem delivery?</summary><p>Tem a barca de churrasco no delivery, com pedidos até as 19h. Os espetos você pode pedir para retirar no trailer.</p></details><details><summary>Fazem churrasco em festas?</summary><p>Sim. A Família França vai até o seu evento com churrasqueiro: costela no bafo, espetos e mais. Peça o orçamento.</p></details><details><summary>Quais espetos tem?</summary><p>Carne, kafta, panceta, medalhão, frango, tulipa, coração, linguiça e queijo coalho, de acordo com o cardápio da casa.</p></details><details><summary>Quais formas de pagamento?</summary><p>O cardápio da casa mostra Visa e Mastercard. Para outras formas, pergunte pelo WhatsApp.</p></details><details><summary>É um lugar para todo mundo?</summary><p>Sim. No Google, a casa se identifica como empresa de empreendedoras e que acolhe a comunidade LGBTQ+.</p></details>
+    </div>
+    <form class="panel" id="ajudaForm" data-wa-form data-title="Olá! Mensagem pelo site da Família França." data-done="ajudaFormDone" novalidate>
+<div class="field"><label for="hAssunto">Assunto</label><select id="hAssunto" data-label="Assunto" ><option>Dúvida</option><option>Pedido</option><option>Evento</option><option>Elogio</option><option>Reclamação</option></select></div><div class="field"><label for="hNome">Seu nome</label><input id="hNome" type="text" data-label="Nome" autocomplete="name"></div><div class="field"><label for="hMsg">Mensagem</label><textarea id="hMsg" data-label="Mensagem" data-required="Escreva sua mensagem antes de enviar." ></textarea></div>
+<p class="error" role="alert"></p>
+<button class="btn btn-main" type="submit">Enviar mensagem</button>
+<p class="done" id="ajudaFormDone" role="status">Mensagem pronta no WhatsApp. É só enviar. Não abriu? <a href="#">Toque aqui</a>.</p>
+</form>
+  </div>
+</section>
+
+<section id="onde">
+  <div class="wrap">
+    <h2>Onde fica o trailer</h2>
+    <div class="where">
+      <div class="facade" role="img" aria-label="Trailer da Família França com mesas sob o toldo"><span>Procure o trailer preto com chamas</span></div>
+      <div>
+        <p class="intro" style="margin-bottom:8px">Rua Vasco Altafim, Santa Cruz, São Pedro, SP.</p>
+        <table class="hours" id="hoursTable" aria-label="Horário de funcionamento"></table>
+        <div class="ctas"><a class="btn btn-main btn-sm" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=Espetos+Fam%C3%ADlia+Fran%C3%A7a+S%C3%A3o+Pedro+SP">Como chegar</a><a class="btn btn-line btn-sm" target="_blank" rel="noopener" href="https://www.instagram.com/familiafrancaespetos/">Instagram</a></div>
+      </div>
+    </div>
+    <iframe class="map" title="Mapa do trailer da Família França" loading="lazy" src="https://www.google.com/maps?q=-22.5516651,-47.9065344&z=17&output=embed"></iframe>
+  </div>
+</section>
+
+</main>
+<main id="calculadora-view" class="page-view" hidden>
+<div class="page-hero"><div class="wrap">
+  <a class="back" href="#inicio">← Voltar para o site</a>
+  <h1 style="text-transform:uppercase">Calculadora de churrasco</h1>
+  <p>Quantos quilos de carne para a sua festa? Coloque os convidados e a duração. A conta usa a média de mercado e o pedido de orçamento já vai com tudo preenchido.</p>
+</div></div>
+<section><div class="wrap calc">
+  <form class="panel" id="calcForm" novalidate>
+    <div class="row">
+      <div class="field"><label for="kAd">Adultos</label><input id="kAd" type="number" min="0" max="500" value="30"></div>
+      <div class="field"><label for="kCr">Crianças</label><input id="kCr" type="number" min="0" max="300" value="10"></div>
+    </div>
+    <div class="field"><span class="legend">Quanto tempo de festa</span>
+      <div class="seg"><label><input type="radio" name="kDur" value="1" checked> Até 3h</label><label><input type="radio" name="kDur" value="1.1"> 3 a 5h</label><label><input type="radio" name="kDur" value="1.2"> Mais de 5h</label></div>
+    </div>
+    <div class="field"><span class="legend">Quem come mais</span>
+      <div class="seg"><label><input type="radio" name="kFome" value="1" checked> Normal</label><label><input type="radio" name="kFome" value="1.15"> Turma que come bem</label></div>
+    </div>
+    <div class="row">
+      <div class="field"><label for="kData">Data da festa</label><input id="kData" type="date"></div>
+      <div class="field"><label for="kNome">Seu nome</label><input id="kNome" autocomplete="name"></div>
+    </div>
+    <p class="error" id="kErr" role="alert"></p>
+    <button class="btn btn-main" type="submit">Pedir orçamento com essa conta</button>
+    <p class="done" id="kDone" role="status">Orçamento pronto no WhatsApp. Não abriu? <a href="#">Toque aqui</a>.</p>
+  </form>
+  <div class="grill" aria-live="polite">
+    <p>Carne para a festa</p>
+    <div class="kg" id="kKg">14 <small>kg</small></div>
+    <p id="kEsp">≈ 140 espetos de 100 g</p>
+    <ul id="kSplit"></ul>
+    <p style="font-size:.85rem">Base: 400 g por adulto e 200 g por criança, com acréscimo para festas longas. A Família França ajusta tudo no orçamento.</p>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap"><span>Espetos Família França · Rua Vasco Altafim, Santa Cruz, São Pedro, SP · familiafespetos@gmail.com</span><span>WhatsApp (19) 99632-8501</span></div></footer>
+<a class="btn btn-main wa-float" data-wa="Olá! Vim pelo site da Família França e gostaria de mais informações." href="#">WhatsApp</a>
+<dialog class="lb" id="lb" aria-label="Foto ampliada">
+  <img id="lbImg" alt="">
+  <div class="bar"><p id="lbCap"></p><div class="ctl">
+    <button class="round" type="button" id="lbPrev" aria-label="Foto anterior">‹</button>
+    <button class="round" type="button" id="lbNext" aria-label="Próxima foto">›</button>
+    <button class="round" type="button" id="lbClose" aria-label="Fechar">×</button>
+  </div></div>
+</dialog>
+<script>window.SITE = {"name": "Espetos Família França", "wa": "5519996328501", "email": null, "hours": {"0": [], "1": [], "2": [], "3": [[1050, 1320]], "4": [[1050, 1320]], "5": [[1050, 1320]], "6": [[480, 780]]}, "pages": ["calculadora"], "pageTitles": {"calculadora": "Calculadora de churrasco"}, "hoursOrder": [3, 4, 5, 6, 0, 1, 2], "closedText": null};</script>
+<script>
+(function(){
+  var C = window.SITE;
+  function wa(text, number){
+    var url = C.wa ? ("https://wa.me/" + (number === undefined ? C.wa : number) + "?text=" + encodeURIComponent(text))
+                   : ("mailto:" + C.email + "?subject=" + encodeURIComponent(C.mailSubject || "Contato pelo site") + "&body=" + encodeURIComponent(text));
+    if (number === "") url = "https://wa.me/?text=" + encodeURIComponent(text);
+    try { var w = window.open(url, "_blank"); if (w) w.opener = null; } catch(_){}
+    return url;
+  }
+  window.siteWA = wa;
+  function done(id, url){
+    var el = document.getElementById(id); if (!el) return; el.classList.add("show");
+    var a = el.querySelector("a"); if (a){ a.href = url; a.target = "_blank"; a.rel = "noopener"; }
+  }
+  window.siteDone = done;
+  function bind(form, fn){
+    if (typeof form === "string") form = document.getElementById(form);
+    form.addEventListener("submit", function(e){ e.preventDefault(); });
+    var btn = form.querySelector("button[type=submit]");
+    if (btn){ btn.type = "button"; btn.addEventListener("click", fn); }
+    form.querySelectorAll("input:not([type=checkbox]):not([type=range]):not([type=radio]), select").forEach(function(i){
+      i.addEventListener("keydown", function(e){ if (e.key === "Enter"){ e.preventDefault(); fn(); } });
+    });
+  }
+  window.siteBind = bind;
+  document.querySelectorAll("[data-wa]").forEach(function(a){
+    a.href = C.wa ? "https://wa.me/" + C.wa + "?text=" + encodeURIComponent(a.dataset.wa) : "mailto:" + C.email + "?body=" + encodeURIComponent(a.dataset.wa);
+    a.target = "_blank"; a.rel = "noopener";
+  });
+
+  /* router: #<page> opens its own page, any other hash returns to the main page */
+  var home = document.getElementById("inicio"), pages = C.pages || [];
+  var curHash = location.hash;
+  function route(){
+    var h = curHash, pid = h.slice(1), isPage = pages.indexOf(pid) >= 0;
+    var wasHidden = home.hidden, changed = isPage ? !wasHidden || true : wasHidden;
+    home.hidden = isPage;
+    pages.forEach(function(p){
+      var v = document.getElementById(p + "-view"); if (v) v.hidden = p !== pid;
+      document.querySelectorAll('[data-page-link="' + p + '"]').forEach(function(l){ l.classList.toggle("on", p === pid); if (p === pid) l.setAttribute("aria-current","page"); else l.removeAttribute("aria-current"); });
+    });
+    document.title = isPage ? (C.pageTitles[pid] + " · " + C.name) : C.name;
+    var how = (isPage || wasHidden) ? "instant" : "smooth";
+    if (isPage || !h || h === "#inicio"){ window.scrollTo({top:0, behavior:how}); return; }
+    var t = document.getElementById(pid);
+    if (t) window.scrollTo({top: t.getBoundingClientRect().top + window.scrollY - 64, behavior:how});
+  }
+  function goTo(h, push){ curHash = h; if (push){ try { history.pushState(null, "", h); } catch(_){} } route(); }
+  document.addEventListener("click", function(e){
+    var a = e.target.closest && e.target.closest('a[href^="#"]'); if (!a) return;
+    var h = a.getAttribute("href"); if (h.length < 2) return;
+    e.preventDefault(); goTo(h, true);
+  });
+  window.addEventListener("hashchange", function(){ goTo(location.hash, false); });
+  window.addEventListener("popstate", function(){ goTo(location.hash, false); });
+  if (pages.indexOf(curHash.slice(1)) >= 0) route();
+
+  var dt = document.getElementById("demoToggle"), dn = document.getElementById("demoNotes");
+  dt.addEventListener("click", function(){ var o = dn.classList.toggle("open"); dt.setAttribute("aria-expanded", o); dt.textContent = o ? "Fechar notas" : "Ver notas"; });
+
+  /* hours: HOURS[dow] = [[openMin, closeMin], ...]; close may pass 1440 */
+  var H = C.hours, NAMES = ["Domingo","Segunda","Terça","Quarta","Quinta","Sexta","Sábado"];
+  function fmt(m){ m %= 1440; var h = Math.floor(m/60), mm = m%60; return h + "h" + (mm ? String(mm).padStart(2,"0") : ""); }
+  function endTxt(m){ return m === 1440 ? "meia-noite" : fmt(m); }
+  function spNow(){
+    var o = {}; new Intl.DateTimeFormat("en-US",{timeZone:"America/Sao_Paulo",weekday:"short",hour:"numeric",minute:"numeric",hour12:false}).formatToParts(new Date()).forEach(function(p){ o[p.type] = p.value; });
+    return {day:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].indexOf(o.weekday), min:(parseInt(o.hour,10)%24)*60 + parseInt(o.minute,10)};
+  }
+  window.siteHours = {H:H, fmt:fmt, NAMES:NAMES, spNow:spNow};
+  function status(){
+    var el = document.getElementById("status"); if (!el) return;
+    var tx = el.querySelector(".txt"), n = spNow(), today = H[n.day] || [], y = H[(n.day+6)%7] || [];
+    el.classList.remove("open");
+    for (var i = 0; i < y.length; i++) if (y[i][1] > 1440 && n.min < y[i][1]-1440){ el.classList.add("open"); tx.textContent = "Aberto agora, até " + fmt(y[i][1]); return; }
+    for (i = 0; i < today.length; i++) if (n.min >= today[i][0] && n.min < today[i][1]){ el.classList.add("open"); tx.textContent = "Aberto agora, até " + endTxt(today[i][1]); return; }
+    for (i = 0; i < today.length; i++) if (n.min < today[i][0]){ tx.textContent = "Fechado agora, abre hoje às " + fmt(today[i][0]); return; }
+    for (var k = 1; k <= 7; k++){ var d = (n.day+k)%7; if ((H[d]||[]).length){ tx.textContent = "Fechado agora, abre " + (k===1 ? "amanhã" : NAMES[d].toLowerCase()) + " às " + fmt(H[d][0][0]); return; } }
+    tx.textContent = C.closedText || "Consulte o horário";
+  }
+  status(); setInterval(status, 60000);
+  var tb = document.getElementById("hoursTable");
+  if (tb){
+    var td = spNow().day;
+    (C.hoursOrder || [1,2,3,4,5,6,0]).forEach(function(d){
+      var tr = document.createElement("tr"); if (d === td) tr.className = "today";
+      var iv = H[d] || [];
+      tr.innerHTML = "<td>" + NAMES[d] + "</td><td>" + (iv.length ? iv.map(function(x){ return fmt(x[0]) + " às " + endTxt(x[1]); }).join(" e ") : "Fechado") + "</td>";
+      tb.appendChild(tr);
+    });
+  }
+
+  /* lightbox */
+  var shots = Array.prototype.map.call(document.querySelectorAll("[data-shot]"), function(b){ var im = b.querySelector("img"); var cap = b.querySelector("figcaption"); return {src:im.getAttribute("src"), alt:im.alt, cap:cap ? cap.textContent : im.alt}; });
+  var lb = document.getElementById("lb"), cur = 0, lastBtn = null;
+  function show(i){ cur = (i + shots.length) % shots.length; var s = shots[cur]; var im = document.getElementById("lbImg"); im.src = s.src; im.alt = s.alt; document.getElementById("lbCap").textContent = s.cap; }
+  document.querySelectorAll("[data-shot]").forEach(function(b, i){ b.addEventListener("click", function(){ lastBtn = b; show(i); if (lb.showModal) lb.showModal(); else lb.setAttribute("open",""); }); });
+  document.getElementById("lbPrev").onclick = function(){ show(cur-1); };
+  document.getElementById("lbNext").onclick = function(){ show(cur+1); };
+  document.getElementById("lbClose").onclick = function(){ lb.close(); };
+  lb.addEventListener("click", function(e){ if (e.target === lb) lb.close(); });
+  lb.addEventListener("keydown", function(e){ if (e.key === "ArrowRight") show(cur+1); if (e.key === "ArrowLeft") show(cur-1); });
+  lb.addEventListener("close", function(){ if (lastBtn) lastBtn.focus(); });
+
+  /* generic WhatsApp forms */
+  function iso(d){ return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0"); }
+  function parse(s){ var p = s.split("-").map(Number); return new Date(p[0], p[1]-1, p[2]); }
+  function br(s){ var d = parse(s); return NAMES[d.getDay()].toLowerCase()+", "+String(d.getDate()).padStart(2,"0")+"/"+String(d.getMonth()+1).padStart(2,"0"); }
+  window.siteDate = {iso:iso, parse:parse, br:br};
+  document.querySelectorAll("input[type=date]").forEach(function(i){ if (!i.min) i.min = iso(new Date()); });
+  document.querySelectorAll("input[type=date][data-hours-for]").forEach(function(di){
+    var sel = document.getElementById(di.dataset.hoursFor), step = +(di.dataset.step || 30), last = +(di.dataset.lastBefore || 60);
+    di.addEventListener("change", function(){
+      sel.innerHTML = "";
+      if (!di.value){ sel.innerHTML = '<option value="">Escolha a data</option>'; return; }
+      var iv = H[parse(di.value).getDay()] || [];
+      if (!iv.length){ sel.innerHTML = '<option value="">Fechado neste dia</option>'; return; }
+      iv.forEach(function(x){ for (var m = x[0]; m <= x[1]-last; m += step){ var o = document.createElement("option"); o.value = o.textContent = fmt(m).replace(/h$/,"h00"); sel.appendChild(o); } });
+    });
+  });
+  document.querySelectorAll("input[type=range][data-out]").forEach(function(r){
+    var o = document.getElementById(r.dataset.out), suf = r.dataset.suffix || "";
+    function up(){ o.textContent = r.value + (r.value === r.max && r.dataset.plus ? "+" : "") + suf; } r.addEventListener("input", up); up();
+  });
+  document.querySelectorAll("form[data-wa-form]").forEach(function(f){
+    bind(f, function(){
+      var err = f.querySelector(".error"); err.textContent = "";
+      var reqs = f.querySelectorAll("[data-required]");
+      for (var i = 0; i < reqs.length; i++){
+        var el = reqs[i];
+        if (!el.value || !String(el.value).trim()){ err.textContent = el.dataset.required; el.focus(); return; }
+        if (el.type === "date" && el.dataset.openOnly && !(H[parse(el.value).getDay()] || []).length){ err.textContent = el.dataset.openOnly; el.focus(); return; }
+      }
+      var lines = [f.dataset.title, ""];
+      f.querySelectorAll("[data-label]").forEach(function(el){
+        if (el.tagName === "FIELDSET"){
+          var vals = Array.prototype.map.call(el.querySelectorAll("input:checked"), function(c){ return c.value; });
+          if (vals.length) lines.push(el.dataset.label + ": " + vals.join(", ")); return;
+        }
+        var v = el.type === "range" ? (document.getElementById(el.dataset.out).textContent) : String(el.value || "").trim();
+        if (!v) return;
+        if (el.type === "date") v = br(v);
+        lines.push(el.dataset.label + ": " + v);
+      });
+      var url = wa(lines.join("\n").replace(/\n\n$/, ""));
+      done(f.dataset.done, url);
+    });
+  });
+})();
+</script>
+<script>
+(function(){
+  /* embers: the brasa in the hero */
+  var cv = document.getElementById("embers"), still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (cv && !still){
+    var ctx = cv.getContext("2d"), parts = [], W = 0, Hh = 0, dpr = Math.min(2, window.devicePixelRatio || 1);
+    function size(){ W = cv.clientWidth; Hh = cv.clientHeight; cv.width = W*dpr; cv.height = Hh*dpr; ctx.setTransform(dpr,0,0,dpr,0,0); }
+    size(); window.addEventListener("resize", size);
+    function spawn(){ return {x: W*(0.45 + Math.random()*0.6), y: Hh + 10, vy: 0.4 + Math.random()*1.1, vx: (Math.random()-.5)*0.5, r: 0.8 + Math.random()*2, life: 0, max: 160 + Math.random()*160}; }
+    for (var i = 0; i < 46; i++){ var p = spawn(); p.y = Math.random()*Hh; parts.push(p); }
+    var vis = true; new IntersectionObserver(function(e){ vis = e[0].isIntersecting; }).observe(cv);
+    (function tick(){
+      if (vis && !document.hidden){
+        ctx.clearRect(0,0,W,Hh);
+        parts.forEach(function(p, k){
+          p.life++; p.y -= p.vy; p.x += p.vx + Math.sin((p.life + k*7)/18)*0.35;
+          var a = Math.max(0, 1 - p.life/p.max);
+          ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 6.283);
+          ctx.fillStyle = "rgba(255," + (120 + Math.floor(80*a)) + ",40," + (0.85*a) + ")"; ctx.shadowColor = "rgba(255,120,30,.9)"; ctx.shadowBlur = 8; ctx.fill();
+          if (a <= 0 || p.y < -10) parts[k] = spawn();
+        });
+      }
+      requestAnimationFrame(tick);
+    })();
+  }
+
+  /* order builder */
+  var qty = {};
+  function render(){
+    var esp = [], beb = [], n = 0;
+    document.querySelectorAll(".step").forEach(function(s){
+      var q = qty[s.dataset.item] || 0; s.querySelector("output").textContent = q; s.classList.toggle("has", q > 0);
+      if (q){ (s.dataset.group === "esp" ? esp : beb).push(q + "x " + s.dataset.item); if (s.dataset.group === "esp") n += q; }
+    });
+    document.getElementById("pTotal").textContent = n ? (n + (n === 1 ? " espeto" : " espetos")) + (beb.length ? " e bebidas" : "") : (beb.length ? "Só bebidas" : "Nenhum item ainda");
+    document.getElementById("pLines").textContent = esp.concat(beb).join("\n") || "Use o + para adicionar espetos.";
+    return {esp:esp, beb:beb};
+  }
+  document.querySelectorAll(".step").forEach(function(s){
+    s.querySelector(".plus").addEventListener("click", function(){ qty[s.dataset.item] = (qty[s.dataset.item] || 0) + 1; render(); });
+    s.querySelector(".minus").addEventListener("click", function(){ qty[s.dataset.item] = Math.max(0, (qty[s.dataset.item] || 0) - 1); render(); });
+  });
+  render();
+  window.siteBind("pedidoForm", function(){
+    var r = render(), err = document.getElementById("pErr"); err.textContent = "";
+    if (!r.esp.length && !r.beb.length){ err.textContent = "Adicione pelo menos um item."; return; }
+    var nome = document.getElementById("pNome").value.trim();
+    if (!nome){ err.textContent = "Informe seu nome para o pedido."; document.getElementById("pNome").focus(); return; }
+    var t = "Olá! Quero fazer um pedido.\n\n" + r.esp.concat(r.beb).join("\n") + "\n\nNome: " + nome + "\n" + document.getElementById("pModo").value + " às " + (document.getElementById("pHora").value || "—");
+    window.siteDone("pDone", window.siteWA(t));
+  });
+
+  /* churrasco calculator */
+  function n(id){ var v = parseInt(document.getElementById(id).value, 10); return isNaN(v) || v < 0 ? 0 : v; }
+  function radio(name){ var r = document.querySelector('input[name="' + name + '"]:checked'); return r ? parseFloat(r.value) : 1; }
+  var last = null;
+  function calc(){
+    var ad = n("kAd"), cr = n("kCr"), f = radio("kDur") * radio("kFome");
+    var kg = Math.ceil((ad*0.4 + cr*0.2) * f * 2) / 2;
+    document.getElementById("kKg").innerHTML = (kg.toLocaleString("pt-BR")) + " <small>kg</small>";
+    document.getElementById("kEsp").textContent = "≈ " + Math.round(kg*10) + " espetos de 100 g";
+    var split = [["Carne vermelha e costela", .55], ["Linguiça", .2], ["Frango", .15], ["Queijo coalho", .1]];
+    document.getElementById("kSplit").innerHTML = split.map(function(s){ return "<li>" + s[0] + ": " + (Math.round(kg*s[1]*10)/10).toLocaleString("pt-BR") + " kg</li>"; }).join("");
+    last = {ad:ad, cr:cr, kg:kg}; return last;
+  }
+  ["kAd","kCr"].forEach(function(id){ document.getElementById(id).addEventListener("input", calc); });
+  document.querySelectorAll('input[name="kDur"],input[name="kFome"]').forEach(function(r){ r.addEventListener("change", calc); });
+  calc();
+  window.siteBind("calcForm", function(){
+    var r = calc(), err = document.getElementById("kErr"); err.textContent = "";
+    if (!r.ad && !r.cr){ err.textContent = "Coloque quantos convidados vão."; return; }
+    var nome = document.getElementById("kNome").value.trim(); if (!nome){ err.textContent = "Informe seu nome para o orçamento."; document.getElementById("kNome").focus(); return; }
+    var d = document.getElementById("kData").value;
+    var t = "Olá! Fiz a conta no site e gostaria de um orçamento de churrasco.\n\nNome: " + nome + "\nConvidados: " + r.ad + " adultos e " + r.cr + " crianças" + (d ? "\nData: " + window.siteDate.br(d) : "") + "\nEstimativa: cerca de " + r.kg.toLocaleString("pt-BR") + " kg de carne";
+    window.siteDone("kDone", window.siteWA(t));
+  });
+})();
+</script>
+</body>
+</html>

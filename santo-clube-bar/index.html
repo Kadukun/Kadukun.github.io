@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Santo Clube Bar</title>
+<meta name="description" content="Bar com música ao vivo em São Pedro (SP): chopp gelado, porções, lanches gourmet, espaço kids e varanda de frente para a praça. Reserve sua mesa.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#12100e">
+<style>
+@font-face{font-family:"Alfa Slab One";font-weight:400;font-style:normal;font-display:swap;src:url("fonts/alfa-slab-one-400.woff2") format("woff2")}
+@font-face{font-family:"Manrope";font-weight:400;font-style:normal;font-display:swap;src:url("fonts/manrope-400.woff2") format("woff2")}
+@font-face{font-family:"Manrope";font-weight:600;font-style:normal;font-display:swap;src:url("fonts/manrope-600.woff2") format("woff2")}
+@font-face{font-family:"Manrope";font-weight:700;font-style:normal;font-display:swap;src:url("fonts/manrope-700.woff2") format("woff2")}
+@font-face{font-family:"Caveat";font-weight:500;font-style:normal;font-display:swap;src:url("fonts/caveat-500.woff2") format("woff2")}
+@font-face{font-family:"Caveat";font-weight:700;font-style:normal;font-display:swap;src:url("fonts/caveat-700.woff2") format("woff2")}
+:root{--bg:#12100e;--surface:#1c1915;--text:#f3ece0;--muted:#b5a995;--accent:#ffc65a;--accent-hi:#ffd57f;--accent-ink:#1a1206;--accent-glow:rgba(255,198,90,.45);--link:#ffc65a;--focus:#ffc65a;--line:rgba(243,236,224,.12);--line-strong:rgba(243,236,224,.26);--header-bg:rgba(18,16,14,.88);--badge-bg:rgba(28,25,21,.9);--open:#ffc65a;--open-ring:rgba(255,198,90,.25);--input-bg:#12100e;--error:#ff9b8a;--done-bg:rgba(255,198,90,.12);--today:#ffc65a;--page-bg:transparent;--page-ink:#f3ece0;--page-line:rgba(243,236,224,.32);--page-on:#f3ece0;--page-on-ink:#12100e;--display:"Alfa Slab One",Georgia,serif;--body:"Manrope",system-ui,sans-serif;--hand:"Caveat",cursive;--r-lg:14px;--r-sm:8px;--btn-r:10px;--h2-weight:400;--h1-weight:400;--h2-track:.005em;}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--body);font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--link)}
+:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:6px}
+[hidden]{display:none!important}
+.wrap{width:min(1120px,100% - 32px);margin-inline:auto}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+.demo{background:#ffd27a;color:#2b1a00;font-size:.9rem;font-family:system-ui,sans-serif}
+.demo .wrap{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:8px 0;flex-wrap:wrap}
+.demo button{background:none;border:1.5px solid currentColor;color:inherit;font:inherit;font-weight:700;padding:3px 12px;border-radius:99px;cursor:pointer}
+.demo .notes{display:none;padding:0 0 12px}.demo .notes.open{display:block}.demo .notes ul{margin:4px 0 0;padding-left:20px}
+header.top{position:sticky;top:0;z-index:40;background:var(--header-bg);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:10px 0}
+.logo{display:flex;align-items:center;gap:10px;color:var(--text);text-decoration:none;min-width:0}
+nav.links{display:flex;gap:20px}
+nav.links a{color:var(--muted);text-decoration:none;font-weight:600;font-size:.95rem}
+nav.links a:hover{color:var(--text)}
+@media (max-width:900px){nav.links{display:none}}
+.head-ctas{display:flex;gap:8px;align-items:center;flex:none}
+@media (max-width:520px){.logo .logo-text{display:none}.head-ctas .btn{padding:8px 12px;font-size:.85rem}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:700 1rem var(--body);padding:12px 22px;border-radius:var(--btn-r,99px);border:0;cursor:pointer;text-decoration:none;transition:transform .15s ease,background .15s ease,box-shadow .15s ease,border-color .15s ease}
+.btn:active{transform:scale(.97)}
+.btn-main{background:var(--accent);color:var(--accent-ink)}
+.btn-main:hover{background:var(--accent-hi);box-shadow:0 0 22px var(--accent-glow)}
+.btn-line{background:transparent;color:var(--text);border:1.5px solid var(--line-strong)}
+.btn-line:hover{border-color:var(--accent)}
+.btn-page{background:var(--page-bg);color:var(--page-ink);border:1.5px solid var(--page-line)}
+.btn-page.on{background:var(--page-on);color:var(--page-on-ink);border-color:var(--page-on)}
+.btn-page svg{width:16px;height:16px}
+.btn-sm{padding:8px 16px;font-size:.92rem}
+section{padding:84px 0;border-top:1px solid var(--line)}
+h2{font:var(--h2-weight,700) clamp(1.8rem,4vw,2.7rem)/1.1 var(--display);margin:0 0 14px;letter-spacing:var(--h2-track,-.01em)}
+.intro{color:var(--muted);max-width:58ch;margin:0 0 34px}
+h3{font-size:1.16rem;margin:0 0 6px}
+.split{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:start}
+@media (max-width:900px){.split{grid-template-columns:1fr;gap:30px}}
+.badge{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:.92rem;padding:6px 14px;border-radius:99px;background:var(--badge-bg);color:var(--text);border:1px solid var(--line)}
+.badge .dot{width:9px;height:9px;border-radius:50%;background:var(--muted)}
+.badge.open .dot{background:var(--open);box-shadow:0 0 0 4px var(--open-ring)}
+.panel{background:var(--surface);border-radius:var(--r-lg);padding:28px;border:1px solid var(--line)}
+@media (max-width:520px){.panel{padding:20px}}
+.field{display:flex;flex-direction:column;gap:6px;margin-bottom:16px;border:0;padding:0;min-width:0}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:520px){.row{grid-template-columns:1fr}}
+label,.legend{font-weight:600;font-size:.95rem;padding:0}
+.hint{font-size:.85rem;color:var(--muted);font-weight:400}
+input,select,textarea{font:inherit;color:var(--text);background:var(--input-bg);border:1.5px solid var(--line-strong);border-radius:var(--r-sm);padding:11px 12px;width:100%}
+input:focus,select:focus,textarea:focus{border-color:var(--accent);outline:none}
+textarea{min-height:92px;resize:vertical}
+select option{background:var(--input-bg);color:var(--text)}
+input[type=checkbox]{width:18px;height:18px;padding:0;accent-color:var(--accent);flex:none}
+input[type=range]{padding:0;border:0;background:transparent;accent-color:var(--accent)}
+.check{display:flex;gap:10px;align-items:center;font-weight:500;margin:4px 0}
+.error{color:var(--error);font-size:.9rem;min-height:1.2em;margin:-6px 0 10px}
+.done{display:none;margin-top:14px;padding:12px 14px;border-radius:var(--r-sm);background:var(--done-bg);color:var(--text);font-size:.95rem}
+.done.show{display:block}
+.checks{list-style:none;padding:0;margin:0 0 24px}
+.checks li{padding:10px 0;border-bottom:1px solid var(--line);display:flex;gap:12px}
+.checks li::before{content:"";flex:none;width:10px;height:10px;margin-top:.55em;border-radius:50%;background:var(--accent)}
+.gallery{display:grid;grid-template-columns:repeat(var(--gcols,3),1fr);grid-auto-rows:var(--grow,240px);gap:12px}
+.gallery button{all:unset;cursor:zoom-in;position:relative;border-radius:var(--r-lg);overflow:hidden;background:var(--surface)}
+.gallery button:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.gallery button:hover img{transform:scale(1.04)}
+.gallery figcaption{position:absolute;left:0;right:0;bottom:0;padding:28px 14px 12px;font-weight:600;font-size:.94rem;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.72))}
+.credit{font-size:.82rem;color:var(--muted);margin-top:12px}
+dialog.lb{border:0;padding:0;background:transparent;max-width:min(1000px,96vw);width:100%;color:#fff}
+dialog.lb::backdrop{background:rgba(5,5,8,.9)}
+.lb img{width:100%;max-height:78vh;object-fit:contain;border-radius:var(--r-lg)}
+.lb .bar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:12px}
+.lb .bar p{margin:0;font-weight:600}
+.lb .ctl{display:flex;gap:8px}
+.round{width:44px;height:44px;border-radius:50%;border:1.5px solid rgba(255,255,255,.3);background:rgba(20,20,24,.8);color:#fff;font-size:1.2rem;cursor:pointer}
+.round:hover{border-color:#fff}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;list-style:none;padding:18px 0;font-weight:600;font-size:1.05rem;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font:700 1.3rem var(--display);color:var(--accent);transition:transform .2s;line-height:1}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{margin:0 0 18px;color:var(--muted);max-width:62ch}
+.hours{width:100%;border-collapse:collapse;margin:8px 0 22px}
+.hours td{padding:9px 0;border-bottom:1px solid var(--line)}
+.hours td:last-child{text-align:right;color:var(--muted)}
+.hours tr.today td{color:var(--today);font-weight:700}
+.map{width:100%;height:260px;border:0;border-radius:var(--r-lg);background:var(--surface);margin-top:20px}
+.ctas{display:flex;gap:12px;flex-wrap:wrap}
+.page-hero{padding:56px 0 46px;border-bottom:1px solid var(--line)}
+.page-hero .back{display:inline-block;color:var(--muted);text-decoration:none;font-weight:600;font-size:.95rem;margin-bottom:20px}
+.page-hero .back:hover{color:var(--text)}
+.page-hero h1{font:var(--h1-weight,800) clamp(2.1rem,6vw,3.6rem)/1.05 var(--display);margin:0 0 12px}
+.page-hero p{max-width:56ch;color:var(--muted);font-size:1.08rem;margin:0}
+.page-view section:first-of-type{border-top:0}
+footer{border-top:1px solid var(--line);padding:36px 0 110px;color:var(--muted);font-size:.92rem}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.wa-float{position:fixed;right:16px;bottom:16px;z-index:50;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+
+
+.logo .wings{width:44px;height:24px;color:var(--accent);filter:drop-shadow(0 0 6px var(--accent-glow))}
+.logo-text{display:flex;flex-direction:column;line-height:1}
+.logo-text b{font:400 1.25rem var(--display);letter-spacing:.02em}
+.logo-text small{font:700 .62rem var(--body);letter-spacing:.28em;text-transform:uppercase;color:var(--muted);margin-top:3px}
+.hero{padding:64px 0 72px;position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr;gap:28px}}
+.hero h1{font:400 clamp(2.3rem,5.4vw,4.1rem)/1.04 var(--display);margin:18px 0 0;letter-spacing:.005em}
+.hero h1 em{font-style:normal;color:var(--accent);text-shadow:0 0 18px var(--accent-glow)}
+.hero .lede{color:var(--muted);font-size:1.13rem;max-width:46ch;margin:18px 0 26px}
+.facts{display:flex;gap:26px;flex-wrap:wrap;margin-top:36px;color:var(--muted);font-size:.94rem}
+.facts strong{display:block;color:var(--text)}
+/* signature: the neon wings switch on */
+.neon{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:3/4;max-height:620px;justify-self:center;width:100%;max-width:470px;background:#0b0a09;box-shadow:0 0 0 1px var(--line)}
+.neon img{width:100%;height:100%;object-fit:cover;filter:brightness(.18) saturate(.6);animation:ignite 1.6s .5s steps(1,end) forwards}
+.neon::after{content:"";position:absolute;inset:-20%;background:radial-gradient(circle at 50% 62%,rgba(255,198,90,.32),transparent 55%);opacity:0;animation:halo 1.2s 1.6s ease-out forwards;pointer-events:none;mix-blend-mode:screen;transition:opacity .4s}
+.hero:hover .neon::after{opacity:1}
+@keyframes ignite{0%{filter:brightness(.18) saturate(.6)}12%{filter:brightness(1) saturate(1)}18%{filter:brightness(.25) saturate(.6)}30%{filter:brightness(1) saturate(1)}36%{filter:brightness(.4) saturate(.7)}46%,100%{filter:brightness(1.04) saturate(1.05)}}
+@keyframes halo{to{opacity:.75}}
+@media (prefers-reduced-motion: reduce){.neon img{filter:none;animation:none}.neon::after{opacity:.75;animation:none}}
+.casa .gallery{grid-template-areas:"a a b" "c d b"}
+.casa .gallery button:nth-child(1){grid-area:a}.casa .gallery button:nth-child(2){grid-area:b}.casa .gallery button:nth-child(3){grid-area:c}.casa .gallery button:nth-child(4){grid-area:d}
+@media (max-width:700px){.casa .gallery{grid-template-areas:"a a" "c d" "b b";--gcols:2!important;grid-auto-rows:200px!important}.casa .gallery button:nth-child(2){grid-row:span 2}}
+.menu3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media (max-width:760px){.menu3{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.menu3{grid-template-columns:1fr}}
+.menu3 figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden}
+.menu3 img{aspect-ratio:4/5;object-fit:cover;width:100%}
+.menu3 figcaption{padding:12px 16px;font-weight:700}
+.menu3 figcaption small{display:block;color:var(--muted);font-weight:500}
+.note-row{margin-top:24px;display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:18px 22px;border-radius:var(--r-lg);background:var(--surface);border:1px solid var(--line)}
+.note-row p{margin:0}
+/* chalkboard: answers the "only told at the door" complaint */
+.lousa{background:#22211e url("img/salao-lousa.jpg") center/cover;position:relative;border-radius:18px;overflow:hidden;border:10px solid #5a3b22;box-shadow:inset 0 0 0 2px rgba(0,0,0,.4)}
+.lousa::before{content:"";position:absolute;inset:0;background:rgba(24,23,21,.9)}
+.lousa .in{position:relative;padding:34px 34px 30px}
+@media (max-width:520px){.lousa .in{padding:24px 20px}}
+.lousa h3{font:700 2.2rem/1 var(--hand);color:#f6efe2;margin:0 0 14px;transform:rotate(-1.5deg)}
+.lousa ul{list-style:none;margin:0 0 22px;padding:0}
+.lousa li{font:500 1.45rem/1.3 var(--hand);color:#efe7d8;padding:8px 0 8px 32px;position:relative;border-bottom:1px dashed rgba(239,231,216,.22)}
+.lousa li::before{content:"✓";position:absolute;left:4px;top:8px;color:var(--accent)}
+.lousa li b{color:var(--accent);font-weight:700}
+.where{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:stretch}
+@media (max-width:900px){.where{grid-template-columns:1fr}}
+.facade{border-radius:var(--r-lg);min-height:300px;background:url("img/fachada.jpg") center/cover;position:relative}
+.facade span{position:absolute;left:14px;top:14px;background:rgba(18,16,14,.8);padding:6px 12px;border-radius:99px;font-weight:600;font-size:.9rem}
+/* racha a conta page */
+.calc{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start}
+@media (max-width:860px){.calc{grid-template-columns:1fr}}
+.money{position:relative}.money span{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--muted);font-weight:600}.money input{padding-left:40px}
+.tab{background:#f5efe3;color:#1d1813;border-radius:6px;padding:26px 24px 30px;font-family:var(--body);position:relative;box-shadow:0 18px 40px rgba(0,0,0,.45)}
+.tab::after{content:"";position:absolute;left:0;right:0;bottom:-10px;height:12px;background:linear-gradient(-45deg,transparent 8px,#f5efe3 0) 0 0/16px 12px,linear-gradient(45deg,transparent 8px,#f5efe3 0) 0 0/16px 12px}
+.tab h3{font:400 1.5rem var(--display);margin:0 0 4px;color:#1d1813}
+.tab .sub{color:#6f655a;margin:0 0 16px;font-size:.92rem}
+.tab table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.tab td{padding:8px 0;border-bottom:1px dashed #cdbfa9}
+.tab td:last-child{text-align:right;font-weight:700}
+.tab .big td{font-size:1.25rem;border-bottom:0;padding-top:14px}
+.tab .who{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.tab .who div{background:#ebe2d2;border-radius:8px;padding:12px}
+.tab .who b{display:block;font:400 1.6rem var(--display);color:#1d1813}
+.tab .who small{color:#6f655a}
+
+</style>
+</head>
+<body>
+<div class="demo" role="note">
+  <div class="wrap">
+    <span><strong>Proposta de site</strong> para Santo Clube Bar. Demonstração, ainda não é o site oficial.</span>
+    <button type="button" id="demoToggle" aria-expanded="false" aria-controls="demoNotes">Ver notas</button>
+  </div>
+  <div class="wrap notes" id="demoNotes">Feito com informações e fotos públicas do Google Maps. Antes de publicar, confirmar com a empresa:<ul><li>Valor da entrada para não sócios e como funciona ser sócio</li><li>Uso das fotos, logo em alta resolução e cardápio com preços</li><li>Programação de música ao vivo, delivery e capacidade para eventos</li></ul></div>
+</div>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#inicio" aria-label="Santo Clube Bar, início"><svg class="wings" viewBox="0 0 120 60" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"><path d="M56 50C40 48 21 37 8 12"/><path d="M50 41C38 39 26 31 17 17"/><path d="M44 32C36 30 30 26 25 19"/><path d="M64 50C80 48 99 37 112 12"/><path d="M70 41C82 39 94 31 103 17"/><path d="M76 32C84 30 90 26 95 19"/></g></svg><span class="logo-text"><b>Santo</b><small>Clube Bar</small></span></a>
+    <nav class="links" aria-label="Seções"><a href="#casa">O bar</a><a href="#antes">Antes de ir</a><a href="#reservar">Reservar</a><a href="#eventos">Eventos</a><a href="#ajuda">Ajuda</a><a href="#onde">Onde fica</a></nav>
+    <div class="head-ctas"><a class="btn btn-page btn-sm" href="#racha-conta" data-page-link="racha-conta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M9 7h6M9 12h.01M12 12h.01M15 12h.01M9 16h.01M12 16h.01M15 16h.01"/></svg>Racha a conta</a><a class="btn btn-main btn-sm" href="#reservar">Reservar mesa</a></div>
+  </div>
+</header>
+<main id="inicio">
+
+<div class="hero" id="topo">
+  <div class="wrap">
+    <div>
+      <span class="badge" id="status"><span class="dot"></span><span class="txt">Verificando horário…</span></span>
+      <h1>Chopp gelado, banda no palco e a <em>praça</em> logo ali.</h1>
+      <p class="lede">O Santo Clube Bar recebe São Pedro de quarta a sábado com chopp, porções, lanches gourmet e música ao vivo. Traga a família: tem espaço kids.</p>
+      <div class="ctas"><a class="btn btn-main" href="#reservar">Reservar mesa</a><a class="btn btn-line" href="#antes">Antes de ir</a></div>
+      <div class="facts">
+        <div><strong>4,6 no Google</strong>436 avaliações</div>
+        <div><strong>Quarta a sábado</strong>das 17h às 23h</div>
+        <div><strong>Espaço kids</strong>para ir com a família</div>
+      </div>
+    </div>
+    <figure class="neon" aria-label="Asas de neon na parede do Santo Clube Bar"><img src="img/asas-neon.jpg" alt="Letreiro Santo Clube Bar com asas de neon âmbar na parede escura"></figure>
+  </div>
+</div>
+
+<section id="casa" class="casa">
+  <div class="wrap">
+    <h2>Conheça o Santo</h2>
+    <p class="intro">Balcão de madeira, lousa desenhada à mão, mesas para a turma toda e varanda de frente para a praça. Toque nas fotos para ampliar.</p>
+    <div class="gallery " style="--gcols:3;--grow:230px"><button data-shot style=""><img src="img/salao-bar.jpg" alt="Salão com mesas de madeira e balcão iluminado com o letreiro do Santo" loading="lazy"><figcaption>O salão e o balcão</figcaption></button><button data-shot style=""><img src="img/asas-neon.jpg" alt="Asas de neon âmbar abaixo do letreiro do Santo Clube Bar" loading="lazy"><figcaption>As asas de neon</figcaption></button><button data-shot style=""><img src="img/fachada.jpg" alt="Varanda com mesas na calçada, de frente para a praça" loading="lazy"><figcaption>A varanda, de frente para a praça</figcaption></button><button data-shot style=""><img src="img/salao-lousa.jpg" alt="Salão escuro com lousa decorada à mão" loading="lazy"><figcaption>A lousa e o salão</figcaption></button></div>
+    <p class="credit">Fotos públicas do Google Maps, usadas apenas nesta demonstração.</p>
+  </div>
+</section>
+
+<section id="cardapio">
+  <div class="wrap">
+    <h2>Pra pedir assim que sentar</h2>
+    <p class="intro">Os clientes falam do chopp geladíssimo, das porções quentes e dos lanches gourmet. Alguns destaques das fotos da casa:</p>
+    <div class="menu3">
+      <figure><img src="img/chopp.jpg" alt="Caneca de chopp gelado com colarinho" loading="lazy"><figcaption>Chopp gelado<small>Na caneca congelada</small></figcaption></figure>
+      <figure><img src="img/burger.jpg" alt="Hambúrguer artesanal com batata frita" loading="lazy"><figcaption>Lanches gourmet<small>Com fritas na cestinha</small></figcaption></figure>
+      <figure><img src="img/arancini.jpg" alt="Arancini empanados na tábua com cheiro-verde" loading="lazy"><figcaption>Arancini<small>Na tábua para dividir</small></figcaption></figure>
+    </div>
+    <div class="note-row"><p>Quer o cardápio completo com os preços de hoje? A equipe manda pelo WhatsApp.</p><a class="btn btn-line btn-sm" data-wa="Olá! Pode me mandar o cardápio do Santo com os preços?" href="#">Pedir o cardápio</a></div>
+  </div>
+</section>
+
+<section id="antes">
+  <div class="wrap split">
+    <div>
+      <h2>Antes de ir, sem surpresa na porta</h2>
+      <p class="intro">Um cliente contou que só soube na entrada que quem não é sócio paga um valor para entrar. Aqui isso fica escrito antes, junto com o que mais vale saber.</p>
+      <div class="ctas">
+        <a class="btn btn-main" data-wa="Olá! Qual é o valor da entrada para não sócios hoje? Vai ter música ao vivo?" href="#">Perguntar o valor de hoje</a>
+        <a class="btn btn-line" data-wa="Olá! Como faço para ser sócio do Santo Clube?" href="#">Quero ser sócio</a>
+      </div>
+    </div>
+    <div class="lousa"><div class="in">
+      <h3>Hoje no Santo</h3>
+      <ul>
+        <li><b>Não sócio</b> paga entrada na porta. Pergunte o valor da noite no WhatsApp.</li>
+        <li>Aberto de <b>quarta a sábado</b>, das 17h às 23h.</li>
+        <li><b>Espaço kids</b> para as crianças.</li>
+        <li>Mesas na <b>varanda</b>, de frente para a praça.</li>
+        <li>Grupo grande? <b>Reserve antes</b> e a mesa fica pronta.</li>
+      </ul>
+    </div></div>
+  </div>
+</section>
+
+<section id="reservar">
+  <div class="wrap split">
+    <div>
+      <h2>Reserve sua mesa</h2>
+      <p class="intro">Preencha e a mensagem vai pronta para o WhatsApp do Santo. A reserva vale quando a equipe confirmar.</p>
+      <ul class="checks"><li>Abre de quarta a sábado.</li><li>Diga se prefere o salão ou a varanda.</li><li>Vai com criança? Avise e a equipe indica a mesa perto do espaço kids.</li></ul>
+    </div>
+    <form class="panel" id="reservaForm" data-wa-form data-title="Olá! Gostaria de reservar uma mesa no Santo." data-done="reservaFormDone" novalidate>
+<div class="field"><label for="rNome">Seu nome</label><input id="rNome" type="text" data-label="Nome" data-required="Informe seu nome para a reserva." autocomplete="name"></div><div class="row"><div class="field"><label for="rData">Data</label><input id="rData" type="date" data-label="Data" data-required="Escolha a data." data-hours-for="rHora" data-open-only="O Santo abre de quarta a sábado. Escolha outro dia." data-last-before="60"></div><div class="field"><label for="rHora">Horário de chegada</label><select id="rHora" data-label="Chegada" data-required="Escolha o horário de chegada."><option value="">Escolha a data</option></select></div></div><div class="row"><div class="field"><label for="rPessoas">Quantas pessoas</label><input id="rPessoas" type="number" data-label="Pessoas" data-required="Informe quantas pessoas." value="4" min="1" max="80"></div><div class="field"><label for="rArea">Onde prefere</label><select id="rArea" data-label="Prefere" ><option>Tanto faz</option><option>Salão</option><option>Varanda (frente para a praça)</option><option>Perto do espaço kids</option></select></div></div><div class="field"><label for="rObs">Observações <span class="hint">(opcional)</span></label><textarea id="rObs" data-label="Observações" placeholder="Ex.: aniversário, vamos levar bolo…"></textarea></div>
+<p class="error" role="alert"></p>
+<button class="btn btn-main" type="submit">Enviar reserva pelo WhatsApp</button>
+<p class="done" id="reservaFormDone" role="status">Reserva pronta no WhatsApp. Envie a mensagem e aguarde a confirmação. Não abriu? <a href="#">Toque aqui</a>.</p>
+</form>
+  </div>
+</section>
+
+<section id="eventos">
+  <div class="wrap split">
+    <div>
+      <h2>Aniversário ou evento no Santo</h2>
+      <p class="intro">Salão amplo, palco e varanda. Conte como imagina a festa e receba o orçamento pelo WhatsApp.</p>
+      <figure style="margin:0;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line)"><img src="img/salao-bar.jpg" alt="Salão do Santo Clube Bar com mesas e balcão" loading="lazy" style="aspect-ratio:16/9;object-fit:cover;width:100%"></figure>
+    </div>
+    <form class="panel" id="eventoForm" data-wa-form data-title="Olá! Gostaria de um orçamento para evento no Santo." data-done="eventoFormDone" novalidate>
+<div class="row"><div class="field"><label for="eTipo">Tipo de evento</label><select id="eTipo" data-label="Tipo" ><option>Aniversário</option><option>Confraternização de empresa</option><option>Encontro de amigos</option><option>Outro</option></select></div><div class="field"><label for="eData">Data pretendida</label><input id="eData" type="date" data-label="Data" ></div></div><div class="field"><label for="eConv">Convidados (aproximado)</label><div style="display:flex;gap:14px;align-items:center"><input id="eConv" type="range" min="10" max="200" step="5" value="30" data-out="eConvOut" data-plus="1" data-label="Convidados"><output id="eConvOut" style="font:400 1.4rem var(--display);color:var(--accent);min-width:3.4ch;text-align:right">30</output></div></div><fieldset class="field" data-label="Incluir"><legend class="legend">Incluir</legend><label class="check"><input type="checkbox" value="Música ao vivo"> Música ao vivo</label><label class="check"><input type="checkbox" value="Porções" checked> Porções</label><label class="check"><input type="checkbox" value="Chopp" checked> Chopp</label><label class="check"><input type="checkbox" value="Espaço reservado"> Espaço reservado</label></fieldset><div class="field"><label for="eNome">Seu nome</label><input id="eNome" type="text" data-label="Nome" data-required="Informe seu nome para o orçamento." autocomplete="name"></div>
+<p class="error" role="alert"></p>
+<button class="btn btn-main" type="submit">Pedir orçamento</button>
+<p class="done" id="eventoFormDone" role="status">Pedido de orçamento pronto no WhatsApp. Não abriu? <a href="#">Toque aqui</a>.</p>
+</form>
+  </div>
+</section>
+
+<section id="ajuda">
+  <div class="wrap split">
+    <div class="faq">
+      <h2>Dúvidas rápidas</h2>
+      <p class="intro">Não achou a sua? Fale com a equipe pelo formulário.</p>
+      <details><summary>Qual o horário?</summary><p>Quarta a sábado, das 17h às 23h. Domingo, segunda e terça o Santo fecha.</p></details><details><summary>Quem não é sócio paga entrada?</summary><p>Sim, não sócios pagam um valor na entrada. Pergunte o valor da noite pelo WhatsApp antes de sair de casa.</p></details><details><summary>Tem música ao vivo?</summary><p>Sim, o Santo é bar com música ao vivo. Para saber quem toca hoje, pergunte à equipe.</p></details><details><summary>Dá para ir com crianças?</summary><p>Dá. A casa tem espaço kids.</p></details><details><summary>Tem delivery?</summary><p>A casa informa no Google que faz entrega sem contato e pedidos para viagem. Confirme pelo WhatsApp.</p></details><details><summary>Quanto custa em média?</summary><p>Quem avaliou no Google informa entre R$ 60 e R$ 80 por pessoa.</p></details>
+    </div>
+    <form class="panel" id="ajudaForm" data-wa-form data-title="Olá! Mensagem pelo site do Santo." data-done="ajudaFormDone" novalidate>
+<div class="field"><label for="hAssunto">Assunto</label><select id="hAssunto" data-label="Assunto" ><option>Dúvida</option><option>Ser sócio</option><option>Alterar ou cancelar reserva</option><option>Esqueci um objeto</option><option>Elogio</option><option>Reclamação</option></select></div><div class="field"><label for="hNome">Seu nome</label><input id="hNome" type="text" data-label="Nome" autocomplete="name"></div><div class="field"><label for="hMsg">Mensagem</label><textarea id="hMsg" data-label="Mensagem" data-required="Escreva sua mensagem antes de enviar." ></textarea></div>
+<p class="error" role="alert"></p>
+<button class="btn btn-main" type="submit">Enviar mensagem</button>
+<p class="done" id="ajudaFormDone" role="status">Mensagem pronta no WhatsApp. É só enviar. Não abriu? <a href="#">Toque aqui</a>.</p>
+</form>
+  </div>
+</section>
+
+<section id="onde">
+  <div class="wrap">
+    <h2>Onde fica</h2>
+    <div class="where">
+      <div class="facade" role="img" aria-label="Fachada e varanda do Santo Clube Bar"><span>Varanda de frente para a praça</span></div>
+      <div>
+        <p class="intro" style="margin-bottom:8px">R. Joaquim Teixeira de Toledo, 712, Centro, São Pedro, SP.</p>
+        <table class="hours" id="hoursTable" aria-label="Horário de funcionamento"></table>
+        <div class="ctas"><a class="btn btn-main btn-sm" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=Santo+Clube+Bar+S%C3%A3o+Pedro+SP">Como chegar</a><a class="btn btn-line btn-sm" data-wa="Olá! Estou a caminho e tenho uma dúvida." href="#">WhatsApp</a></div>
+      </div>
+    </div>
+    <iframe class="map" title="Mapa do Santo Clube Bar" loading="lazy" src="https://www.google.com/maps?q=Santo+Clube+Bar,+R.+Joaquim+Teixeira+de+Toledo,+712,+S%C3%A3o+Pedro+-+SP&output=embed"></iframe>
+  </div>
+</section>
+
+</main>
+<main id="racha-conta-view" class="page-view" hidden>
+<div class="page-hero"><div class="wrap">
+  <a class="back" href="#inicio">← Voltar para o site</a>
+  <h1>Racha a conta</h1>
+  <p>Fim de noite sem calculadora no guardanapo. Coloque o valor da conta e quantas pessoas estão na mesa. Quem não bebeu não paga a cerveja dos outros.</p>
+</div></div>
+<section><div class="wrap calc">
+  <form class="panel" id="rachaForm" novalidate>
+    <div class="field"><label for="cTotal">Valor total da conta (sem a taxa)</label><div class="money"><span>R$</span><input id="cTotal" inputmode="decimal" placeholder="0,00"></div></div>
+    <div class="field"><label for="cBebida">Quanto disso é bebida alcoólica? <span class="hint">(opcional)</span></label><div class="money"><span>R$</span><input id="cBebida" inputmode="decimal" placeholder="0,00"></div></div>
+    <div class="row">
+      <div class="field"><label for="cPessoas">Pessoas na mesa</label><input id="cPessoas" type="number" min="1" max="60" value="4"></div>
+      <div class="field"><label for="cBeberam">Quantas beberam</label><input id="cBeberam" type="number" min="0" max="60" value="4"></div>
+    </div>
+    <div class="field"><label for="cEntrada">Entrada por pessoa <span class="hint">(se já não estiver na conta)</span></label><div class="money"><span>R$</span><input id="cEntrada" inputmode="decimal" placeholder="0,00"></div></div>
+    <label class="check"><input type="checkbox" id="cTaxa" checked> Incluir taxa de serviço de 10%</label>
+    <p class="error" id="cErr" role="alert" style="margin-top:12px"></p>
+    <div class="ctas"><button class="btn btn-main" type="submit" id="cShare">Mandar no grupo</button><button class="btn btn-line" type="button" id="cClear">Limpar</button></div>
+  </form>
+  <div class="tab" aria-live="polite">
+    <h3>A conta da mesa</h3>
+    <p class="sub">Atualiza enquanto você digita.</p>
+    <table>
+      <tr><td>Consumo</td><td id="tConsumo">R$ 0,00</td></tr>
+      <tr><td>Taxa de serviço</td><td id="tTaxa">R$ 0,00</td></tr>
+      <tr><td>Entradas</td><td id="tEntrada">R$ 0,00</td></tr>
+      <tr class="big"><td>Total</td><td id="tTotal">R$ 0,00</td></tr>
+    </table>
+    <div class="who">
+      <div><small>Quem bebeu paga</small><b id="tBebeu">R$ 0,00</b></div>
+      <div><small>Quem não bebeu paga</small><b id="tNao">R$ 0,00</b></div>
+    </div>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap"><span>Santo Clube Bar · R. Joaquim Teixeira de Toledo, 712, Centro, São Pedro, SP</span><span>WhatsApp (19) 99668-3438</span></div></footer>
+<a class="btn btn-main wa-float" data-wa="Olá! Vim pelo site do Santo e gostaria de mais informações." href="#">WhatsApp</a>
+<dialog class="lb" id="lb" aria-label="Foto ampliada">
+  <img id="lbImg" alt="">
+  <div class="bar"><p id="lbCap"></p><div class="ctl">
+    <button class="round" type="button" id="lbPrev" aria-label="Foto anterior">‹</button>
+    <button class="round" type="button" id="lbNext" aria-label="Próxima foto">›</button>
+    <button class="round" type="button" id="lbClose" aria-label="Fechar">×</button>
+  </div></div>
+</dialog>
+<script>window.SITE = {"name": "Santo Clube Bar", "wa": "5519996683438", "email": null, "hours": {"0": [], "1": [], "2": [], "3": [[1020, 1380]], "4": [[1020, 1380]], "5": [[1020, 1380]], "6": [[1020, 1380]]}, "pages": ["racha-conta"], "pageTitles": {"racha-conta": "Racha a conta"}, "hoursOrder": [3, 4, 5, 6, 0, 1, 2], "closedText": null};</script>
+<script>
+(function(){
+  var C = window.SITE;
+  function wa(text, number){
+    var url = C.wa ? ("https://wa.me/" + (number === undefined ? C.wa : number) + "?text=" + encodeURIComponent(text))
+                   : ("mailto:" + C.email + "?subject=" + encodeURIComponent(C.mailSubject || "Contato pelo site") + "&body=" + encodeURIComponent(text));
+    if (number === "") url = "https://wa.me/?text=" + encodeURIComponent(text);
+    try { var w = window.open(url, "_blank"); if (w) w.opener = null; } catch(_){}
+    return url;
+  }
+  window.siteWA = wa;
+  function done(id, url){
+    var el = document.getElementById(id); if (!el) return; el.classList.add("show");
+    var a = el.querySelector("a"); if (a){ a.href = url; a.target = "_blank"; a.rel = "noopener"; }
+  }
+  window.siteDone = done;
+  function bind(form, fn){
+    if (typeof form === "string") form = document.getElementById(form);
+    form.addEventListener("submit", function(e){ e.preventDefault(); });
+    var btn = form.querySelector("button[type=submit]");
+    if (btn){ btn.type = "button"; btn.addEventListener("click", fn); }
+    form.querySelectorAll("input:not([type=checkbox]):not([type=range]):not([type=radio]), select").forEach(function(i){
+      i.addEventListener("keydown", function(e){ if (e.key === "Enter"){ e.preventDefault(); fn(); } });
+    });
+  }
+  window.siteBind = bind;
+  document.querySelectorAll("[data-wa]").forEach(function(a){
+    a.href = C.wa ? "https://wa.me/" + C.wa + "?text=" + encodeURIComponent(a.dataset.wa) : "mailto:" + C.email + "?body=" + encodeURIComponent(a.dataset.wa);
+    a.target = "_blank"; a.rel = "noopener";
+  });
+
+  /* router: #<page> opens its own page, any other hash returns to the main page */
+  var home = document.getElementById("inicio"), pages = C.pages || [];
+  var curHash = location.hash;
+  function route(){
+    var h = curHash, pid = h.slice(1), isPage = pages.indexOf(pid) >= 0;
+    var wasHidden = home.hidden, changed = isPage ? !wasHidden || true : wasHidden;
+    home.hidden = isPage;
+    pages.forEach(function(p){
+      var v = document.getElementById(p + "-view"); if (v) v.hidden = p !== pid;
+      document.querySelectorAll('[data-page-link="' + p + '"]').forEach(function(l){ l.classList.toggle("on", p === pid); if (p === pid) l.setAttribute("aria-current","page"); else l.removeAttribute("aria-current"); });
+    });
+    document.title = isPage ? (C.pageTitles[pid] + " · " + C.name) : C.name;
+    var how = (isPage || wasHidden) ? "instant" : "smooth";
+    if (isPage || !h || h === "#inicio"){ window.scrollTo({top:0, behavior:how}); return; }
+    var t = document.getElementById(pid);
+    if (t) window.scrollTo({top: t.getBoundingClientRect().top + window.scrollY - 64, behavior:how});
+  }
+  function goTo(h, push){ curHash = h; if (push){ try { history.pushState(null, "", h); } catch(_){} } route(); }
+  document.addEventListener("click", function(e){
+    var a = e.target.closest && e.target.closest('a[href^="#"]'); if (!a) return;
+    var h = a.getAttribute("href"); if (h.length < 2) return;
+    e.preventDefault(); goTo(h, true);
+  });
+  window.addEventListener("hashchange", function(){ goTo(location.hash, false); });
+  window.addEventListener("popstate", function(){ goTo(location.hash, false); });
+  if (pages.indexOf(curHash.slice(1)) >= 0) route();
+
+  var dt = document.getElementById("demoToggle"), dn = document.getElementById("demoNotes");
+  dt.addEventListener("click", function(){ var o = dn.classList.toggle("open"); dt.setAttribute("aria-expanded", o); dt.textContent = o ? "Fechar notas" : "Ver notas"; });
+
+  /* hours: HOURS[dow] = [[openMin, closeMin], ...]; close may pass 1440 */
+  var H = C.hours, NAMES = ["Domingo","Segunda","Terça","Quarta","Quinta","Sexta","Sábado"];
+  function fmt(m){ m %= 1440; var h = Math.floor(m/60), mm = m%60; return h + "h" + (mm ? String(mm).padStart(2,"0") : ""); }
+  function endTxt(m){ return m === 1440 ? "meia-noite" : fmt(m); }
+  function spNow(){
+    var o = {}; new Intl.DateTimeFormat("en-US",{timeZone:"America/Sao_Paulo",weekday:"short",hour:"numeric",minute:"numeric",hour12:false}).formatToParts(new Date()).forEach(function(p){ o[p.type] = p.value; });
+    return {day:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].indexOf(o.weekday), min:(parseInt(o.hour,10)%24)*60 + parseInt(o.minute,10)};
+  }
+  window.siteHours = {H:H, fmt:fmt, NAMES:NAMES, spNow:spNow};
+  function status(){
+    var el = document.getElementById("status"); if (!el) return;
+    var tx = el.querySelector(".txt"), n = spNow(), today = H[n.day] || [], y = H[(n.day+6)%7] || [];
+    el.classList.remove("open");
+    for (var i = 0; i < y.length; i++) if (y[i][1] > 1440 && n.min < y[i][1]-1440){ el.classList.add("open"); tx.textContent = "Aberto agora, até " + fmt(y[i][1]); return; }
+    for (i = 0; i < today.length; i++) if (n.min >= today[i][0] && n.min < today[i][1]){ el.classList.add("open"); tx.textContent = "Aberto agora, até " + endTxt(today[i][1]); return; }
+    for (i = 0; i < today.length; i++) if (n.min < today[i][0]){ tx.textContent = "Fechado agora, abre hoje às " + fmt(today[i][0]); return; }
+    for (var k = 1; k <= 7; k++){ var d = (n.day+k)%7; if ((H[d]||[]).length){ tx.textContent = "Fechado agora, abre " + (k===1 ? "amanhã" : NAMES[d].toLowerCase()) + " às " + fmt(H[d][0][0]); return; } }
+    tx.textContent = C.closedText || "Consulte o horário";
+  }
+  status(); setInterval(status, 60000);
+  var tb = document.getElementById("hoursTable");
+  if (tb){
+    var td = spNow().day;
+    (C.hoursOrder || [1,2,3,4,5,6,0]).forEach(function(d){
+      var tr = document.createElement("tr"); if (d === td) tr.className = "today";
+      var iv = H[d] || [];
+      tr.innerHTML = "<td>" + NAMES[d] + "</td><td>" + (iv.length ? iv.map(function(x){ return fmt(x[0]) + " às " + endTxt(x[1]); }).join(" e ") : "Fechado") + "</td>";
+      tb.appendChild(tr);
+    });
+  }
+
+  /* lightbox */
+  var shots = Array.prototype.map.call(document.querySelectorAll("[data-shot]"), function(b){ var im = b.querySelector("img"); var cap = b.querySelector("figcaption"); return {src:im.getAttribute("src"), alt:im.alt, cap:cap ? cap.textContent : im.alt}; });
+  var lb = document.getElementById("lb"), cur = 0, lastBtn = null;
+  function show(i){ cur = (i + shots.length) % shots.length; var s = shots[cur]; var im = document.getElementById("lbImg"); im.src = s.src; im.alt = s.alt; document.getElementById("lbCap").textContent = s.cap; }
+  document.querySelectorAll("[data-shot]").forEach(function(b, i){ b.addEventListener("click", function(){ lastBtn = b; show(i); if (lb.showModal) lb.showModal(); else lb.setAttribute("open",""); }); });
+  document.getElementById("lbPrev").onclick = function(){ show(cur-1); };
+  document.getElementById("lbNext").onclick = function(){ show(cur+1); };
+  document.getElementById("lbClose").onclick = function(){ lb.close(); };
+  lb.addEventListener("click", function(e){ if (e.target === lb) lb.close(); });
+  lb.addEventListener("keydown", function(e){ if (e.key === "ArrowRight") show(cur+1); if (e.key === "ArrowLeft") show(cur-1); });
+  lb.addEventListener("close", function(){ if (lastBtn) lastBtn.focus(); });
+
+  /* generic WhatsApp forms */
+  function iso(d){ return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0"); }
+  function parse(s){ var p = s.split("-").map(Number); return new Date(p[0], p[1]-1, p[2]); }
+  function br(s){ var d = parse(s); return NAMES[d.getDay()].toLowerCase()+", "+String(d.getDate()).padStart(2,"0")+"/"+String(d.getMonth()+1).padStart(2,"0"); }
+  window.siteDate = {iso:iso, parse:parse, br:br};
+  document.querySelectorAll("input[type=date]").forEach(function(i){ if (!i.min) i.min = iso(new Date()); });
+  document.querySelectorAll("input[type=date][data-hours-for]").forEach(function(di){
+    var sel = document.getElementById(di.dataset.hoursFor), step = +(di.dataset.step || 30), last = +(di.dataset.lastBefore || 60);
+    di.addEventListener("change", function(){
+      sel.innerHTML = "";
+      if (!di.value){ sel.innerHTML = '<option value="">Escolha a data</option>'; return; }
+      var iv = H[parse(di.value).getDay()] || [];
+      if (!iv.length){ sel.innerHTML = '<option value="">Fechado neste dia</option>'; return; }
+      iv.forEach(function(x){ for (var m = x[0]; m <= x[1]-last; m += step){ var o = document.createElement("option"); o.value = o.textContent = fmt(m).replace(/h$/,"h00"); sel.appendChild(o); } });
+    });
+  });
+  document.querySelectorAll("input[type=range][data-out]").forEach(function(r){
+    var o = document.getElementById(r.dataset.out), suf = r.dataset.suffix || "";
+    function up(){ o.textContent = r.value + (r.value === r.max && r.dataset.plus ? "+" : "") + suf; } r.addEventListener("input", up); up();
+  });
+  document.querySelectorAll("form[data-wa-form]").forEach(function(f){
+    bind(f, function(){
+      var err = f.querySelector(".error"); err.textContent = "";
+      var reqs = f.querySelectorAll("[data-required]");
+      for (var i = 0; i < reqs.length; i++){
+        var el = reqs[i];
+        if (!el.value || !String(el.value).trim()){ err.textContent = el.dataset.required; el.focus(); return; }
+        if (el.type === "date" && el.dataset.openOnly && !(H[parse(el.value).getDay()] || []).length){ err.textContent = el.dataset.openOnly; el.focus(); return; }
+      }
+      var lines = [f.dataset.title, ""];
+      f.querySelectorAll("[data-label]").forEach(function(el){
+        if (el.tagName === "FIELDSET"){
+          var vals = Array.prototype.map.call(el.querySelectorAll("input:checked"), function(c){ return c.value; });
+          if (vals.length) lines.push(el.dataset.label + ": " + vals.join(", ")); return;
+        }
+        var v = el.type === "range" ? (document.getElementById(el.dataset.out).textContent) : String(el.value || "").trim();
+        if (!v) return;
+        if (el.type === "date") v = br(v);
+        lines.push(el.dataset.label + ": " + v);
+      });
+      var url = wa(lines.join("\n").replace(/\n\n$/, ""));
+      done(f.dataset.done, url);
+    });
+  });
+})();
+</script>
+<script>
+(function(){
+  function num(id){ var v = (document.getElementById(id).value || "").replace(/\./g,"").replace(",", "."); var n = parseFloat(v); return isNaN(n) ? 0 : n; }
+  function brl(n){ return n.toLocaleString("pt-BR",{style:"currency",currency:"BRL"}); }
+  var ids = ["cTotal","cBebida","cPessoas","cBeberam","cEntrada","cTaxa"], last = null;
+  function calc(){
+    var total = num("cTotal"), beb = Math.min(num("cBebida"), total), p = Math.max(1, Math.round(num("cPessoas"))), b = Math.min(p, Math.max(0, Math.round(num("cBeberam")))), ent = num("cEntrada"), tx = document.getElementById("cTaxa").checked ? 0.10 : 0;
+    var food = total - beb;
+    if (b === 0){ food = total; beb = 0; }
+    var shareFood = food / p * (1 + tx), shareDrink = b ? beb / b * (1 + tx) : 0;
+    var bebeu = shareFood + shareDrink + ent, nao = shareFood + ent;
+    var r = {total:total, taxa: total*tx, ent: ent*p, all: total*(1+tx) + ent*p, bebeu: bebeu, nao: nao, p:p, b:b};
+    document.getElementById("tConsumo").textContent = brl(total);
+    document.getElementById("tTaxa").textContent = brl(r.taxa);
+    document.getElementById("tEntrada").textContent = brl(r.ent);
+    document.getElementById("tTotal").textContent = brl(r.all);
+    document.getElementById("tBebeu").textContent = b ? brl(bebeu) : "—";
+    document.getElementById("tNao").textContent = b < p ? brl(nao) : "—";
+    last = r; return r;
+  }
+  ids.forEach(function(id){ var el = document.getElementById(id); el.addEventListener("input", calc); el.addEventListener("change", calc); });
+  calc();
+  window.siteBind("rachaForm", function(){
+    var r = calc(), err = document.getElementById("cErr"); err.textContent = "";
+    if (!r.total){ err.textContent = "Coloque o valor da conta para dividir."; document.getElementById("cTotal").focus(); return; }
+    var t = "🍺 Conta do Santo Clube Bar\nTotal: " + brl(r.all) + " (" + r.p + " pessoas)";
+    if (r.b) t += "\nQuem bebeu: " + brl(r.bebeu);
+    if (r.b < r.p) t += "\nQuem não bebeu: " + brl(r.nao);
+    window.siteWA(t, "");
+  });
+  document.getElementById("cClear").addEventListener("click", function(){ ["cTotal","cBebida","cEntrada"].forEach(function(id){ document.getElementById(id).value = ""; }); calc(); });
+})();
+</script>
+</body>
+</html>
