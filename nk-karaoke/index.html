@@ -1,0 +1,753 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NK Karaokê e Eventos</title>
+<meta name="description" content="A casa do karaokê em Santana, zona norte de São Paulo. Reserve sua mesa, monte a roda de música da turma e faça seu evento no salão com palco.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#070b26">
+<style>
+@font-face{font-family:"Unbounded";font-weight:500;font-display:swap;src:url("fonts/unbounded-latin-500-normal.woff2") format("woff2")}
+@font-face{font-family:"Unbounded";font-weight:700;font-display:swap;src:url("fonts/unbounded-latin-700-normal.woff2") format("woff2")}
+@font-face{font-family:"Unbounded";font-weight:800;font-display:swap;src:url("fonts/unbounded-latin-800-normal.woff2") format("woff2")}
+@font-face{font-family:"Figtree";font-weight:400;font-display:swap;src:url("fonts/figtree-latin-400-normal.woff2") format("woff2")}
+@font-face{font-family:"Figtree";font-weight:500;font-display:swap;src:url("fonts/figtree-latin-500-normal.woff2") format("woff2")}
+@font-face{font-family:"Figtree";font-weight:600;font-display:swap;src:url("fonts/figtree-latin-600-normal.woff2") format("woff2")}
+@font-face{font-family:"Figtree";font-weight:700;font-display:swap;src:url("fonts/figtree-latin-700-normal.woff2") format("woff2")}
+@property --sx { syntax:'<percentage>'; inherits:true; initial-value:62%; }
+@property --sy { syntax:'<percentage>'; inherits:true; initial-value:38%; }
+:root{
+  --night:#070b26;
+  --navy:#111938;
+  --navy-2:#1a2452;
+  --led:#2f6bff;
+  --led-hi:#4d82ff;
+  --neon:#3fe0ff;
+  --amber:#ffb45c;
+  --violet:#8b5cff;
+  --text:#eef3ff;
+  --muted:#9aa6cf;
+  --line:rgba(170,190,255,.16);
+  --r-sm:10px;
+  --r-lg:20px;
+  --display:"Unbounded","Arial Black",sans-serif;
+  --body:"Figtree",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--night);color:var(--text);font-family:var(--body);font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--neon)}
+:focus-visible{outline:3px solid var(--neon);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1120px,100% - 32px);margin-inline:auto}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+/* demo banner */
+.demo{background:var(--amber);color:#2b1700;font-size:.9rem}
+.demo .wrap{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:8px 0;flex-wrap:wrap}
+.demo button{background:none;border:1.5px solid currentColor;color:inherit;font:inherit;font-weight:700;padding:3px 12px;border-radius:99px;cursor:pointer}
+.demo .notes{display:none;padding:0 0 12px}
+.demo .notes.open{display:block}
+.demo .notes ul{margin:4px 0 0;padding-left:20px}
+
+/* header */
+header.top{position:sticky;top:0;z-index:40;background:rgba(7,11,38,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 0}
+.logo{display:flex;align-items:center;gap:10px;color:var(--text);text-decoration:none}
+.logo svg{width:46px;height:34px}
+.logo span{font:700 .78rem/1.15 var(--display);letter-spacing:.04em;color:var(--muted)}
+nav.links{display:flex;gap:22px}
+nav.links a{color:var(--muted);text-decoration:none;font-weight:600;font-size:.95rem}
+nav.links a:hover{color:var(--text)}
+@media (max-width:880px){nav.links{display:none}}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:700 1rem var(--body);padding:12px 22px;border-radius:99px;border:0;cursor:pointer;text-decoration:none;transition:transform .15s ease,background .15s ease,box-shadow .15s ease}
+.btn:active{transform:scale(.97)}
+.btn-led{background:var(--led);color:#fff;box-shadow:0 0 0 0 rgba(47,107,255,0)}
+.btn-led:hover{background:var(--led-hi);box-shadow:0 0 24px rgba(47,107,255,.55)}
+.btn-line{background:transparent;color:var(--text);border:1.5px solid var(--line)}
+.btn-line:hover{border-color:var(--neon)}
+.btn-sm{padding:8px 16px;font-size:.92rem}
+
+/* HERO: lights-up spotlight over the real bar */
+.hero{position:relative;min-height:min(92vh,820px);display:flex;align-items:flex-end;overflow:hidden;isolation:isolate;--sx:62%;--sy:38%}
+.hero .ph{position:absolute;inset:0;background:url("img/bar-neon.jpg") center/cover no-repeat;z-index:-3}
+.hero .ph.dim{filter:brightness(.28) saturate(.7)}
+.hero .ph.lit{z-index:-2;-webkit-mask-image:radial-gradient(circle 260px at var(--sx) var(--sy),#000 0%,rgba(0,0,0,.85) 40%,transparent 100%);mask-image:radial-gradient(circle 260px at var(--sx) var(--sy),#000 0%,rgba(0,0,0,.85) 40%,transparent 100%);opacity:0;animation:lightsup 1.2s 1.1s ease-out forwards}
+.hero.auto .ph.lit{animation:lightsup 1.2s 1.1s ease-out forwards,sweep 14s 2.3s ease-in-out infinite alternate}
+@keyframes lightsup{to{opacity:1}}
+@keyframes sweep{0%{--sx:62%;--sy:36%}35%{--sx:30%;--sy:48%}70%{--sx:78%;--sy:62%}100%{--sx:52%;--sy:30%}}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(7,11,38,.15) 0%,rgba(7,11,38,0) 35%,rgba(7,11,38,.92) 88%,var(--night) 100%)}
+.hero .wrap{padding:96px 0 64px}
+.badge{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:.93rem;padding:6px 14px;border-radius:99px;background:rgba(17,25,56,.8);border:1px solid var(--line);backdrop-filter:blur(6px)}
+.badge .dot{width:9px;height:9px;border-radius:50%;background:var(--muted)}
+.badge.open .dot{background:var(--amber);box-shadow:0 0 0 4px rgba(255,180,92,.22)}
+.mark{margin:22px 0 4px;display:block;width:min(340px,70vw)}
+.mark .roof{fill:none;stroke:var(--text);stroke-width:7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:420;stroke-dashoffset:420;animation:draw 1s .15s ease-out forwards}
+.mark .swoosh{fill:none;stroke:var(--led);stroke-width:6;stroke-linecap:round;stroke-dasharray:300;stroke-dashoffset:300;animation:draw .8s .55s ease-out forwards}
+.mark .nk{font:800 92px var(--display);fill:var(--neon);opacity:0;animation:flicker 1.1s .7s linear forwards;filter:drop-shadow(0 0 10px rgba(63,224,255,.7))}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes flicker{0%{opacity:0}8%{opacity:1}12%{opacity:.15}20%{opacity:1}26%{opacity:.3}34%{opacity:1}100%{opacity:1}}
+.hero h1{font:800 clamp(2rem,5.6vw,4.4rem)/1.05 var(--display);letter-spacing:-.01em;margin:6px 0 0;max-width:15ch}
+.hero p.lede{max-width:46ch;color:#c9d2f2;font-size:1.15rem;margin:18px 0 26px}
+.ctas{display:flex;gap:12px;flex-wrap:wrap}
+.facts{display:flex;gap:28px;flex-wrap:wrap;margin-top:40px;color:var(--muted);font-size:.95rem}
+.facts strong{display:block;color:var(--text);font-size:1.02rem}
+.hint-spot{position:absolute;right:16px;bottom:16px;font-size:.82rem;color:var(--muted);opacity:.8}
+@media (hover:none){.hint-spot{display:none}}
+
+/* sections */
+section{padding:88px 0;border-top:1px solid var(--line)}
+h2{font:700 clamp(1.7rem,3.8vw,2.6rem)/1.15 var(--display);margin:0 0 14px;letter-spacing:-.01em}
+.intro{color:var(--muted);max-width:58ch;margin:0 0 36px}
+h3{font-size:1.18rem;margin:0 0 6px}
+.split{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:start}
+@media (max-width:900px){.split{grid-template-columns:1fr;gap:32px}}
+
+/* A casa: photo mosaic */
+.mosaic{display:grid;grid-template-columns:1.1fr 1fr 1fr;grid-template-rows:240px 240px;gap:12px}
+.mosaic button{all:unset;cursor:zoom-in;position:relative;border-radius:var(--r-lg);overflow:hidden;background:var(--navy)}
+.mosaic button:focus-visible{outline:3px solid var(--neon);outline-offset:3px}
+.mosaic img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.mosaic button:hover img{transform:scale(1.04)}
+.mosaic figcaption{position:absolute;left:0;right:0;bottom:0;padding:28px 16px 12px;font-weight:600;font-size:.95rem;background:linear-gradient(transparent,rgba(7,11,38,.9))}
+.mosaic .m-a{grid-row:1/3;grid-column:1/2}
+.mosaic .m-d{grid-column:2/4;grid-row:2/3}
+@media (max-width:760px){.mosaic{grid-template-columns:1fr 1fr;grid-template-rows:220px 170px 170px}.mosaic .m-a{grid-row:1/2;grid-column:1/3}.mosaic .m-d{grid-column:1/3;grid-row:3/4}}
+.tv{position:sticky;top:90px}
+@media (max-width:640px){.hero .ph{background-position:74% center}}
+.mark{margin-bottom:14px!important}
+.credit{font-size:.82rem;color:var(--muted);margin-top:12px}
+
+/* lightbox */
+dialog.lb{border:0;padding:0;background:transparent;max-width:min(1100px,96vw);width:100%;color:var(--text)}
+dialog.lb::backdrop{background:rgba(3,5,18,.9)}
+.lb img{width:100%;max-height:78vh;object-fit:contain;border-radius:var(--r-lg)}
+.lb .bar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:12px}
+.lb .bar p{margin:0;font-weight:600}
+.lb .ctl{display:flex;gap:8px}
+.round{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--line);background:var(--navy);color:var(--text);font-size:1.2rem;cursor:pointer}
+.round:hover{border-color:var(--neon)}
+
+/* petiscos */
+.food{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.food figure{margin:0;border-radius:var(--r-lg);overflow:hidden;background:var(--navy);border:1px solid var(--line)}
+.food img{aspect-ratio:3/2;object-fit:cover;width:100%}
+.food figcaption{padding:14px 18px;font-weight:600}
+.food figcaption small{display:block;color:var(--muted);font-weight:400}
+@media (max-width:640px){.food{grid-template-columns:1fr}}
+.note-row{margin-top:24px;display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:18px 22px;border-radius:var(--r-lg);background:var(--navy);border:1px solid var(--line)}
+.note-row p{margin:0}
+
+/* MODO FESTA: karaoke TV with slot reels */
+.tv{background:#050818;border:2px solid #22305f;border-radius:24px;padding:22px;box-shadow:0 0 0 6px #0c1330,0 0 60px rgba(47,107,255,.25)}
+.screen{border-radius:16px;background:radial-gradient(120% 90% at 50% 0%,#14204f 0%,#070b26 70%);padding:24px;border:1px solid rgba(63,224,255,.25);text-align:center}
+.screen .label{color:var(--muted);font-size:.85rem;font-weight:600}
+.reels{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0 18px}
+.reel{height:64px;overflow:hidden;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid var(--line);position:relative}
+.reel ul{list-style:none;margin:0;padding:0;transition:transform 1.6s cubic-bezier(.12,.75,.15,1)}
+.reel li{height:64px;display:flex;align-items:center;justify-content:center;padding:0 10px;font:700 1.02rem/1.15 var(--display);color:var(--neon);text-shadow:0 0 12px rgba(63,224,255,.55);overflow:hidden}
+.reel.song li{color:var(--text);text-shadow:none;font-family:var(--body);font-weight:700;font-size:1.05rem}
+.reel::before,.reel::after{content:"";position:absolute;left:0;right:0;height:14px;z-index:1;pointer-events:none}
+.reel::before{top:0;background:linear-gradient(#070b26,transparent)}
+.reel::after{bottom:0;background:linear-gradient(transparent,#070b26)}
+.now{min-height:1.6em;font-weight:700;color:var(--amber);margin:0 0 14px}
+.tv-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.opt{display:flex;align-items:center;gap:8px;justify-content:center;margin-top:12px;color:var(--muted);font-size:.92rem}
+.opt input{width:18px;height:18px;accent-color:var(--led)}
+.lists{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:22px}
+@media (max-width:640px){.lists{grid-template-columns:1fr}.reels{grid-template-columns:1fr}}
+.listbox h3{font-size:1rem}
+.addrow{display:flex;gap:8px}
+.addrow input{flex:1;min-width:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.chip{display:inline-flex;align-items:center;gap:6px;font:500 .9rem var(--body);background:var(--navy);color:var(--text);border:1px solid var(--line);border-radius:99px;padding:5px 6px 5px 12px}
+.chip button{all:unset;cursor:pointer;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;color:var(--muted)}
+.chip button:hover{color:var(--text);background:rgba(255,255,255,.08)}
+.chip button:focus-visible{outline:2px solid var(--neon)}
+.sugg{all:unset;cursor:pointer;font:500 .88rem var(--body);color:var(--muted);border:1px dashed var(--line);border-radius:99px;padding:5px 12px}
+.sugg:hover{color:var(--text);border-color:var(--neon)}
+.sugg:focus-visible{outline:2px solid var(--neon)}
+.empty-note{color:var(--muted);font-size:.9rem;margin:8px 0 0}
+
+/* forms */
+.panel{background:var(--navy);border-radius:var(--r-lg);padding:28px;border:1px solid var(--line)}
+@media (max-width:520px){.panel{padding:20px}}
+.field{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:520px){.row{grid-template-columns:1fr}}
+label{font-weight:600;font-size:.95rem}
+.hint{font-size:.85rem;color:var(--muted)}
+input,select,textarea{font:inherit;color:var(--text);background:var(--night);border:1.5px solid var(--line);border-radius:var(--r-sm);padding:11px 12px;width:100%}
+input:focus,select:focus,textarea:focus{border-color:var(--neon);outline:none}
+textarea{min-height:92px;resize:vertical}
+select option{background:var(--night)}
+input::-webkit-calendar-picker-indicator{filter:invert(1)}
+input[type=range]{padding:0;border:0;background:transparent;accent-color:var(--led)}
+.error{color:#ff9db0;font-size:.9rem;min-height:1.2em;margin:-6px 0 10px}
+.done{display:none;margin-top:14px;padding:12px 14px;border-radius:var(--r-sm);background:rgba(255,180,92,.12);color:#ffe1bd;font-size:.95rem}
+.done.show{display:block}
+.checks{list-style:none;padding:0;margin:0 0 24px}
+.checks li{padding:10px 0;border-bottom:1px solid var(--line);display:flex;gap:12px}
+.checks li::before{content:"";flex:none;width:12px;height:9px;margin-top:.55em;border:solid var(--neon);border-width:2px 2px 0 0;transform:skewY(0) rotate(-45deg) translate(2px,2px);border-radius:1px}
+.guests{display:flex;align-items:center;gap:14px}
+.guests output{font:700 1.4rem var(--display);color:var(--neon);min-width:3.2ch;text-align:right}
+
+/* eventos with photo */
+.ev-photo{border-radius:var(--r-lg);overflow:hidden;position:relative;margin-bottom:24px;border:1px solid var(--line)}
+.ev-photo img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.ev-photo span{position:absolute;left:14px;bottom:12px;font-weight:700;background:rgba(7,11,38,.75);padding:4px 10px;border-radius:99px;font-size:.9rem}
+
+/* faq */
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;list-style:none;padding:18px 0;font-weight:600;font-size:1.06rem;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font:700 1.2rem var(--display);color:var(--neon);transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{margin:0 0 18px;color:var(--muted);max-width:62ch}
+
+/* onde fica */
+.where{display:grid;grid-template-columns:.9fr 1.1fr;gap:28px;align-items:stretch}
+@media (max-width:900px){.where{grid-template-columns:1fr}}
+.facade{border-radius:var(--r-lg);overflow:hidden;position:relative;min-height:320px;background:url("img/fachada.jpg") center/cover}
+.facade .tag{position:absolute;left:14px;top:14px;background:rgba(7,11,38,.78);padding:6px 12px;border-radius:99px;font-weight:600;font-size:.9rem}
+.hours{width:100%;border-collapse:collapse;margin:8px 0 22px}
+.hours td{padding:9px 0;border-bottom:1px solid var(--line)}
+.hours td:last-child{text-align:right;color:var(--muted)}
+.hours tr.today td{color:var(--amber);font-weight:700}
+.map{width:100%;height:260px;border:0;border-radius:var(--r-lg);background:var(--navy);margin-top:20px}
+
+[hidden]{display:none!important}
+.head-ctas{display:flex;gap:8px;align-items:center}
+.btn-festa{background:rgba(63,224,255,.08);color:var(--neon);border:1.5px solid rgba(63,224,255,.5)}
+.btn-festa:hover{background:rgba(63,224,255,.16);box-shadow:0 0 18px rgba(63,224,255,.35)}
+.btn-festa.on{background:var(--neon);color:var(--night);border-color:var(--neon)}
+.btn-festa svg{width:15px;height:15px}
+@media (max-width:520px){.logo span{display:none}.head-ctas .btn{padding:8px 12px;font-size:.85rem}}
+.festa-hero{position:relative;padding:56px 0 52px;background:linear-gradient(180deg,rgba(7,11,38,.62) 0%,rgba(7,11,38,.8) 60%,var(--night) 100%),url("img/palco-luzes.jpg") center 40%/cover no-repeat}
+.festa-hero .back{display:inline-block;color:var(--muted);text-decoration:none;font-weight:600;font-size:.95rem;margin-bottom:22px}
+.festa-hero .back:hover{color:var(--text)}
+.festa-hero h1{font:800 clamp(2.2rem,6.4vw,4rem)/1.05 var(--display);margin:0 0 12px;color:var(--text)}
+.festa-hero h1 span{color:var(--neon);text-shadow:0 0 18px rgba(63,224,255,.55)}
+.festa-hero p{max-width:52ch;color:#c9d2f2;font-size:1.1rem;margin:0 0 28px}
+.how{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;counter-reset:how;max-width:900px}
+.how li{counter-increment:how;display:flex;gap:12px;align-items:flex-start;color:#c9d2f2;font-size:.98rem}
+.how li::before{content:counter(how);flex:none;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:rgba(17,25,56,.9);border:1px solid var(--line);color:var(--amber);font:700 .95rem var(--display)}
+.how b{display:block;color:var(--text)}
+@media (max-width:700px){.how{grid-template-columns:1fr}}
+.festa-page #festa{border-top:0;padding-top:40px}
+.festa-end{text-align:center;padding:56px 0}
+.festa-end p{color:var(--muted);margin:0 0 16px}
+footer{border-top:1px solid var(--line);padding:36px 0 110px;color:var(--muted);font-size:.92rem}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.wa-float{position:fixed;right:16px;bottom:16px;z-index:50;box-shadow:0 10px 30px rgba(0,0,0,.45)}
+</style>
+</head>
+<body>
+
+<div class="demo" role="note">
+  <div class="wrap">
+    <span><strong>Proposta de site</strong> para a NK Karaokê e Eventos. Demonstração, ainda não é o site oficial da casa.</span>
+    <button type="button" id="demoToggle" aria-expanded="false" aria-controls="demoNotes">Ver notas</button>
+  </div>
+  <div class="wrap notes" id="demoNotes">
+    Feito com informações e fotos públicas do Google Maps (enviadas por clientes e pela casa). Antes de publicar, confirmar com a NK:
+    <ul>
+      <li>Uso das fotos, ou trocar pelas fotos oficiais e pelo logo em alta resolução</li>
+      <li>Horários, regras de reserva, consumação e fila de músicas</li>
+      <li>Cardápio, preços, formas de pagamento e capacidade do salão</li>
+    </ul>
+  </div>
+</div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#inicio" aria-label="NK Karaokê e Eventos, início">
+      <svg viewBox="0 0 92 68" aria-hidden="true"><path d="M8 30 46 6l38 24" fill="none" stroke="#eef3ff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><text x="46" y="56" text-anchor="middle" font-family="Unbounded,Arial Black,sans-serif" font-weight="800" font-size="30" fill="#4d82ff">NK</text><path d="M12 64q34-10 68 0" fill="none" stroke="#2f6bff" stroke-width="3" stroke-linecap="round"/></svg>
+      <span>Karaokê<br>e Eventos</span>
+    </a>
+    <nav class="links" aria-label="Seções">
+      <a href="#casa">A casa</a>
+      <a href="#reservar">Reservar</a>
+      <a href="#eventos">Eventos</a>
+      <a href="#ajuda">Ajuda</a>
+      <a href="#onde">Onde fica</a>
+    </nav>
+    <div class="head-ctas">
+      <a class="btn btn-festa btn-sm" href="#modo-festa" id="festaLink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v4"/></svg>Modo festa</a>
+      <a class="btn btn-led btn-sm" href="#reservar">Reservar mesa</a>
+    </div>
+  </div>
+</header>
+
+<main id="inicio">
+  <div class="hero" id="hero">
+    <div class="ph dim" aria-hidden="true"></div>
+    <div class="ph lit" aria-hidden="true"></div>
+    <div class="wrap">
+      <span class="badge" id="status"><span class="dot"></span><span id="statusText">Verificando horário…</span></span>
+      <svg class="mark" viewBox="0 0 340 170" role="img" aria-label="NK">
+        <path class="roof" d="M30 70 170 12l140 58"/>
+        <text class="nk" x="170" y="140" text-anchor="middle">NK</text>
+        <path class="swoosh" d="M40 162q130-34 260 0"/>
+      </svg>
+      <h1>A casa do karaokê da zona norte.</h1>
+      <p class="lede">Palco, luz de balada, drinks e petiscos em Santana. Junte a turma, escolha a música e acende a casa.</p>
+      <div class="ctas">
+        <a class="btn btn-led" href="#reservar">Reservar mesa</a>
+        <a class="btn btn-line" href="#modo-festa">Abrir o modo festa</a>
+      </div>
+      <div class="facts">
+        <div><strong>4,5 no Google</strong>177 avaliações</div>
+        <div><strong>Salão com palco</strong>para aniversários e eventos</div>
+        <div><strong>Todo mundo é bem-vindo</strong>casa LGBTQ+ friendly</div>
+      </div>
+    </div>
+    <span class="hint-spot" aria-hidden="true">Passe o mouse para acender a luz</span>
+  </div>
+
+  <section id="casa">
+    <div class="wrap">
+      <h2>Conheça a casa</h2>
+      <p class="intro">Bar com neon e tijolinho, palco com luz de balada e um salão inteiro para a sua festa. Toque nas fotos para ampliar.</p>
+      <div class="mosaic" id="mosaic">
+        <button class="m-a" data-i="0"><img src="img/palco-luzes.jpg" alt="Palco do karaokê com globo de luz colorida, microfone e o letreiro NYCKARAOKE na TV" loading="lazy"><figcaption>O palco do karaokê</figcaption></button>
+        <button class="m-b" data-i="1"><img src="img/bar-neon.jpg" alt="Bar com parede de tijolinho, LED azul e garrafas iluminadas" loading="lazy"><figcaption>O bar</figcaption></button>
+        <button class="m-c" data-i="2"><img src="img/fachada.jpg" alt="Fachada azul-marinho da NK com logo e entrada de vidro" loading="lazy"><figcaption>A entrada, nº 80</figcaption></button>
+        <button class="m-d" data-i="3"><img src="img/salao-palco.jpg" alt="Salão de eventos com mesas de madeira e palco com o logo NK ao fundo" loading="lazy"><figcaption>O salão de eventos, com palco próprio</figcaption></button>
+      </div>
+      <p class="credit">Fotos públicas do Google Maps, usadas apenas nesta demonstração.</p>
+    </div>
+  </section>
+
+  <section id="petiscos">
+    <div class="wrap">
+      <h2>Para dividir entre uma música e outra</h2>
+      <p class="intro">Cantar abre o apetite. Alguns dos petiscos que aparecem nas fotos da casa:</p>
+      <div class="food">
+        <figure><img src="img/batata.jpg" alt="Porção de batata frita com bacon e queijo e molho rosé" loading="lazy"><figcaption>Batata com bacon e queijo<small>Com molho para mergulhar</small></figcaption></figure>
+        <figure><img src="img/pastel.jpg" alt="Pastel de queijo aberto com queijo derretido e vinagrete" loading="lazy"><figcaption>Pastel de queijo<small>Com vinagrete</small></figcaption></figure>
+      </div>
+      <div class="note-row">
+        <p>Quer o cardápio completo e os preços de hoje? A equipe manda pelo WhatsApp.</p>
+        <a class="btn btn-line btn-sm" data-wa="Olá! Pode me mandar o cardápio com os preços?" href="#">Pedir o cardápio</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="reservar">
+    <div class="wrap split">
+      <div>
+        <h2>Reserve sua mesa</h2>
+        <p class="intro">Preencha e a mensagem vai pronta para o WhatsApp da casa. A reserva vale quando a equipe confirmar.</p>
+        <ul class="checks">
+          <li>Aberto de terça a sábado. Domingo e segunda a casa fecha.</li>
+          <li>Sexta e sábado enchem: reserve antes para garantir o grupo todo junto.</li>
+          <li>Precisa de acessibilidade? Avise nas observações.</li>
+        </ul>
+      </div>
+      <form class="panel" id="reserveForm" novalidate>
+        <div class="field"><label for="rName">Seu nome</label><input id="rName" autocomplete="name"></div>
+        <div class="row">
+          <div class="field"><label for="rDate">Data</label><input id="rDate" type="date"></div>
+          <div class="field"><label for="rTime">Horário de chegada</label><select id="rTime"><option value="">Escolha a data</option></select></div>
+        </div>
+        <div class="row">
+          <div class="field"><label for="rPeople">Quantas pessoas</label><input id="rPeople" type="number" min="1" max="80" value="4"></div>
+          <div class="field"><label for="rOcc">Ocasião</label>
+            <select id="rOcc"><option>Noite com amigos</option><option>Aniversário</option><option>Happy hour da empresa</option><option>Despedida / comemoração</option><option>Outra</option></select></div>
+        </div>
+        <div class="field"><label for="rNotes">Observações <span class="hint">(opcional)</span></label><textarea id="rNotes" placeholder="Ex.: vamos levar bolo, precisamos de mesa perto do palco…"></textarea></div>
+        <p class="error" id="rErr" role="alert"></p>
+        <button class="btn btn-led" type="submit">Enviar reserva pelo WhatsApp</button>
+        <p class="done" id="rDone" role="status">Reserva pronta no WhatsApp. Envie a mensagem e aguarde a confirmação da casa. Não abriu? <a href="#">Toque aqui</a>.</p>
+      </form>
+    </div>
+  </section>
+
+  <section id="eventos">
+    <div class="wrap split">
+      <div>
+        <h2>Seu evento no salão com palco</h2>
+        <p class="intro">A NK tem um salão separado, com palco, som e luz. Aniversário, confraternização da empresa ou despedida: conte como você imagina e receba o orçamento.</p>
+        <figure class="ev-photo"><img src="img/salao-palco.jpg" alt="Salão de eventos da NK com palco iluminado" loading="lazy"><span>Salão de eventos</span></figure>
+      </div>
+      <form class="panel" id="eventForm" novalidate>
+        <div class="row">
+          <div class="field"><label for="eType">Tipo de evento</label>
+            <select id="eType"><option>Aniversário</option><option>Confraternização de empresa</option><option>Despedida de solteiro(a)</option><option>Show ou apresentação</option><option>Outro</option></select></div>
+          <div class="field"><label for="eDate">Data pretendida</label><input id="eDate" type="date"></div>
+        </div>
+        <div class="field">
+          <label for="eGuests">Convidados (aproximado)</label>
+          <div class="guests"><input id="eGuests" type="range" min="10" max="150" step="5" value="30"><output id="eGuestsOut" for="eGuests">30</output></div>
+        </div>
+        <fieldset class="field" style="border:0;padding:0;margin:0 0 16px">
+          <legend style="font-weight:600;font-size:.95rem;margin-bottom:6px">O que você quer incluir</legend>
+          <label class="opt" style="justify-content:flex-start;color:var(--text)"><input type="checkbox" value="Karaokê liberado no palco" checked> Karaokê liberado no palco</label>
+          <label class="opt" style="justify-content:flex-start;color:var(--text)"><input type="checkbox" value="Porções e petiscos"> Porções e petiscos</label>
+          <label class="opt" style="justify-content:flex-start;color:var(--text)"><input type="checkbox" value="Bebidas / open bar"> Bebidas / open bar</label>
+          <label class="opt" style="justify-content:flex-start;color:var(--text)"><input type="checkbox" value="Espaço exclusivo"> Espaço exclusivo</label>
+        </fieldset>
+        <div class="field"><label for="eName">Seu nome</label><input id="eName" autocomplete="name"></div>
+        <div class="field"><label for="eMsg">Algo mais? <span class="hint">(opcional)</span></label><textarea id="eMsg" placeholder="Ex.: tema da festa, horário, vamos levar bolo…"></textarea></div>
+        <p class="error" id="eErr" role="alert"></p>
+        <button class="btn btn-led" type="submit">Pedir orçamento</button>
+        <p class="done" id="eDone" role="status">Pedido de orçamento pronto no WhatsApp. Não abriu? <a href="#">Toque aqui</a>.</p>
+      </form>
+    </div>
+  </section>
+
+  <section id="ajuda">
+    <div class="wrap split">
+      <div class="faq">
+        <h2>Central de ajuda</h2>
+        <p class="intro">As dúvidas mais comuns. Não achou a sua? Fale com a equipe.</p>
+        <details><summary>Qual o horário de funcionamento?</summary><p>Terça a quinta, das 18h à meia-noite. Sexta e sábado, das 19h às 3h. Domingo e segunda a casa fecha.</p></details>
+        <details><summary>Preciso reservar?</summary><p>Não é obrigatório, mas sexta e sábado costumam lotar. Com reserva o grupo fica junto e você não volta para casa sem cantar.</p></details>
+        <details><summary>Como funciona para cantar?</summary><p>Você escolhe a música e entra na fila do palco. Regras da noite, como quantas músicas por mesa, a equipe explica pelo WhatsApp ou na chegada.</p></details>
+        <details><summary>Dá para fazer festa fechada?</summary><p>Sim. A casa tem um salão de eventos com palco próprio. Peça o orçamento na seção de eventos.</p></details>
+        <details><summary>O espaço é acessível?</summary><p>O Google indica entrada acessível para cadeirantes. Se precisar de algo a mais, avise na reserva.</p></details>
+        <details><summary>A casa é LGBTQ+ friendly?</summary><p>Sim. A NK é identificada no Google como empresa que acolhe a comunidade LGBTQ+. Aqui o palco é de todo mundo.</p></details>
+        <details><summary>Tem estacionamento?</summary><p>Não há estacionamento próprio. Clientes contam que costuma ter vaga na rua.</p></details>
+      </div>
+      <form class="panel" id="supportForm" novalidate>
+        <h3>Fale com a equipe</h3>
+        <p class="hint" style="margin-top:0">A resposta vem pelo WhatsApp. Elogios e reclamações chegam direto para a gerência.</p>
+        <div class="field"><label for="hType">Assunto</label>
+          <select id="hType"><option>Dúvida</option><option>Alterar ou cancelar reserva</option><option>Esqueci um objeto</option><option>Elogio</option><option>Reclamação</option><option>Sugestão de música para o catálogo</option></select></div>
+        <div class="field"><label for="hName">Seu nome</label><input id="hName" autocomplete="name"></div>
+        <div class="field"><label for="hMsg">Mensagem</label><textarea id="hMsg"></textarea></div>
+        <p class="error" id="hErr" role="alert"></p>
+        <button class="btn btn-led" type="submit">Enviar mensagem</button>
+        <p class="done" id="hDone" role="status">Mensagem pronta no WhatsApp. É só enviar. Não abriu? <a href="#">Toque aqui</a>.</p>
+      </form>
+    </div>
+  </section>
+
+  <section id="onde">
+    <div class="wrap">
+      <h2>Onde fica</h2>
+      <div class="where">
+        <div class="facade" role="img" aria-label="Fachada da NK Karaokê e Eventos"><span class="tag">Procure a fachada azul, nº 80</span></div>
+        <div>
+          <p class="intro" style="margin-bottom:10px">R. Alferes Magalhães, 80, Santana, São Paulo, SP, 02034-006.</p>
+          <table class="hours" id="hoursTable" aria-label="Horário de funcionamento"></table>
+          <div class="ctas">
+            <a class="btn btn-led btn-sm" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=R.+Alferes+Magalh%C3%A3es,+80+-+Santana,+S%C3%A3o+Paulo+-+SP,+02034-006">Como chegar</a>
+            <a class="btn btn-line btn-sm" data-wa="Olá! Estou a caminho e tenho uma dúvida." href="#">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+      <iframe class="map" title="Mapa da NK Karaokê e Eventos" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=R.+Alferes+Magalh%C3%A3es,+80+-+Santana,+S%C3%A3o+Paulo+-+SP&output=embed"></iframe>
+    </div>
+  </section>
+</main>
+
+<main id="modo-festa-view" class="festa-page" hidden>
+  <div class="festa-hero">
+    <div class="wrap">
+      <a class="back" href="#inicio">← Voltar para o site</a>
+      <h1>Modo <span>festa</span></h1>
+      <p>Chega de "vai você primeiro". Coloque a turma e as músicas, gire e deixe o sorteio decidir quem sobe no palco da NK e com qual música.</p>
+      <ol class="how">
+        <li><span><b>Adicione a turma</b>Os nomes de quem vai cantar.</span></li>
+        <li><span><b>Escolha as músicas</b>As suas ou as sugestões.</span></li>
+        <li><span><b>Gire na mesa</b>E mande o resultado no grupo.</span></li>
+      </ol>
+    </div>
+  </div>
+  <section id="festa">
+    <div class="wrap split">
+      <div>
+        <h2>Monte a roda</h2>
+        <p class="intro">Tudo fica salvo neste celular, então dá para montar em casa e usar na mesa.</p>
+        <div class="lists">
+          <div class="listbox">
+            <h3>Quem vai cantar</h3>
+            <form class="addrow" id="nameForm">
+              <label class="sr" for="nameIn">Nome</label>
+              <input id="nameIn" placeholder="Nome" maxlength="24" autocomplete="off">
+              <button class="btn btn-line btn-sm" type="submit">Adicionar</button>
+            </form>
+            <div class="chips" id="nameChips"></div>
+          </div>
+          <div class="listbox">
+            <h3>O que vai tocar</h3>
+            <form class="addrow" id="songForm">
+              <label class="sr" for="songIn">Música</label>
+              <input id="songIn" placeholder="Música" maxlength="48" autocomplete="off">
+              <button class="btn btn-line btn-sm" type="submit">Adicionar</button>
+            </form>
+            <div class="chips" id="songChips"></div>
+            <div class="chips" id="sugg" aria-label="Sugestões de músicas"></div>
+          </div>
+        </div>
+      </div>
+      <div class="tv">
+        <div class="screen">
+          <div class="label" id="tvLabel">Agora no palco</div>
+          <div class="reels">
+            <div class="reel" id="reelName" aria-hidden="true"><ul></ul></div>
+            <div class="reel song" id="reelSong" aria-hidden="true"><ul></ul></div>
+          </div>
+          <p class="now" id="now" aria-live="polite"></p>
+          <div class="tv-actions">
+            <button class="btn btn-led" type="button" id="spin">Girar</button>
+            <button class="btn btn-line" type="button" id="shareSpin">Mandar no grupo</button>
+          </div>
+          <label class="opt"><input type="checkbox" id="noRepeat" checked> Quem já cantou sai da roda até todo mundo cantar</label>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="festa-end">
+    <div class="wrap">
+      <p>Ainda não garantiu a mesa para a noite?</p>
+      <a class="btn btn-led" href="#reservar">Reservar mesa</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>NK Karaokê e Eventos · R. Alferes Magalhães, 80, Santana, São Paulo</span>
+    <span>WhatsApp (11) 97195-9633</span>
+  </div>
+</footer>
+
+<a class="btn btn-led wa-float" data-wa="Olá! Vim pelo site e gostaria de mais informações." href="#">WhatsApp</a>
+
+<dialog class="lb" id="lb" aria-label="Foto ampliada">
+  <img id="lbImg" alt="">
+  <div class="bar">
+    <p id="lbCap"></p>
+    <div class="ctl">
+      <button class="round" type="button" id="lbPrev" aria-label="Foto anterior">‹</button>
+      <button class="round" type="button" id="lbNext" aria-label="Próxima foto">›</button>
+      <button class="round" type="button" id="lbClose" aria-label="Fechar">×</button>
+    </div>
+  </div>
+</dialog>
+
+<script>
+(function(){
+  var WA = "5511971959633";
+  function wa(text, number){
+    var url = "https://wa.me/" + (number === undefined ? WA : number) + "?text=" + encodeURIComponent(text);
+    try { var w = window.open(url, "_blank"); if (w) w.opener = null; } catch(_){}
+    return url;
+  }
+  function done(id, url){
+    var el = document.getElementById(id); el.classList.add("show");
+    var a = el.querySelector("a"); if (a){ a.href = url; a.target = "_blank"; a.rel = "noopener"; }
+  }
+  /* Works without form submission (blocked in sandboxed previews): button click + Enter key */
+  function bind(formId, fn){
+    var f = document.getElementById(formId);
+    f.addEventListener("submit", function(e){ e.preventDefault(); });
+    var btn = f.querySelector("button[type=submit]");
+    if (btn){ btn.type = "button"; btn.addEventListener("click", fn); }
+    f.querySelectorAll("input:not([type=checkbox]):not([type=range]), select").forEach(function(i){
+      i.addEventListener("keydown", function(e){ if (e.key === "Enter"){ e.preventDefault(); fn(); } });
+    });
+  }
+  document.querySelectorAll("[data-wa]").forEach(function(a){ a.href = "https://wa.me/" + WA + "?text=" + encodeURIComponent(a.dataset.wa); a.target = "_blank"; a.rel = "noopener"; });
+  function store(k, v){ try{ if (v === undefined) return JSON.parse(localStorage.getItem(k) || "null"); localStorage.setItem(k, JSON.stringify(v)); }catch(_){ return null; } }
+
+  /* page router: #modo-festa opens its own page; any other hash goes back to the main page.
+     Links are handled in JS so it also works where hash navigation is blocked (sandboxed previews). */
+  var homeView = document.getElementById("inicio"), festaView = document.getElementById("modo-festa-view"), festaLink = document.getElementById("festaLink");
+  var curHash = location.hash;
+  function route(){
+    var h = curHash, isF = h === "#modo-festa", changed = festaView.hidden === isF;
+    homeView.hidden = isF; festaView.hidden = !isF;
+    festaLink.classList.toggle("on", isF);
+    if (isF) festaLink.setAttribute("aria-current", "page"); else festaLink.removeAttribute("aria-current");
+    document.title = isF ? "Modo festa · NK Karaokê e Eventos" : "NK Karaokê e Eventos";
+    var how = changed ? "instant" : "smooth";
+    if (isF || !h || h === "#inicio"){ window.scrollTo({top:0, behavior:how}); return; }
+    var t = document.getElementById(h.slice(1));
+    if (t) window.scrollTo({top: t.getBoundingClientRect().top + window.scrollY - 60, behavior:how});
+  }
+  function goTo(h, push){ curHash = h; if (push){ try { history.pushState(null, "", h); } catch(_){} } route(); }
+  document.addEventListener("click", function(e){
+    var a = e.target.closest && e.target.closest('a[href^="#"]'); if (!a) return;
+    var h = a.getAttribute("href"); if (h.length < 2) return;
+    e.preventDefault(); goTo(h, true);
+  });
+  window.addEventListener("hashchange", function(){ goTo(location.hash, false); });
+  window.addEventListener("popstate", function(){ goTo(location.hash, false); });
+  if (curHash === "#modo-festa") route(); else { homeView.hidden = false; festaView.hidden = true; }
+
+  var dt = document.getElementById("demoToggle"), dn = document.getElementById("demoNotes");
+  dt.addEventListener("click", function(){ var o = dn.classList.toggle("open"); dt.setAttribute("aria-expanded", o); dt.textContent = o ? "Fechar notas" : "Ver notas"; });
+
+  /* hero spotlight */
+  var hero = document.getElementById("hero");
+  var fine = window.matchMedia("(hover:hover) and (pointer:fine)").matches;
+  var still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!fine && !still) hero.classList.add("auto");
+  if (fine){
+    hero.addEventListener("pointermove", function(e){
+      var r = hero.getBoundingClientRect();
+      hero.style.setProperty("--sx", ((e.clientX - r.left) / r.width * 100).toFixed(1) + "%");
+      hero.style.setProperty("--sy", ((e.clientY - r.top) / r.height * 100).toFixed(1) + "%");
+    });
+  }
+
+  /* hours + status */
+  var HOURS = {0:null,1:null,2:[1080,1440],3:[1080,1440],4:[1080,1440],5:[1140,1620],6:[1140,1620]};
+  var NAMES = ["Domingo","Segunda","Terça","Quarta","Quinta","Sexta","Sábado"];
+  function fmt(m){ m %= 1440; var h = Math.floor(m/60), mm = m%60; return h + "h" + (mm ? String(mm).padStart(2,"0") : ""); }
+  function endTxt(h){ return h[1] === 1440 ? "meia-noite" : fmt(h[1]); }
+  function spNow(){
+    var o = {}; new Intl.DateTimeFormat("en-US",{timeZone:"America/Sao_Paulo",weekday:"short",hour:"numeric",minute:"numeric",hour12:false}).formatToParts(new Date()).forEach(function(p){ o[p.type] = p.value; });
+    return {day:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].indexOf(o.weekday), min:(parseInt(o.hour,10)%24)*60 + parseInt(o.minute,10)};
+  }
+  function status(){
+    var n = spNow(), el = document.getElementById("status"), tx = document.getElementById("statusText"), t = HOURS[n.day], y = HOURS[(n.day+6)%7];
+    el.classList.remove("open");
+    if (y && y[1] > 1440 && n.min < y[1]-1440){ el.classList.add("open"); tx.textContent = "Aberto agora, até " + fmt(y[1]); return; }
+    if (t && n.min >= t[0]){ el.classList.add("open"); tx.textContent = "Aberto agora, até " + endTxt(t); return; }
+    if (t){ tx.textContent = "Fechado agora, abre hoje às " + fmt(t[0]); return; }
+    for (var i = 1; i <= 7; i++){ var d = (n.day+i)%7; if (HOURS[d]){ tx.textContent = "Fechado agora, abre " + (i===1 ? "amanhã" : NAMES[d].toLowerCase()) + " às " + fmt(HOURS[d][0]); return; } }
+  }
+  status(); setInterval(status, 60000);
+  var tb = document.getElementById("hoursTable"), today = spNow().day;
+  [2,3,4,5,6,0,1].forEach(function(d){ var tr = document.createElement("tr"); if (d === today) tr.className = "today"; var h = HOURS[d]; tr.innerHTML = "<td>"+NAMES[d]+"</td><td>"+(h ? fmt(h[0])+" às "+endTxt(h) : "Fechado")+"</td>"; tb.appendChild(tr); });
+
+  /* lightbox */
+  var shots = Array.prototype.map.call(document.querySelectorAll("#mosaic button"), function(b){ var im = b.querySelector("img"); return {src:im.getAttribute("src"), alt:im.alt, cap:b.querySelector("figcaption").textContent}; });
+  var lb = document.getElementById("lb"), cur = 0, lastBtn = null;
+  function show(i){ cur = (i + shots.length) % shots.length; var s = shots[cur]; document.getElementById("lbImg").src = s.src; document.getElementById("lbImg").alt = s.alt; document.getElementById("lbCap").textContent = s.cap; }
+  document.querySelectorAll("#mosaic button").forEach(function(b){ b.addEventListener("click", function(){ lastBtn = b; show(+b.dataset.i); if (lb.showModal) lb.showModal(); else lb.setAttribute("open",""); }); });
+  document.getElementById("lbPrev").onclick = function(){ show(cur-1); };
+  document.getElementById("lbNext").onclick = function(){ show(cur+1); };
+  document.getElementById("lbClose").onclick = function(){ lb.close(); };
+  lb.addEventListener("click", function(e){ if (e.target === lb) lb.close(); });
+  lb.addEventListener("keydown", function(e){ if (e.key === "ArrowRight") show(cur+1); if (e.key === "ArrowLeft") show(cur-1); });
+  lb.addEventListener("close", function(){ if (lastBtn) lastBtn.focus(); });
+
+  /* modo festa */
+  var names = store("nk-names") || [], songs = store("nk-songs") || [], sung = store("nk-sung") || [];
+  var SUG = ["Evidências","Total Eclipse of the Heart","Fogo e Paixão","Bohemian Rhapsody","Garota Nacional","I Will Survive","Sozinho","Dancing Queen","Pais e Filhos","Shallow"];
+  function chipList(el, arr, key, onChange){
+    el.innerHTML = "";
+    arr.forEach(function(v, i){
+      var c = document.createElement("span"); c.className = "chip"; c.appendChild(document.createTextNode(v));
+      var x = document.createElement("button"); x.type = "button"; x.textContent = "×"; x.setAttribute("aria-label", "Remover " + v);
+      x.onclick = function(){ arr.splice(i,1); store(key, arr); onChange(); };
+      c.appendChild(x); el.appendChild(c);
+    });
+    if (!arr.length){ var p = document.createElement("p"); p.className = "empty-note"; p.textContent = key === "nk-names" ? "Adicione pelo menos um nome." : "Adicione músicas ou toque numa sugestão."; el.appendChild(p); }
+  }
+  function renderSugg(){
+    var el = document.getElementById("sugg"); el.innerHTML = "";
+    SUG.filter(function(s){ return songs.indexOf(s) < 0; }).slice(0,6).forEach(function(s){
+      var b = document.createElement("button"); b.type = "button"; b.className = "sugg"; b.textContent = "+ " + s;
+      b.onclick = function(){ songs.push(s); store("nk-songs", songs); renderAll(); }; el.appendChild(b);
+    });
+  }
+  function renderAll(){
+    sung = sung.filter(function(n){ return names.indexOf(n) >= 0; }); store("nk-sung", sung);
+    chipList(document.getElementById("nameChips"), names, "nk-names", renderAll);
+    chipList(document.getElementById("songChips"), songs, "nk-songs", renderAll);
+    renderSugg(); idleReels();
+  }
+  function addFrom(formId, inputId, arr, key){
+    bind(formId, function(){
+      var inp = document.getElementById(inputId), v = inp.value.trim();
+      if (v && arr.indexOf(v) < 0){ arr.push(v); store(key, arr); renderAll(); }
+      inp.value = ""; inp.focus();
+    });
+  }
+  addFrom("nameForm","nameIn",names,"nk-names");
+  addFrom("songForm","songIn",songs,"nk-songs");
+
+  var H = 64, lastPick = null;
+  function fill(reel, items){ var ul = reel.querySelector("ul"); ul.style.transition = "none"; ul.style.transform = "translateY(0)"; ul.innerHTML = ""; items.forEach(function(t){ var li = document.createElement("li"); li.textContent = t; ul.appendChild(li); }); return ul; }
+  function idleReels(){
+    if (lastPick) return;
+    fill(document.getElementById("reelName"), [names[0] || "Sua vez?"]);
+    fill(document.getElementById("reelSong"), [songs[0] || "Escolha a música"]);
+  }
+  function rand(a){ return a[Math.floor(Math.random()*a.length)]; }
+  function spinReel(reel, pool, final, extra){
+    var seq = []; for (var i = 0; i < extra; i++) seq.push(rand(pool)); seq.push(final);
+    var ul = fill(reel, seq); void ul.offsetHeight;
+    ul.style.transition = still ? "none" : ""; ul.style.transform = "translateY(" + (-(seq.length-1)*H) + "px)";
+  }
+  document.getElementById("spin").addEventListener("click", function(){
+    var now = document.getElementById("now");
+    if (!names.length || !songs.length){ now.textContent = "Adicione pelo menos um nome e uma música."; return; }
+    var pool = names;
+    if (document.getElementById("noRepeat").checked){
+      pool = names.filter(function(n){ return sung.indexOf(n) < 0; });
+      if (!pool.length){ sung = []; pool = names; }
+    }
+    var who = rand(pool), what = rand(songs);
+    lastPick = {who:who, what:what};
+    sung.push(who); store("nk-sung", sung);
+    now.textContent = "";
+    spinReel(document.getElementById("reelName"), names, who, 14);
+    spinReel(document.getElementById("reelSong"), songs, what, 18);
+    setTimeout(function(){ now.textContent = who + " canta " + what + "!"; }, still ? 0 : 1650);
+  });
+  document.getElementById("shareSpin").addEventListener("click", function(){
+    var txt;
+    if (lastPick) txt = "🎤 Sorteio na NK Karaokê: " + lastPick.who + " canta " + lastPick.what + "!";
+    else if (songs.length) txt = "Nossa lista para a NK Karaokê 🎤\n\n" + songs.map(function(s,i){ return (i+1)+". "+s; }).join("\n");
+    else { document.getElementById("now").textContent = "Gire primeiro ou adicione músicas para compartilhar."; return; }
+    var url = wa(txt, "");
+    var now = document.getElementById("now"); now.innerHTML = 'Não abriu o WhatsApp? <a target="_blank" rel="noopener">Toque aqui</a>.'; now.querySelector("a").href = url;
+  });
+  renderAll();
+
+  /* forms */
+  function iso(d){ return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0"); }
+  function parse(s){ var p = s.split("-").map(Number); return new Date(p[0], p[1]-1, p[2]); }
+  function br(s){ var d = parse(s); return NAMES[d.getDay()].toLowerCase()+", "+String(d.getDate()).padStart(2,"0")+"/"+String(d.getMonth()+1).padStart(2,"0"); }
+  var rDate = document.getElementById("rDate"), rTime = document.getElementById("rTime");
+  rDate.min = document.getElementById("eDate").min = iso(new Date());
+  rDate.addEventListener("change", function(){
+    rTime.innerHTML = "";
+    if (!rDate.value){ rTime.innerHTML = '<option value="">Escolha a data</option>'; return; }
+    var h = HOURS[parse(rDate.value).getDay()];
+    if (!h){ rTime.innerHTML = '<option value="">Casa fechada neste dia</option>'; return; }
+    for (var m = h[0]; m <= h[1]-60; m += 30){ var o = document.createElement("option"); o.value = o.textContent = fmt(m).replace(/h$/,"h00"); rTime.appendChild(o); }
+  });
+  function v(id){ return document.getElementById(id).value.trim(); }
+  bind("reserveForm", function(){
+    var err = document.getElementById("rErr"); err.textContent = "";
+    var n = parseInt(v("rPeople"),10);
+    if (!v("rName")) return err.textContent = "Informe seu nome para a reserva.";
+    if (!rDate.value) return err.textContent = "Escolha a data da reserva.";
+    if (!HOURS[parse(rDate.value).getDay()]) return err.textContent = "A casa fecha aos domingos e segundas. Escolha de terça a sábado.";
+    if (!rTime.value) return err.textContent = "Escolha o horário de chegada.";
+    if (!n || n < 1) return err.textContent = "Informe quantas pessoas vão.";
+    var url = wa("Olá! Gostaria de reservar uma mesa.\n\nNome: "+v("rName")+"\nData: "+br(rDate.value)+"\nChegada: "+rTime.value+"\nPessoas: "+n+"\nOcasião: "+v("rOcc")+(v("rNotes") ? "\nObservações: "+v("rNotes") : ""));
+    done("rDone", url);
+  });
+  var g = document.getElementById("eGuests"), go = document.getElementById("eGuestsOut");
+  g.addEventListener("input", function(){ go.textContent = g.value + (g.value === "150" ? "+" : ""); });
+  bind("eventForm", function(){
+    var err = document.getElementById("eErr"); err.textContent = "";
+    if (!v("eName")) return err.textContent = "Informe seu nome para o orçamento.";
+    var inc = Array.prototype.map.call(document.querySelectorAll("#eventForm input[type=checkbox]:checked"), function(c){ return c.value; });
+    var url = wa("Olá! Gostaria de um orçamento para evento no salão.\n\nNome: "+v("eName")+"\nTipo: "+v("eType")+"\nConvidados: cerca de "+go.textContent+(v("eDate") ? "\nData pretendida: "+br(v("eDate")) : "")+(inc.length ? "\nIncluir: "+inc.join(", ") : "")+(v("eMsg") ? "\nObs.: "+v("eMsg") : ""));
+    done("eDone", url);
+  });
+  bind("supportForm", function(){
+    var err = document.getElementById("hErr"); err.textContent = "";
+    if (!v("hMsg")) return err.textContent = "Escreva sua mensagem antes de enviar.";
+    var url = wa("["+v("hType")+"]"+(v("hName") ? "\nNome: "+v("hName") : "")+"\n\n"+v("hMsg"));
+    done("hDone", url);
+  });
+})();
+</script>
+</body>
+</html>
