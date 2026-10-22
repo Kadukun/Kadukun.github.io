@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Recanto do Sabor</title>
+<meta name="description" content="Restaurante de comida caseira em Ibitinga (SP): self-service e marmitex de segunda a sábado, das 9h às 14h. Encomende sua marmitex.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#f7fafa">
+<style>
+@font-face{font-family:"Bitter";font-weight:700;font-style:normal;font-display:swap;src:url("fonts/bitter-700.woff2") format("woff2")}
+@font-face{font-family:"Nunito";font-weight:400;font-style:normal;font-display:swap;src:url("fonts/nunito-400.woff2") format("woff2")}
+@font-face{font-family:"Nunito";font-weight:700;font-style:normal;font-display:swap;src:url("fonts/nunito-700.woff2") format("woff2")}
+:root{--bg:#f7fafa;--surface:#ffffff;--text:#22323a;--muted:#5f7279;--accent:#d23a33;--accent-hi:#e04840;--accent-ink:#ffffff;--accent-glow:rgba(210,58,51,.28);--ink:#1d2b30;--teal:#2f8f9d;--teal-ink:#1f5f68;--link:#b8302a;--focus:#2f8f9d;--line:rgba(29,43,48,.12);--line-strong:rgba(29,43,48,.24);--header-bg:rgba(247,250,250,.92);--badge-bg:#ffffff;--open:#2f8f5d;--open-ring:rgba(47,143,93,.18);--input-bg:#ffffff;--error:#b8302a;--done-bg:#e6f3f4;--today:#d23a33;--page-bg:#e6f3f4;--page-ink:#1d2b30;--page-line:#cfe5e8;--page-on:#2f8f9d;--page-on-ink:#ffffff;--display:"Bitter",Georgia,serif;--body:"Nunito",system-ui,sans-serif;--r-lg:18px;--r-sm:10px;--btn-r:12px;--h2-weight:700;--h1-weight:700;--h2-track:-.01em;}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--body);font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--link)}
+:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:6px}
+[hidden]{display:none!important}
+.wrap{width:min(1120px,100% - 32px);margin-inline:auto}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+.demo{background:#ffd27a;color:#2b1a00;font-size:.9rem;font-family:system-ui,sans-serif}
+.demo .wrap{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:8px 0;flex-wrap:wrap}
+.demo button{background:none;border:1.5px solid currentColor;color:inherit;font:inherit;font-weight:700;padding:3px 12px;border-radius:99px;cursor:pointer}
+.demo .notes{display:none;padding:0 0 12px}.demo .notes.open{display:block}.demo .notes ul{margin:4px 0 0;padding-left:20px}
+header.top{position:sticky;top:0;z-index:40;background:var(--header-bg);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:10px 0}
+.logo{display:flex;align-items:center;gap:10px;color:var(--text);text-decoration:none;min-width:0}
+nav.links{display:flex;gap:20px}
+nav.links a{color:var(--muted);text-decoration:none;font-weight:600;font-size:.95rem}
+nav.links a:hover{color:var(--text)}
+@media (max-width:900px){nav.links{display:none}}
+.head-ctas{display:flex;gap:8px;align-items:center;flex:none}
+@media (max-width:520px){.logo .logo-text{display:none}.head-ctas .btn{padding:8px 12px;font-size:.85rem}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:700 1rem var(--body);padding:12px 22px;border-radius:var(--btn-r,99px);border:0;cursor:pointer;text-decoration:none;transition:transform .15s ease,background .15s ease,box-shadow .15s ease,border-color .15s ease}
+.btn:active{transform:scale(.97)}
+.btn-main{background:var(--accent);color:var(--accent-ink)}
+.btn-main:hover{background:var(--accent-hi);box-shadow:0 0 22px var(--accent-glow)}
+.btn-line{background:transparent;color:var(--text);border:1.5px solid var(--line-strong)}
+.btn-line:hover{border-color:var(--accent)}
+.btn-page{background:var(--page-bg);color:var(--page-ink);border:1.5px solid var(--page-line)}
+.btn-page.on{background:var(--page-on);color:var(--page-on-ink);border-color:var(--page-on)}
+.btn-page svg{width:16px;height:16px}
+.btn-sm{padding:8px 16px;font-size:.92rem}
+section{padding:84px 0;border-top:1px solid var(--line)}
+h2{font:var(--h2-weight,700) clamp(1.8rem,4vw,2.7rem)/1.1 var(--display);margin:0 0 14px;letter-spacing:var(--h2-track,-.01em)}
+.intro{color:var(--muted);max-width:58ch;margin:0 0 34px}
+h3{font-size:1.16rem;margin:0 0 6px}
+.split{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:start}
+@media (max-width:900px){.split{grid-template-columns:1fr;gap:30px}}
+.badge{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:.92rem;padding:6px 14px;border-radius:99px;background:var(--badge-bg);color:var(--text);border:1px solid var(--line)}
+.badge .dot{width:9px;height:9px;border-radius:50%;background:var(--muted)}
+.badge.open .dot{background:var(--open);box-shadow:0 0 0 4px var(--open-ring)}
+.panel{background:var(--surface);border-radius:var(--r-lg);padding:28px;border:1px solid var(--line)}
+@media (max-width:520px){.panel{padding:20px}}
+.field{display:flex;flex-direction:column;gap:6px;margin-bottom:16px;border:0;padding:0;min-width:0}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:520px){.row{grid-template-columns:1fr}}
+label,.legend{font-weight:600;font-size:.95rem;padding:0}
+.hint{font-size:.85rem;color:var(--muted);font-weight:400}
+input,select,textarea{font:inherit;color:var(--text);background:var(--input-bg);border:1.5px solid var(--line-strong);border-radius:var(--r-sm);padding:11px 12px;width:100%}
+input:focus,select:focus,textarea:focus{border-color:var(--accent);outline:none}
+textarea{min-height:92px;resize:vertical}
+select option{background:var(--input-bg);color:var(--text)}
+input[type=checkbox]{width:18px;height:18px;padding:0;accent-color:var(--accent);flex:none}
+input[type=range]{padding:0;border:0;background:transparent;accent-color:var(--accent)}
+.check{display:flex;gap:10px;align-items:center;font-weight:500;margin:4px 0}
+.error{color:var(--error);font-size:.9rem;min-height:1.2em;margin:-6px 0 10px}
+.done{display:none;margin-top:14px;padding:12px 14px;border-radius:var(--r-sm);background:var(--done-bg);color:var(--text);font-size:.95rem}
+.done.show{display:block}
+.checks{list-style:none;padding:0;margin:0 0 24px}
+.checks li{padding:10px 0;border-bottom:1px solid var(--line);display:flex;gap:12px}
+.checks li::before{content:"";flex:none;width:10px;height:10px;margin-top:.55em;border-radius:50%;background:var(--accent)}
+.gallery{display:grid;grid-template-columns:repeat(var(--gcols,3),1fr);grid-auto-rows:var(--grow,240px);gap:12px}
+.gallery button{all:unset;cursor:zoom-in;position:relative;border-radius:var(--r-lg);overflow:hidden;background:var(--surface)}
+.gallery button:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.gallery button:hover img{transform:scale(1.04)}
+.gallery figcaption{position:absolute;left:0;right:0;bottom:0;padding:28px 14px 12px;font-weight:600;font-size:.94rem;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.72))}
+.credit{font-size:.82rem;color:var(--muted);margin-top:12px}
+dialog.lb{border:0;padding:0;background:transparent;max-width:min(1000px,96vw);width:100%;color:#fff}
+dialog.lb::backdrop{background:rgba(5,5,8,.9)}
+.lb img{width:100%;max-height:78vh;object-fit:contain;border-radius:var(--r-lg)}
+.lb .bar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:12px}
+.lb .bar p{margin:0;font-weight:600}
+.lb .ctl{display:flex;gap:8px}
+.round{width:44px;height:44px;border-radius:50%;border:1.5px solid rgba(255,255,255,.3);background:rgba(20,20,24,.8);color:#fff;font-size:1.2rem;cursor:pointer}
+.round:hover{border-color:#fff}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;list-style:none;padding:18px 0;font-weight:600;font-size:1.05rem;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font:700 1.3rem var(--display);color:var(--accent);transition:transform .2s;line-height:1}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{margin:0 0 18px;color:var(--muted);max-width:62ch}
+.hours{width:100%;border-collapse:collapse;margin:8px 0 22px}
+.hours td{padding:9px 0;border-bottom:1px solid var(--line)}
+.hours td:last-child{text-align:right;color:var(--muted)}
+.hours tr.today td{color:var(--today);font-weight:700}
+.map{width:100%;height:260px;border:0;border-radius:var(--r-lg);background:var(--surface);margin-top:20px}
+.ctas{display:flex;gap:12px;flex-wrap:wrap}
+.page-hero{padding:56px 0 46px;border-bottom:1px solid var(--line)}
+.page-hero .back{display:inline-block;color:var(--muted);text-decoration:none;font-weight:600;font-size:.95rem;margin-bottom:20px}
+.page-hero .back:hover{color:var(--text)}
+.page-hero h1{font:var(--h1-weight,800) clamp(2.1rem,6vw,3.6rem)/1.05 var(--display);margin:0 0 12px}
+.page-hero p{max-width:56ch;color:var(--muted);font-size:1.08rem;margin:0}
+.page-view section:first-of-type{border-top:0}
+footer{border-top:1px solid var(--line);padding:36px 0 110px;color:var(--muted);font-size:.92rem}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.wa-float{position:fixed;right:16px;bottom:16px;z-index:50;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+
+
+.logo .pot{width:40px;height:34px}
+.logo-text{display:flex;flex-direction:column;line-height:1}
+.logo-text small{font:700 .6rem var(--body);letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+.logo-text b{font:700 1.25rem var(--display);color:var(--ink)}
+.check-band{height:16px;background:repeating-conic-gradient(#d23a33 0 25%,#fff 0 50%) 0 0/16px 16px;opacity:.9}
+.hero{position:relative;padding:50px 0 62px;background:linear-gradient(180deg,#e6f3f4,var(--bg))}
+.hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+@media (max-width:900px){.hero .wrap{grid-template-columns:1fr;gap:30px}}
+.hero h1{font:700 clamp(2.5rem,6vw,4.4rem)/1.02 var(--display);color:var(--ink);margin:18px 0 0}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .lede{color:var(--muted);font-size:1.12rem;max-width:46ch;margin:18px 0 26px}
+.facts{display:flex;gap:26px;flex-wrap:wrap;margin-top:30px;color:var(--muted);font-size:.94rem}
+.facts strong{display:block;color:var(--text)}
+.arch{margin:0;border-radius:200px 200px 18px 18px;overflow:hidden;border:10px solid var(--teal);aspect-ratio:4/3.4;box-shadow:0 26px 60px rgba(29,43,48,.22)}
+.arch img{width:100%;height:100%;object-fit:cover}
+/* lunch clock */
+.clock{display:grid;grid-template-columns:auto 1fr;gap:30px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:24px;padding:28px}
+@media (max-width:760px){.clock{grid-template-columns:1fr;justify-items:center;text-align:center;padding:22px}}
+.dial{width:240px;height:150px}
+.dial .arc-bg{fill:none;stroke:#e6eef0;stroke-width:22;stroke-linecap:round}
+.dial .arc{fill:none;stroke:var(--teal);stroke-width:22;stroke-linecap:round}
+.dial .hand{stroke:var(--accent);stroke-width:4;stroke-linecap:round;transition:transform 1.2s cubic-bezier(.2,.8,.2,1);transform-origin:120px 130px}
+.dial text{font:700 12px var(--body);fill:#6b7f85}
+.clock h3{font:700 1.7rem var(--display);margin:0 0 6px;color:var(--ink)}
+.clock p{margin:0;color:var(--muted)}
+.week{display:flex;gap:6px;margin-top:14px;flex-wrap:wrap}
+.week span{font:700 .78rem var(--body);padding:6px 9px;border-radius:8px;background:#e6f3f4;color:var(--teal-ink)}
+.week span.off{background:#f6e3e2;color:#a3302a;text-decoration:line-through}
+.week span.now{outline:2px solid var(--accent);outline-offset:1px}
+.menu3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media (max-width:760px){.menu3{grid-template-columns:1fr}}
+.menu3 figure{margin:0;background:#fff;border-radius:18px;overflow:hidden;border:1px solid var(--line)}
+.menu3 img{aspect-ratio:6/5;object-fit:cover;width:100%}
+.menu3 figcaption{padding:12px 16px 14px;font-weight:700}
+.menu3 figcaption small{display:block;color:var(--muted);font-weight:400}
+.where{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+@media (max-width:900px){.where{grid-template-columns:1fr}}
+.facade{border-radius:18px;min-height:260px;background:url("img/fachada.jpg") center/cover;margin-bottom:18px}
+/* marmitex page */
+.mx{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:start}
+@media (max-width:900px){.mx{grid-template-columns:1fr}}
+.tabs{display:flex;gap:8px;margin-bottom:16px}
+.tabs button{flex:1;padding:12px;border-radius:12px;border:1px solid var(--line-strong);background:#fff;font:700 1rem var(--body);color:var(--text);cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--teal);color:#fff;border-color:var(--teal)}
+.qty{display:flex;align-items:center;gap:12px}
+.qty button{width:44px;height:44px;border-radius:50%;border:1px solid var(--line-strong);background:#fff;font:700 1.3rem var(--body);cursor:pointer;color:var(--text)}
+.qty output{font:700 2rem var(--display);min-width:2ch;text-align:center;color:var(--ink)}
+.ticket{background:#fff;border:2px dashed var(--teal);border-radius:16px;padding:22px;font-size:.98rem}
+.ticket h3{font:700 1.3rem var(--display);margin:0 0 10px;color:var(--ink)}
+.ticket pre{white-space:pre-wrap;font:inherit;margin:0;color:var(--text)}
+.callbox{margin-top:14px;background:#e6f3f4;border-radius:14px;padding:16px;color:var(--teal-ink)}
+.sticky{position:sticky;top:96px}
+
+h2{color:var(--ink)}
+</style>
+</head>
+<body>
+<div class="demo" role="note">
+  <div class="wrap">
+    <span><strong>Proposta de site</strong> para Recanto do Sabor. Demonstração, ainda não é o site oficial.</span>
+    <button type="button" id="demoToggle" aria-expanded="false" aria-controls="demoNotes">Ver notas</button>
+  </div>
+  <div class="wrap notes" id="demoNotes">Feito com informações e fotos públicas do Google Maps. Antes de publicar, confirmar com a empresa:<ul><li>Número de WhatsApp para pedidos (usamos o (16) 3341-6728 do Google; confirmar se tem WhatsApp)</li><li>Valores do self-service e da marmitex, e se fazem entrega</li><li>Uso das fotos e do logo em alta resolução</li></ul></div>
+</div>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#inicio" aria-label="Recanto do Sabor, início"><svg class="pot" viewBox="0 0 48 40" aria-hidden="true"><path d="M8 16h32v8a12 12 0 0 1-12 12h-8A12 12 0 0 1 8 24z" fill="#1d2b30"/><rect x="5" y="13" width="38" height="5" rx="2.5" fill="#1d2b30"/><path d="M2 18h6M40 18h6" stroke="#1d2b30" stroke-width="3" stroke-linecap="round"/><path d="M18 9c0-3 3-3 3-6M26 9c0-3 3-3 3-6" stroke="#1d2b30" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M14 38h20l-10 2z" fill="#d23a33"/></svg><span class="logo-text"><small>Restaurante</small><b>Recanto do Sabor</b></span></a>
+    <nav class="links" aria-label="Seções"><a href="#horario">Horário</a><a href="#comida">Comida</a><a href="#casa">O Recanto</a><a href="#ajuda">Ajuda</a><a href="#onde">Onde fica</a></nav>
+    <div class="head-ctas"><a class="btn btn-page btn-sm" href="#marmitex" data-page-link="marmitex"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="11" rx="2"/><path d="M3 12h18M8 8V5h8v3"/></svg>Marmitex</a><a class="btn btn-main btn-sm" href="#horario">Está aberto?</a></div>
+  </div>
+</header>
+<main id="inicio">
+
+<div class="hero" id="topo">
+  <div class="wrap">
+    <div>
+      <span class="badge" id="status"><span class="dot"></span><span class="txt">Verificando horário…</span></span>
+      <h1>Comida caseira, <em>no almoço</em> de todo dia.</h1>
+      <p class="lede">O Recanto do Sabor serve self-service e marmitex de segunda a sábado, das 9h às 14h, na Av. Eng. Ivanil Francischini, em Ibitinga. Comida simples, gostosa e com preço justo, como dizem os clientes.</p>
+      <div class="ctas"><a class="btn btn-main" href="#marmitex" data-page-link="marmitex">Encomendar marmitex</a><a class="btn btn-line" href="#horario">Ver o horário</a></div>
+      <div class="facts">
+        <div><strong>4,6 no Google</strong>113 avaliações</div>
+        <div><strong>Segunda a sábado</strong>das 9h às 14h</div>
+        <div><strong>Self-service</strong>e marmitex</div>
+      </div>
+    </div>
+    <figure class="arch"><img src="img/salao.jpg" alt="Salão do Recanto do Sabor com mesas de toalha xadrez vermelha e janelas com moldura azul"></figure>
+  </div>
+</div>
+<div class="check-band" aria-hidden="true"></div>
+
+<section id="horario">
+  <div class="wrap">
+    <h2>Só almoço: das 9h às 14h</h2>
+    <p class="intro">Um cliente chegou numa segunda às 19h e encontrou a porta fechada. O Recanto é restaurante de almoço. O relógio abaixo mostra, agora, se dá tempo de ir.</p>
+    <div class="clock">
+      <svg class="dial" viewBox="0 0 240 150" aria-hidden="true">
+        <path class="arc-bg" d="M20 130 A100 100 0 0 1 220 130"/>
+        <path class="arc" id="arcOpen" d="M20 130 A100 100 0 0 1 220 130"/>
+        <line class="hand" id="hand" x1="120" y1="130" x2="120" y2="40"/>
+        <circle cx="120" cy="130" r="8" fill="#d23a33"/>
+        <text x="8" y="148">9h</text><text x="104" y="22">11h30</text><text x="212" y="148">14h</text>
+      </svg>
+      <div>
+        <h3 id="clockTitle">Verificando…</h3>
+        <p id="clockText">O almoço é servido de segunda a sábado.</p>
+        <div class="week" id="week"></div>
+        <div class="ctas" style="margin-top:16px"><a class="btn btn-main btn-sm" href="#marmitex" data-page-link="marmitex">Deixar a marmitex encomendada</a><a class="btn btn-line btn-sm" href="tel:+551633416728">Ligar (16) 3341-6728</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="comida">
+  <div class="wrap">
+    <h2>Do buffet para o prato</h2>
+    <p class="intro">"Comida simples e gostosa, preço bem bacana, opção de marmita, à vontade e por peso", resume um cliente. O cardápio muda todo dia.</p>
+    <div class="menu3">
+      <figure><img src="img/prato-file.jpg" alt="Prato com filé empanado, batata gratinada, carne em molho e arroz" loading="lazy"><figcaption>Prato do dia<small>Empanado, batata gratinada e carne</small></figcaption></figure>
+      <figure><img src="img/prato-variado.jpg" alt="Prato com frango ao molho, arroz colorido, fritas e torresmo" loading="lazy"><figcaption>Monte do seu jeito<small>Arroz, fritas, torresmo e mais</small></figcaption></figure>
+      <figure><img src="img/dobradinha.jpg" alt="Tigela de dobradinha e prato com almôndegas e macarrão sobre toalha xadrez" loading="lazy"><figcaption>Comida de casa<small>Dobradinha, almôndega e macarrão</small></figcaption></figure>
+    </div>
+    <div class="ctas" style="margin-top:20px"><a class="btn btn-line" data-wa="Olá! Qual é o cardápio de hoje no Recanto do Sabor?" href="#">Perguntar o cardápio de hoje</a></div>
+  </div>
+</section>
+
+<section id="casa" class="casa">
+  <div class="wrap">
+    <h2>O Recanto</h2>
+    <p class="intro">"Lugar muito acolhedor, tudo limpinho." Salão arejado, toalha xadrez e buffet na entrada.</p>
+    <div class="gallery " style="--gcols:3;--grow:230px"><button data-shot style=""><img src="img/salao.jpg" alt="Salão com mesas de toalha xadrez vermelha" loading="lazy"><figcaption>O salão</figcaption></button><button data-shot style=""><img src="img/buffet.jpg" alt="Buffet self-service com cubas de comida e salão ao fundo" loading="lazy"><figcaption>O buffet</figcaption></button><button data-shot style=""><img src="img/fachada.jpg" alt="Entrada com moldura azul e adesivo Restaurante Recanto do Sabor Comida Caseira" loading="lazy"><figcaption>A entrada</figcaption></button></div>
+    <p class="credit">Fotos públicas do Google Maps, usadas apenas nesta demonstração.</p>
+  </div>
+</section>
+
+<section id="ajuda">
+  <div class="wrap split">
+    <div class="faq">
+      <h2>Dúvidas rápidas</h2>
+      <p class="intro">Não achou a sua? Mande uma mensagem.</p>
+      <details><summary>Abre à noite?</summary><p>Não. O Recanto funciona só no almoço, de segunda a sábado, das 9h às 14h. Domingo fechado.</p></details><details><summary>Tem marmitex?</summary><p>Tem. Encomende pelo site para retirar no horário que você escolher.</p></details><details><summary>Como funciona o self-service?</summary><p>Os clientes contam que há opção à vontade e por peso. Pergunte os valores do dia.</p></details><details><summary>Dá para encomendar para a firma?</summary><p>Dá. Na página de marmitex, escolha “Para a equipe” e coloque o nome de cada pessoa.</p></details><details><summary>Onde fica?</summary><p>Av. Eng. Ivanil Francischini, 14288, Eldorado, Ibitinga (SP).</p></details>
+    </div>
+    <form class="panel" id="ajudaForm" data-wa-form data-title="Olá! Mensagem pelo site do Recanto do Sabor." data-done="ajudaFormDone" novalidate>
+<div class="field"><label for="hAssunto">Assunto</label><select id="hAssunto" data-label="Assunto" ><option>Dúvida</option><option>Cardápio do dia</option><option>Marmitex</option><option>Elogio</option><option>Reclamação</option></select></div><div class="field"><label for="hNome">Seu nome</label><input id="hNome" type="text" data-label="Nome" autocomplete="name"></div><div class="field"><label for="hMsg">Mensagem</label><textarea id="hMsg" data-label="Mensagem" data-required="Escreva sua mensagem antes de enviar." ></textarea></div>
+<p class="error" role="alert"></p>
+<button class="btn btn-main" type="submit">Enviar mensagem</button>
+<p class="done" id="ajudaFormDone" role="status">Mensagem pronta no WhatsApp. É só enviar. Não abriu? <a href="#">Toque aqui</a>.</p>
+</form>
+  </div>
+</section>
+
+<section id="onde">
+  <div class="wrap">
+    <h2>Onde fica</h2>
+    <div class="where">
+      <div>
+        <div class="facade" role="img" aria-label="Entrada do Recanto do Sabor com moldura azul"></div>
+        <p class="intro" style="margin-bottom:8px">Av. Eng. Ivanil Francischini, 14288, Eldorado, Ibitinga (SP). Procure a esquina com as molduras azuis.</p>
+        <table class="hours" id="hoursTable" aria-label="Horário de funcionamento"></table>
+        <div class="ctas"><a class="btn btn-main btn-sm" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=-21.7665046,-48.8323465">Como chegar</a><a class="btn btn-line btn-sm" href="tel:+551633416728">Ligar</a></div>
+      </div>
+      <iframe class="map" style="margin-top:0" title="Mapa do Recanto do Sabor" loading="lazy" src="https://www.google.com/maps?q=-21.7665046,-48.8323465&z=17&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+</main>
+<main id="marmitex-view" class="page-view" hidden>
+<div class="page-hero"><div class="wrap">
+  <a class="back" href="#inicio">← Voltar para o site</a>
+  <h1>Encomende sua marmitex</h1>
+  <p>Diga quantas, o horário da retirada e como você gosta. O pedido vai por escrito para o Recanto e fica pronto na hora marcada.</p>
+</div></div>
+<section><div class="wrap mx">
+  <form class="panel" id="mxForm" novalidate>
+    <div class="tabs" role="tablist"><button type="button" role="tab" aria-selected="true" id="tabEu">Para mim</button><button type="button" role="tab" aria-selected="false" id="tabEq">Para a equipe</button></div>
+    <div id="boxEu">
+      <p style="font-weight:700;margin:0 0 8px">Quantas marmitex</p>
+      <div class="qty"><button type="button" id="qMn" aria-label="Menos">−</button><output id="qOut">1</output><button type="button" id="qPl" aria-label="Mais">+</button></div>
+    </div>
+    <div id="boxEq" hidden>
+      <div class="field"><label for="mEquipe">Um nome por linha</label><textarea id="mEquipe" rows="5" placeholder="João&#10;Maria - sem feijão&#10;Pedro - mais salada"></textarea></div>
+      <div class="field"><label for="mEmpresa">Empresa ou setor (opcional)</label><input id="mEmpresa"></div>
+    </div>
+    <div class="row" style="margin-top:12px">
+      <div class="field"><label for="mHora">Retirar às</label><select id="mHora"><option>10h30</option><option>10h45</option><option>11h00</option><option>11h15</option><option>11h30</option><option>11h45</option><option selected>12h00</option><option>12h15</option><option>12h30</option><option>12h45</option><option>13h00</option><option>13h15</option><option>13h30</option><option>13h45</option></select></div>
+      <div class="field"><label for="mNome">Seu nome</label><input id="mNome" autocomplete="name"></div>
+    </div>
+    <fieldset class="checks-f" style="border:0;padding:0;margin:0 0 10px"><legend style="font-weight:700;margin-bottom:6px">Como você gosta (opcional)</legend>
+      <label class="check"><input type="checkbox" value="Sem feijão" class="pref"> Sem feijão</label>
+      <label class="check"><input type="checkbox" value="Mais salada" class="pref"> Mais salada</label>
+      <label class="check"><input type="checkbox" value="Talheres descartáveis" class="pref"> Talheres descartáveis</label>
+    </fieldset>
+    <div class="field"><label for="mObs">Observações</label><input id="mObs" placeholder="Ex.: sem cebola"></div>
+    <p class="error" id="mErr" role="alert"></p>
+    <button class="btn btn-main" type="submit">Enviar pedido pelo WhatsApp</button>
+    <p class="done" id="mDone" role="status">Pedido pronto no WhatsApp. Envie e aguarde a confirmação. Não abriu? <a href="#">Toque aqui</a>.</p>
+  </form>
+  <div class="sticky">
+    <div class="ticket" aria-live="polite"><h3>Seu pedido</h3><pre id="mPrev"></pre></div>
+    <div class="callbox">Prefere ligar? <a href="tel:+551633416728"><b>(16) 3341-6728</b></a>. Leia o pedido acima e pronto. Encomendas até as 14h, de segunda a sábado.</div>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap"><span>Recanto do Sabor · Av. Eng. Ivanil Francischini, 14288, Eldorado, Ibitinga, SP · recanto.sabor@hotmail.com</span><span>Telefone (16) 3341-6728</span></div></footer>
+<a class="btn btn-main wa-float" data-wa="Olá! Vim pelo site do Recanto do Sabor e gostaria de mais informações." href="#">WhatsApp</a>
+<dialog class="lb" id="lb" aria-label="Foto ampliada">
+  <img id="lbImg" alt="">
+  <div class="bar"><p id="lbCap"></p><div class="ctl">
+    <button class="round" type="button" id="lbPrev" aria-label="Foto anterior">‹</button>
+    <button class="round" type="button" id="lbNext" aria-label="Próxima foto">›</button>
+    <button class="round" type="button" id="lbClose" aria-label="Fechar">×</button>
+  </div></div>
+</dialog>
+<script>window.SITE = {"name": "Recanto do Sabor", "wa": "551633416728", "email": null, "hours": {"0": [], "1": [[540, 840]], "2": [[540, 840]], "3": [[540, 840]], "4": [[540, 840]], "5": [[540, 840]], "6": [[540, 840]]}, "pages": ["marmitex"], "pageTitles": {"marmitex": "Encomende sua marmitex"}, "hoursOrder": [1, 2, 3, 4, 5, 6, 0], "closedText": null};</script>
+<script>
+(function(){
+  var C = window.SITE;
+  function wa(text, number){
+    var url = C.wa ? ("https://wa.me/" + (number === undefined ? C.wa : number) + "?text=" + encodeURIComponent(text))
+                   : ("mailto:" + C.email + "?subject=" + encodeURIComponent(C.mailSubject || "Contato pelo site") + "&body=" + encodeURIComponent(text));
+    if (number === "") url = "https://wa.me/?text=" + encodeURIComponent(text);
+    try { var w = window.open(url, "_blank"); if (w) w.opener = null; } catch(_){}
+    return url;
+  }
+  window.siteWA = wa;
+  function done(id, url){
+    var el = document.getElementById(id); if (!el) return; el.classList.add("show");
+    var a = el.querySelector("a"); if (a){ a.href = url; a.target = "_blank"; a.rel = "noopener"; }
+  }
+  window.siteDone = done;
+  function bind(form, fn){
+    if (typeof form === "string") form = document.getElementById(form);
+    form.addEventListener("submit", function(e){ e.preventDefault(); });
+    var btn = form.querySelector("button[type=submit]");
+    if (btn){ btn.type = "button"; btn.addEventListener("click", fn); }
+    form.querySelectorAll("input:not([type=checkbox]):not([type=range]):not([type=radio]), select").forEach(function(i){
+      i.addEventListener("keydown", function(e){ if (e.key === "Enter"){ e.preventDefault(); fn(); } });
+    });
+  }
+  window.siteBind = bind;
+  document.querySelectorAll("[data-wa]").forEach(function(a){
+    a.href = C.wa ? "https://wa.me/" + C.wa + "?text=" + encodeURIComponent(a.dataset.wa) : "mailto:" + C.email + "?body=" + encodeURIComponent(a.dataset.wa);
+    a.target = "_blank"; a.rel = "noopener";
+  });
+
+  /* router: #<page> opens its own page, any other hash returns to the main page */
+  var home = document.getElementById("inicio"), pages = C.pages || [];
+  var curHash = location.hash;
+  function route(){
+    var h = curHash, pid = h.slice(1), isPage = pages.indexOf(pid) >= 0;
+    var wasHidden = home.hidden, changed = isPage ? !wasHidden || true : wasHidden;
+    home.hidden = isPage;
+    pages.forEach(function(p){
+      var v = document.getElementById(p + "-view"); if (v) v.hidden = p !== pid;
+      document.querySelectorAll('[data-page-link="' + p + '"]').forEach(function(l){ l.classList.toggle("on", p === pid); if (p === pid) l.setAttribute("aria-current","page"); else l.removeAttribute("aria-current"); });
+    });
+    document.title = isPage ? (C.pageTitles[pid] + " · " + C.name) : C.name;
+    var how = (isPage || wasHidden) ? "instant" : "smooth";
+    if (isPage || !h || h === "#inicio"){ window.scrollTo({top:0, behavior:how}); return; }
+    var t = document.getElementById(pid);
+    if (t) window.scrollTo({top: t.getBoundingClientRect().top + window.scrollY - 64, behavior:how});
+  }
+  function goTo(h, push){ curHash = h; if (push){ try { history.pushState(null, "", h); } catch(_){} } route(); }
+  document.addEventListener("click", function(e){
+    var a = e.target.closest && e.target.closest('a[href^="#"]'); if (!a) return;
+    var h = a.getAttribute("href"); if (h.length < 2) return;
+    e.preventDefault(); goTo(h, true);
+  });
+  window.addEventListener("hashchange", function(){ goTo(location.hash, false); });
+  window.addEventListener("popstate", function(){ goTo(location.hash, false); });
+  if (pages.indexOf(curHash.slice(1)) >= 0) route();
+
+  var dt = document.getElementById("demoToggle"), dn = document.getElementById("demoNotes");
+  dt.addEventListener("click", function(){ var o = dn.classList.toggle("open"); dt.setAttribute("aria-expanded", o); dt.textContent = o ? "Fechar notas" : "Ver notas"; });
+
+  /* hours: HOURS[dow] = [[openMin, closeMin], ...]; close may pass 1440 */
+  var H = C.hours, NAMES = ["Domingo","Segunda","Terça","Quarta","Quinta","Sexta","Sábado"];
+  function fmt(m){ m %= 1440; var h = Math.floor(m/60), mm = m%60; return h + "h" + (mm ? String(mm).padStart(2,"0") : ""); }
+  function endTxt(m){ return m === 1440 ? "meia-noite" : fmt(m); }
+  function spNow(){
+    var o = {}; new Intl.DateTimeFormat("en-US",{timeZone:"America/Sao_Paulo",weekday:"short",hour:"numeric",minute:"numeric",hour12:false}).formatToParts(new Date()).forEach(function(p){ o[p.type] = p.value; });
+    return {day:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].indexOf(o.weekday), min:(parseInt(o.hour,10)%24)*60 + parseInt(o.minute,10)};
+  }
+  window.siteHours = {H:H, fmt:fmt, NAMES:NAMES, spNow:spNow};
+  function status(){
+    var el = document.getElementById("status"); if (!el) return;
+    var tx = el.querySelector(".txt"), n = spNow(), today = H[n.day] || [], y = H[(n.day+6)%7] || [];
+    el.classList.remove("open");
+    for (var i = 0; i < y.length; i++) if (y[i][1] > 1440 && n.min < y[i][1]-1440){ el.classList.add("open"); tx.textContent = "Aberto agora, até " + fmt(y[i][1]); return; }
+    for (i = 0; i < today.length; i++) if (n.min >= today[i][0] && n.min < today[i][1]){ el.classList.add("open"); tx.textContent = "Aberto agora, até " + endTxt(today[i][1]); return; }
+    for (i = 0; i < today.length; i++) if (n.min < today[i][0]){ tx.textContent = "Fechado agora, abre hoje às " + fmt(today[i][0]); return; }
+    for (var k = 1; k <= 7; k++){ var d = (n.day+k)%7; if ((H[d]||[]).length){ tx.textContent = "Fechado agora, abre " + (k===1 ? "amanhã" : NAMES[d].toLowerCase()) + " às " + fmt(H[d][0][0]); return; } }
+    tx.textContent = C.closedText || "Consulte o horário";
+  }
+  status(); setInterval(status, 60000);
+  var tb = document.getElementById("hoursTable");
+  if (tb){
+    var td = spNow().day;
+    (C.hoursOrder || [1,2,3,4,5,6,0]).forEach(function(d){
+      var tr = document.createElement("tr"); if (d === td) tr.className = "today";
+      var iv = H[d] || [];
+      tr.innerHTML = "<td>" + NAMES[d] + "</td><td>" + (iv.length ? iv.map(function(x){ return fmt(x[0]) + " às " + endTxt(x[1]); }).join(" e ") : "Fechado") + "</td>";
+      tb.appendChild(tr);
+    });
+  }
+
+  /* lightbox */
+  var shots = Array.prototype.map.call(document.querySelectorAll("[data-shot]"), function(b){ var im = b.querySelector("img"); var cap = b.querySelector("figcaption"); return {src:im.getAttribute("src"), alt:im.alt, cap:cap ? cap.textContent : im.alt}; });
+  var lb = document.getElementById("lb"), cur = 0, lastBtn = null;
+  function show(i){ cur = (i + shots.length) % shots.length; var s = shots[cur]; var im = document.getElementById("lbImg"); im.src = s.src; im.alt = s.alt; document.getElementById("lbCap").textContent = s.cap; }
+  document.querySelectorAll("[data-shot]").forEach(function(b, i){ b.addEventListener("click", function(){ lastBtn = b; show(i); if (lb.showModal) lb.showModal(); else lb.setAttribute("open",""); }); });
+  document.getElementById("lbPrev").onclick = function(){ show(cur-1); };
+  document.getElementById("lbNext").onclick = function(){ show(cur+1); };
+  document.getElementById("lbClose").onclick = function(){ lb.close(); };
+  lb.addEventListener("click", function(e){ if (e.target === lb) lb.close(); });
+  lb.addEventListener("keydown", function(e){ if (e.key === "ArrowRight") show(cur+1); if (e.key === "ArrowLeft") show(cur-1); });
+  lb.addEventListener("close", function(){ if (lastBtn) lastBtn.focus(); });
+
+  /* generic WhatsApp forms */
+  function iso(d){ return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0"); }
+  function parse(s){ var p = s.split("-").map(Number); return new Date(p[0], p[1]-1, p[2]); }
+  function br(s){ var d = parse(s); return NAMES[d.getDay()].toLowerCase()+", "+String(d.getDate()).padStart(2,"0")+"/"+String(d.getMonth()+1).padStart(2,"0"); }
+  window.siteDate = {iso:iso, parse:parse, br:br};
+  document.querySelectorAll("input[type=date]").forEach(function(i){ if (!i.min) i.min = iso(new Date()); });
+  document.querySelectorAll("input[type=date][data-hours-for]").forEach(function(di){
+    var sel = document.getElementById(di.dataset.hoursFor), step = +(di.dataset.step || 30), last = +(di.dataset.lastBefore || 60);
+    di.addEventListener("change", function(){
+      sel.innerHTML = "";
+      if (!di.value){ sel.innerHTML = '<option value="">Escolha a data</option>'; return; }
+      var iv = H[parse(di.value).getDay()] || [];
+      if (!iv.length){ sel.innerHTML = '<option value="">Fechado neste dia</option>'; return; }
+      iv.forEach(function(x){ for (var m = x[0]; m <= x[1]-last; m += step){ var o = document.createElement("option"); o.value = o.textContent = fmt(m).replace(/h$/,"h00"); sel.appendChild(o); } });
+    });
+  });
+  document.querySelectorAll("input[type=range][data-out]").forEach(function(r){
+    var o = document.getElementById(r.dataset.out), suf = r.dataset.suffix || "";
+    function up(){ o.textContent = r.value + (r.value === r.max && r.dataset.plus ? "+" : "") + suf; } r.addEventListener("input", up); up();
+  });
+  document.querySelectorAll("form[data-wa-form]").forEach(function(f){
+    bind(f, function(){
+      var err = f.querySelector(".error"); err.textContent = "";
+      var reqs = f.querySelectorAll("[data-required]");
+      for (var i = 0; i < reqs.length; i++){
+        var el = reqs[i];
+        if (!el.value || !String(el.value).trim()){ err.textContent = el.dataset.required; el.focus(); return; }
+        if (el.type === "date" && el.dataset.openOnly && !(H[parse(el.value).getDay()] || []).length){ err.textContent = el.dataset.openOnly; el.focus(); return; }
+      }
+      var lines = [f.dataset.title, ""];
+      f.querySelectorAll("[data-label]").forEach(function(el){
+        if (el.tagName === "FIELDSET"){
+          var vals = Array.prototype.map.call(el.querySelectorAll("input:checked"), function(c){ return c.value; });
+          if (vals.length) lines.push(el.dataset.label + ": " + vals.join(", ")); return;
+        }
+        var v = el.type === "range" ? (document.getElementById(el.dataset.out).textContent) : String(el.value || "").trim();
+        if (!v) return;
+        if (el.type === "date") v = br(v);
+        lines.push(el.dataset.label + ": " + v);
+      });
+      var url = wa(lines.join("\n").replace(/\n\n$/, ""));
+      done(f.dataset.done, url);
+    });
+  });
+})();
+</script>
+<script>
+(function(){
+  function sp(){ var o = {}; new Intl.DateTimeFormat("en-US",{timeZone:"America/Sao_Paulo",weekday:"short",hour:"2-digit",minute:"2-digit",hour12:false}).formatToParts(new Date()).forEach(function(p){ o[p.type] = p.value; });
+    var d = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].indexOf(o.weekday); return {day:d, min:(+o.hour % 24)*60 + (+o.minute)}; }
+  /* lunch clock */
+  var hand = document.getElementById("hand");
+  if (hand){
+    var n = sp(), open = n.day >= 1 && n.day <= 6, start = 540, end = 840;
+    var frac = Math.max(0, Math.min(1, (n.min - start) / (end - start)));
+    var ang = -90 + frac * 180;
+    setTimeout(function(){ hand.style.transform = "rotate(" + ang + "deg)"; }, 400);
+    hand.style.transform = "rotate(-90deg)";
+    var t = document.getElementById("clockTitle"), x = document.getElementById("clockText");
+    if (open && n.min >= start && n.min < end){ var left = end - n.min; t.textContent = "Almoço servido agora"; x.textContent = "Faltam " + (left >= 60 ? Math.floor(left/60) + "h" + String(left%60).padStart(2,"0") : left + " min") + " para fechar, às 14h."; }
+    else if (open && n.min < start){ t.textContent = "Abre hoje às 9h"; x.textContent = "O almoço vai até as 14h. Dá para deixar a marmitex encomendada."; }
+    else { var nx = n.day === 6 ? "segunda" : (n.day === 0 ? "amanhã, segunda" : "amanhã"); t.textContent = "Hoje o almoço já encerrou"; x.textContent = "Volta " + nx + ", das 9h às 14h. Não abre à noite nem aos domingos."; document.getElementById("arcOpen").style.opacity = ".35"; }
+    var W = ["Dom","Seg","Ter","Qua","Qui","Sex","Sáb"], wk = document.getElementById("week");
+    [1,2,3,4,5,6,0].forEach(function(d){ var s = document.createElement("span"); s.textContent = W[d] + (d ? " 9h–14h" : " fechado"); if (!d) s.className = "off"; if (d === n.day) s.className += " now"; wk.appendChild(s); });
+  }
+  /* marmitex */
+  var q = 1, mode = "eu";
+  var prev = document.getElementById("mPrev");
+  if (!prev) return;
+  function team(){ return document.getElementById("mEquipe").value.split("\n").map(function(s){ return s.trim(); }).filter(Boolean); }
+  function prefs(){ return [].filter.call(document.querySelectorAll(".pref"), function(c){ return c.checked; }).map(function(c){ return c.value; }); }
+  function text(){
+    var nome = document.getElementById("mNome").value.trim(), t = "Olá! Quero encomendar marmitex no Recanto do Sabor.\n\n";
+    if (mode === "eu") t += "Quantidade: " + q + (q === 1 ? " marmitex" : " marmitex");
+    else { var tm = team(), emp = document.getElementById("mEmpresa").value.trim(); t += "Pedido da equipe" + (emp ? " (" + emp + ")" : "") + ": " + tm.length + " marmitex"; tm.forEach(function(p, i){ t += "\n" + (i+1) + ". " + p; }); }
+    t += "\nRetirar às: " + document.getElementById("mHora").value + "\nNome: " + (nome || "—");
+    var pf = prefs(); if (pf.length) t += "\nComo gosto: " + pf.join(", ");
+    var ob = document.getElementById("mObs").value.trim(); if (ob) t += "\nObservações: " + ob;
+    return t;
+  }
+  function upd(){ document.getElementById("qOut").textContent = q; prev.textContent = text().replace(/^Olá! [^\n]*\n\n/, ""); }
+  document.getElementById("qPl").addEventListener("click", function(){ if (q < 50){ q++; upd(); } });
+  document.getElementById("qMn").addEventListener("click", function(){ if (q > 1){ q--; upd(); } });
+  function setMode(m){ mode = m; document.getElementById("tabEu").setAttribute("aria-selected", m === "eu"); document.getElementById("tabEq").setAttribute("aria-selected", m === "eq"); document.getElementById("boxEu").hidden = m !== "eu"; document.getElementById("boxEq").hidden = m !== "eq"; upd(); }
+  document.getElementById("tabEu").addEventListener("click", function(){ setMode("eu"); });
+  document.getElementById("tabEq").addEventListener("click", function(){ setMode("eq"); });
+  document.getElementById("mxForm").addEventListener("input", upd);
+  document.getElementById("mxForm").addEventListener("change", upd);
+  upd();
+  window.siteBind("mxForm", function(){
+    var err = document.getElementById("mErr"); err.textContent = "";
+    if (!document.getElementById("mNome").value.trim()){ err.textContent = "Informe seu nome para o pedido."; document.getElementById("mNome").focus(); return; }
+    if (mode === "eq" && !team().length){ err.textContent = "Coloque pelo menos um nome da equipe."; document.getElementById("mEquipe").focus(); return; }
+    window.siteDone("mDone", window.siteWA(text()));
+  });
+})();
+</script>
+</body>
+</html>

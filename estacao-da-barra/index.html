@@ -1,0 +1,587 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Estação da Barra</title>
+<meta name="description" content="Restaurante em Barra Bonita (SP): escondidinho, porções, drinks e música. Reserve mesa ou adiante seu pedido pelo WhatsApp.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#14100c">
+<style>
+@font-face{font-family:"Oswald";font-weight:600;font-style:normal;font-display:swap;src:url("fonts/oswald-600.woff2") format("woff2")}
+@font-face{font-family:"Libre Franklin";font-weight:400;font-style:normal;font-display:swap;src:url("fonts/libre-franklin-400.woff2") format("woff2")}
+@font-face{font-family:"Libre Franklin";font-weight:700;font-style:normal;font-display:swap;src:url("fonts/libre-franklin-700.woff2") format("woff2")}
+@font-face{font-family:"Special Elite";font-weight:400;font-style:normal;font-display:swap;src:url("fonts/special-elite-400.woff2") format("woff2")}
+:root{--bg:#14100c;--surface:#1f1812;--text:#f3e7d3;--muted:#b4a28c;--accent:#f2a541;--accent-hi:#ffb85c;--accent-ink:#1c1208;--accent-glow:rgba(242,165,65,.35);--link:#f2a541;--focus:#f2a541;--line:rgba(243,231,211,.12);--line-strong:rgba(243,231,211,.24);--header-bg:rgba(20,16,12,.9);--badge-bg:#1f1812;--open:#5fcf7a;--open-ring:rgba(95,207,122,.2);--input-bg:#17120d;--error:#ff8a6b;--done-bg:#2a2016;--today:#f2a541;--page-bg:#1f1812;--page-ink:#f3e7d3;--page-line:#3a2c22;--page-on:#f2a541;--page-on-ink:#1c1208;--display:"Oswald",Impact,sans-serif;--body:"Libre Franklin",system-ui,sans-serif;--mono:"Special Elite","Courier New",monospace;--r-lg:14px;--r-sm:8px;--btn-r:8px;--h2-weight:600;--h1-weight:600;--h2-track:.01em;}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--body);font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--link)}
+:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:6px}
+[hidden]{display:none!important}
+.wrap{width:min(1120px,100% - 32px);margin-inline:auto}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+.demo{background:#ffd27a;color:#2b1a00;font-size:.9rem;font-family:system-ui,sans-serif}
+.demo .wrap{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:8px 0;flex-wrap:wrap}
+.demo button{background:none;border:1.5px solid currentColor;color:inherit;font:inherit;font-weight:700;padding:3px 12px;border-radius:99px;cursor:pointer}
+.demo .notes{display:none;padding:0 0 12px}.demo .notes.open{display:block}.demo .notes ul{margin:4px 0 0;padding-left:20px}
+header.top{position:sticky;top:0;z-index:40;background:var(--header-bg);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:10px 0}
+.logo{display:flex;align-items:center;gap:10px;color:var(--text);text-decoration:none;min-width:0}
+nav.links{display:flex;gap:20px}
+nav.links a{color:var(--muted);text-decoration:none;font-weight:600;font-size:.95rem}
+nav.links a:hover{color:var(--text)}
+@media (max-width:900px){nav.links{display:none}}
+.head-ctas{display:flex;gap:8px;align-items:center;flex:none}
+@media (max-width:520px){.logo .logo-text{display:none}.head-ctas .btn{padding:8px 12px;font-size:.85rem}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:700 1rem var(--body);padding:12px 22px;border-radius:var(--btn-r,99px);border:0;cursor:pointer;text-decoration:none;transition:transform .15s ease,background .15s ease,box-shadow .15s ease,border-color .15s ease}
+.btn:active{transform:scale(.97)}
+.btn-main{background:var(--accent);color:var(--accent-ink)}
+.btn-main:hover{background:var(--accent-hi);box-shadow:0 0 22px var(--accent-glow)}
+.btn-line{background:transparent;color:var(--text);border:1.5px solid var(--line-strong)}
+.btn-line:hover{border-color:var(--accent)}
+.btn-page{background:var(--page-bg);color:var(--page-ink);border:1.5px solid var(--page-line)}
+.btn-page.on{background:var(--page-on);color:var(--page-on-ink);border-color:var(--page-on)}
+.btn-page svg{width:16px;height:16px}
+.btn-sm{padding:8px 16px;font-size:.92rem}
+section{padding:84px 0;border-top:1px solid var(--line)}
+h2{font:var(--h2-weight,700) clamp(1.8rem,4vw,2.7rem)/1.1 var(--display);margin:0 0 14px;letter-spacing:var(--h2-track,-.01em)}
+.intro{color:var(--muted);max-width:58ch;margin:0 0 34px}
+h3{font-size:1.16rem;margin:0 0 6px}
+.split{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:start}
+@media (max-width:900px){.split{grid-template-columns:1fr;gap:30px}}
+.badge{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:.92rem;padding:6px 14px;border-radius:99px;background:var(--badge-bg);color:var(--text);border:1px solid var(--line)}
+.badge .dot{width:9px;height:9px;border-radius:50%;background:var(--muted)}
+.badge.open .dot{background:var(--open);box-shadow:0 0 0 4px var(--open-ring)}
+.panel{background:var(--surface);border-radius:var(--r-lg);padding:28px;border:1px solid var(--line)}
+@media (max-width:520px){.panel{padding:20px}}
+.field{display:flex;flex-direction:column;gap:6px;margin-bottom:16px;border:0;padding:0;min-width:0}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:520px){.row{grid-template-columns:1fr}}
+label,.legend{font-weight:600;font-size:.95rem;padding:0}
+.hint{font-size:.85rem;color:var(--muted);font-weight:400}
+input,select,textarea{font:inherit;color:var(--text);background:var(--input-bg);border:1.5px solid var(--line-strong);border-radius:var(--r-sm);padding:11px 12px;width:100%}
+input:focus,select:focus,textarea:focus{border-color:var(--accent);outline:none}
+textarea{min-height:92px;resize:vertical}
+select option{background:var(--input-bg);color:var(--text)}
+input[type=checkbox]{width:18px;height:18px;padding:0;accent-color:var(--accent);flex:none}
+input[type=range]{padding:0;border:0;background:transparent;accent-color:var(--accent)}
+.check{display:flex;gap:10px;align-items:center;font-weight:500;margin:4px 0}
+.error{color:var(--error);font-size:.9rem;min-height:1.2em;margin:-6px 0 10px}
+.done{display:none;margin-top:14px;padding:12px 14px;border-radius:var(--r-sm);background:var(--done-bg);color:var(--text);font-size:.95rem}
+.done.show{display:block}
+.checks{list-style:none;padding:0;margin:0 0 24px}
+.checks li{padding:10px 0;border-bottom:1px solid var(--line);display:flex;gap:12px}
+.checks li::before{content:"";flex:none;width:10px;height:10px;margin-top:.55em;border-radius:50%;background:var(--accent)}
+.gallery{display:grid;grid-template-columns:repeat(var(--gcols,3),1fr);grid-auto-rows:var(--grow,240px);gap:12px}
+.gallery button{all:unset;cursor:zoom-in;position:relative;border-radius:var(--r-lg);overflow:hidden;background:var(--surface)}
+.gallery button:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.gallery button:hover img{transform:scale(1.04)}
+.gallery figcaption{position:absolute;left:0;right:0;bottom:0;padding:28px 14px 12px;font-weight:600;font-size:.94rem;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.72))}
+.credit{font-size:.82rem;color:var(--muted);margin-top:12px}
+dialog.lb{border:0;padding:0;background:transparent;max-width:min(1000px,96vw);width:100%;color:#fff}
+dialog.lb::backdrop{background:rgba(5,5,8,.9)}
+.lb img{width:100%;max-height:78vh;object-fit:contain;border-radius:var(--r-lg)}
+.lb .bar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:12px}
+.lb .bar p{margin:0;font-weight:600}
+.lb .ctl{display:flex;gap:8px}
+.round{width:44px;height:44px;border-radius:50%;border:1.5px solid rgba(255,255,255,.3);background:rgba(20,20,24,.8);color:#fff;font-size:1.2rem;cursor:pointer}
+.round:hover{border-color:#fff}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;list-style:none;padding:18px 0;font-weight:600;font-size:1.05rem;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font:700 1.3rem var(--display);color:var(--accent);transition:transform .2s;line-height:1}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{margin:0 0 18px;color:var(--muted);max-width:62ch}
+.hours{width:100%;border-collapse:collapse;margin:8px 0 22px}
+.hours td{padding:9px 0;border-bottom:1px solid var(--line)}
+.hours td:last-child{text-align:right;color:var(--muted)}
+.hours tr.today td{color:var(--today);font-weight:700}
+.map{width:100%;height:260px;border:0;border-radius:var(--r-lg);background:var(--surface);margin-top:20px}
+.ctas{display:flex;gap:12px;flex-wrap:wrap}
+.page-hero{padding:56px 0 46px;border-bottom:1px solid var(--line)}
+.page-hero .back{display:inline-block;color:var(--muted);text-decoration:none;font-weight:600;font-size:.95rem;margin-bottom:20px}
+.page-hero .back:hover{color:var(--text)}
+.page-hero h1{font:var(--h1-weight,800) clamp(2.1rem,6vw,3.6rem)/1.05 var(--display);margin:0 0 12px}
+.page-hero p{max-width:56ch;color:var(--muted);font-size:1.08rem;margin:0}
+.page-view section:first-of-type{border-top:0}
+footer{border-top:1px solid var(--line);padding:36px 0 110px;color:var(--muted);font-size:.92rem}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.wa-float{position:fixed;right:16px;bottom:16px;z-index:50;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+
+
+.logo .mark{width:30px;height:30px;color:var(--accent)}
+.logo-text{display:flex;flex-direction:column;line-height:1}
+.logo-text b{font:600 1.32rem var(--display);letter-spacing:.06em;text-transform:uppercase}
+.logo-text small{font:400 .72rem var(--mono);color:var(--muted);margin-top:3px}
+.hero{position:relative;padding:56px 0 64px;overflow:hidden;background:radial-gradient(900px 500px at 85% 20%,rgba(242,165,65,.16),transparent 60%)}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
+@media (max-width:900px){.hero .wrap{grid-template-columns:1fr;gap:30px}}
+.hero h1{font:600 clamp(2.6rem,6.2vw,4.7rem)/.98 var(--display);text-transform:uppercase;letter-spacing:.01em;margin:18px 0 0}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .lede{color:var(--muted);font-size:1.12rem;max-width:46ch;margin:18px 0 26px}
+.facts{display:flex;gap:26px;flex-wrap:wrap;margin-top:32px;color:var(--muted);font-size:.94rem}
+.facts strong{display:block;color:var(--text)}
+.hero figure{margin:0;position:relative;border-radius:var(--r-lg);overflow:hidden;aspect-ratio:4/3;box-shadow:0 30px 70px rgba(0,0,0,.55)}
+.hero-visual{position:relative}
+.hero-visual .board{position:relative;z-index:2;margin:-110px 0 0 -36px;max-width:94%}
+@media (max-width:900px){.hero-visual .board{margin:-70px 10px 0;max-width:none}}
+@media (max-width:700px){#estacao .gallery{--gcols:2!important;grid-auto-rows:190px!important}}
+.hero figure img{width:100%;height:100%;object-fit:cover}
+.hero figure::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(12,9,7,.8))}
+.ticketline{position:absolute;left:16px;right:16px;bottom:14px;z-index:1;font:400 .86rem var(--mono);color:#f3e7d3;display:flex;justify-content:space-between;gap:10px}
+/* split-flap board */
+.board{background:#0c0907;border:1px solid #3a2c22;border-radius:14px;padding:18px 18px 14px;box-shadow:inset 0 0 0 4px #1b140f,0 24px 50px rgba(0,0,0,.45)}
+.board-head{display:flex;justify-content:space-between;align-items:center;font:600 .82rem var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.board-head span:last-child{font:400 .8rem var(--mono);letter-spacing:0;color:var(--muted)}
+.brow{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:7px 0;border-top:1px dashed #33271e}
+.flap{display:flex;flex-wrap:wrap;gap:4px 10px}
+.flap .w{display:inline-flex;gap:2px;white-space:nowrap}
+.flap i{font:600 1.02rem/1 var(--mono);font-style:normal;color:#f3e7d3;background:linear-gradient(180deg,#221a14 0 49%,#17110d 51% 100%);min-width:1.05ch;padding:5px 3px;border-radius:3px;text-align:center;text-transform:uppercase}
+.flap i.sp{background:transparent;min-width:.6ch}
+.brow .st{font:400 .78rem var(--mono);color:var(--accent);white-space:nowrap}
+@media (max-width:520px){.flap i{font-size:.86rem;padding:4px 2px}.brow{grid-template-columns:1fr}}
+.menu3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media (max-width:760px){.menu3{grid-template-columns:1fr}}
+.menu3 figure{margin:0;background:var(--surface);border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line)}
+.menu3 img{aspect-ratio:4/3;object-fit:cover;width:100%}
+.menu3 figcaption{padding:12px 16px;font-weight:700}
+.menu3 figcaption small{display:block;color:var(--muted);font-weight:400}
+.semespera{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center}
+@media (max-width:860px){.semespera{grid-template-columns:1fr}}
+.steps{counter-reset:s;display:grid;gap:12px;margin:22px 0}
+.steps li{list-style:none;display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px}
+.steps li::before{counter-increment:s;content:counter(s,decimal-leading-zero);font:600 1.3rem var(--display);color:var(--accent)}
+.steps b{display:block}
+.steps span{color:var(--muted);font-size:.95rem}
+.stub{position:relative;background:#f3e7d3;color:#23180f;border-radius:14px;padding:24px 26px;font-family:var(--mono);box-shadow:0 24px 50px rgba(0,0,0,.4)}
+.stub::before,.stub::after{content:"";position:absolute;top:50%;width:26px;height:26px;border-radius:50%;background:var(--bg);transform:translateY(-50%)}
+.stub::before{left:-13px}.stub::after{right:-13px}
+.stub h3{font:600 1.5rem var(--display);text-transform:uppercase;letter-spacing:.05em;margin:0 0 4px;color:#23180f}
+.stub .row2{display:flex;justify-content:space-between;border-top:2px dashed #b9a78e;margin-top:12px;padding-top:10px;font-size:.92rem}
+.stub ul{margin:10px 0 0;padding:0;list-style:none;font-size:.95rem;line-height:1.7}
+.where{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+@media (max-width:900px){.where{grid-template-columns:1fr}}
+.facade{border-radius:var(--r-lg);min-height:260px;background:url("img/fachada-dia.jpg") center/cover;margin-bottom:18px}
+/* embarque page */
+.emb{display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:start}
+@media (max-width:900px){.emb{grid-template-columns:1fr}}
+.pax{display:grid;gap:10px;margin:6px 0 14px}
+.paxrow{display:grid;grid-template-columns:1fr 1.4fr 1fr 40px;gap:8px;align-items:end;background:var(--input-bg);border:1px solid var(--line);border-radius:10px;padding:10px}
+@media (max-width:640px){.paxrow{grid-template-columns:1fr 1fr}.paxrow .del{grid-column:2;justify-self:end}}
+.paxrow label{font-size:.78rem;color:var(--muted);display:block;margin-bottom:4px}
+.paxrow input{width:100%}
+.paxrow .del{width:40px;height:40px;border-radius:10px;border:1px solid var(--line-strong);background:transparent;color:var(--text);font-size:1.2rem;cursor:pointer}
+.addpax{background:transparent;border:1px dashed var(--line-strong);color:var(--text);border-radius:10px;padding:10px 14px;font:inherit;cursor:pointer;width:100%}
+.addpax:hover{border-color:var(--accent);color:var(--accent)}
+.sticky{position:sticky;top:96px}
+
+h2{text-transform:uppercase}
+</style>
+</head>
+<body>
+<div class="demo" role="note">
+  <div class="wrap">
+    <span><strong>Proposta de site</strong> para Estação da Barra. Demonstração, ainda não é o site oficial.</span>
+    <button type="button" id="demoToggle" aria-expanded="false" aria-controls="demoNotes">Ver notas</button>
+  </div>
+  <div class="wrap notes" id="demoNotes">Feito com informações e fotos públicas do Google Maps. Antes de publicar, confirmar com a empresa:<ul><li>Endereço completo (no Google, o campo de endereço mostra um número de WhatsApp no lugar da rua)</li><li>Cardápio com nomes dos pratos e preços, dias de música ao vivo</li><li>Uso das fotos e do logo em alta resolução</li></ul></div>
+</div>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#inicio" aria-label="Estação da Barra, início"><svg class="mark" viewBox="0 0 40 40" aria-hidden="true"><rect x="9" y="5" width="22" height="24" rx="6" fill="none" stroke="currentColor" stroke-width="2.6"/><rect x="13" y="9" width="14" height="8" rx="2" fill="currentColor" opacity=".9"/><circle cx="15" cy="23" r="2" fill="currentColor"/><circle cx="25" cy="23" r="2" fill="currentColor"/><path d="M13 29l-4 6M27 29l4 6M11 33h18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><span class="logo-text"><b>Estação da Barra</b><small>parada satisfatória</small></span></a>
+    <nav class="links" aria-label="Seções"><a href="#estacao">A casa</a><a href="#cozinha">Cozinha</a><a href="#sem-espera">Sem espera</a><a href="#reservar">Reservar</a><a href="#ajuda">Ajuda</a><a href="#onde">Onde fica</a></nav>
+    <div class="head-ctas"><a class="btn btn-page btn-sm" href="#embarque" data-page-link="embarque"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h18v4a2 2 0 0 0 0 4v4H3v-4a2 2 0 0 0 0-4z"/><path d="M14 7v12" stroke-dasharray="2 2"/></svg>Bilhete de pedido</a><a class="btn btn-main btn-sm" href="#reservar">Reservar mesa</a></div>
+  </div>
+</header>
+<main id="inicio">
+
+<div class="hero" id="topo">
+  <div class="wrap">
+    <div>
+      <span class="badge" id="status"><span class="dot"></span><span class="txt">Verificando horário…</span></span>
+      <h1>Parada <em>satisfatória</em> em Barra Bonita.</h1>
+      <p class="lede">A Estação da Barra serve pratos bem servidos, porções para dividir, drinks e música boa num salão de madeira com varanda. Reserve sua mesa ou mande seu pedido antes de chegar.</p>
+      <div class="ctas"><a class="btn btn-main" href="#reservar">Reservar mesa</a><a class="btn btn-line" href="#embarque" data-page-link="embarque">Pedir antes de chegar</a></div>
+      <div class="facts">
+        <div><strong>4,5 no Google</strong>392 avaliações</div>
+        <div><strong>Terça a sábado</strong>a partir das 18h</div>
+        <div><strong>Domingo</strong>almoço, 11h às 15h</div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <figure><img src="img/salao.jpg" alt="Letreiro aceso da Estação da Barra Restaurante sobre a varanda com mesas"></figure>
+      <div class="board" aria-label="Painel da estação">
+        <div class="board-head"><span>Próximas paradas</span><span id="boardClock">--:--</span></div>
+        <div class="brow"><div class="flap" data-flap="Escondidinho gratinado"></div><span class="st">Na mesa</span></div>
+        <div class="brow"><div class="flap" data-flap="Carne na chapa"></div><span class="st">Para dividir</span></div>
+        <div class="brow"><div class="flap" data-flap="Drinks da casa"></div><span class="st">No balcão</span></div>
+        <div class="brow"><div class="flap" id="flapStatus" data-flap="Estação aberta"></div><span class="st" id="flapStatusTxt">Agora</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="estacao" class="casa">
+  <div class="wrap">
+    <h2>Conheça a Estação</h2>
+    <p class="intro">Madeira escura, telhado de barro, letreiro iluminado e mesas na varanda. Toque nas fotos para ver de perto.</p>
+    <div class="gallery " style="--gcols:4;--grow:240px"><button data-shot style=""><img src="img/salao.jpg" alt="Fachada iluminada à noite com o letreiro Estação da Barra Restaurante e mesas na varanda" loading="lazy"><figcaption>O letreiro aceso</figcaption></button><button data-shot style=""><img src="img/fachada-dia.jpg" alt="Fachada de madeira com o letreiro Estação da Barra Restaurante Parada Satisfatória" loading="lazy"><figcaption>A fachada de dia</figcaption></button><button data-shot style=""><img src="img/bar.jpg" alt="Balcão do bar com garrafas, taças e quadro na parede vermelha" loading="lazy"><figcaption>O bar</figcaption></button><button data-shot style=""><img src="img/fachada-noite.jpg" alt="Vista da rua com a varanda da Estação da Barra ao anoitecer" loading="lazy"><figcaption>A varanda ao anoitecer</figcaption></button></div>
+    <p class="credit">Fotos públicas do Google Maps, usadas apenas nesta demonstração.</p>
+  </div>
+</section>
+
+<section id="cozinha">
+  <div class="wrap">
+    <h2>Da cozinha da Estação</h2>
+    <p class="intro">O escondidinho é o prato mais citado nas avaliações. Peça o cardápio completo com os preços de hoje pelo WhatsApp.</p>
+    <div class="menu3">
+      <figure><img src="img/escondidinho.jpg" alt="Escondidinho gratinado com queijo derretendo, servido com arroz" loading="lazy"><figcaption>Escondidinho gratinado<small>O queridinho das avaliações</small></figcaption></figure>
+      <figure><img src="img/chapa.jpg" alt="Carne na chapa com cebola, fritas, farofa e vinagrete" loading="lazy"><figcaption>Carne na chapa<small>Com fritas, farofa e vinagrete</small></figcaption></figure>
+      <figure><img src="img/drink.jpg" alt="Drink vermelho com morango na borda do copo" loading="lazy"><figcaption>Drinks da casa<small>Para acompanhar a música</small></figcaption></figure>
+    </div>
+    <div class="ctas" style="margin-top:20px"><a class="btn btn-line" data-wa="Olá! Pode me mandar o cardápio da Estação com os preços de hoje?" href="#">Pedir o cardápio</a></div>
+  </div>
+</section>
+
+<section id="sem-espera">
+  <div class="wrap semespera">
+    <div>
+      <h2>Chegue e o pedido já está na cozinha</h2>
+      <p class="intro">Alguns clientes contaram que esperaram muito pelo prato e que o pedido veio diferente do que pediram. Aqui o pedido vai antes, por escrito, com o nome de cada prato e a hora que você chega.</p>
+      <ol class="steps">
+        <li><div><b>Monte o bilhete</b><span>Coloque quem vai e o que cada um quer, do jeito que está no cardápio.</span></div></li>
+        <li><div><b>Diga a hora da chegada</b><span>A cozinha sabe quando começar a preparar.</span></div></li>
+        <li><div><b>Mande pelo WhatsApp</b><span>A equipe confirma e o pedido sai certo, sem confusão de código.</span></div></li>
+      </ol>
+      <div class="ctas"><a class="btn btn-main" href="#embarque" data-page-link="embarque">Montar meu bilhete</a></div>
+    </div>
+    <div class="stub" aria-hidden="true">
+      <h3>Bilhete de pedido</h3>
+      <div>Estação da Barra · Barra Bonita</div>
+      <div class="row2"><span>Embarque 20h00</span><span>Mesa p/ 3</span></div>
+      <ul><li>Ana · Escondidinho</li><li>Carlos · Carne na chapa (ao ponto)</li><li>Bia · Drink de morango</li></ul>
+    </div>
+  </div>
+</section>
+
+<section id="reservar">
+  <div class="wrap split">
+    <div>
+      <h2>Reserve sua mesa</h2>
+      <p class="intro">Fim de semana enche. Escolha o dia e a hora e a reserva vai pronta para o WhatsApp da Estação. Vale quando a equipe confirmar.</p>
+      <ul class="checks"><li>Salão ou varanda</li><li>Aniversário? Avise nas observações</li><li>Quer adiantar o pedido? <a href="#embarque" data-page-link="embarque">Monte o bilhete</a></li></ul>
+    </div>
+    <form class="panel" id="reservaForm" data-wa-form data-title="Olá! Gostaria de reservar uma mesa na Estação da Barra." data-done="reservaFormDone" novalidate>
+<div class="field"><label for="rNome">Seu nome</label><input id="rNome" type="text" data-label="Nome" data-required="Informe seu nome para a reserva." autocomplete="name"></div><div class="row"><div class="field"><label for="rData">Data</label><input id="rData" type="date" data-label="Data" data-required="Escolha a data." data-hours-for="rHora" data-open-only="Segunda a Estação fecha. Escolha outro dia." data-last-before="60"></div><div class="field"><label for="rHora">Horário de chegada</label><select id="rHora" data-label="Chegada" data-required="Escolha o horário de chegada."><option value="">Escolha a data</option></select></div></div><div class="row"><div class="field"><label for="rPessoas">Quantas pessoas</label><input id="rPessoas" type="number" data-label="Pessoas" data-required="Informe quantas pessoas." value="4" min="1" max="80"></div><div class="field"><label for="rArea">Onde prefere</label><select id="rArea" data-label="Prefere" ><option>Tanto faz</option><option>Salão</option><option>Varanda</option></select></div></div><div class="field"><label for="rObs">Observações <span class="hint">(opcional)</span></label><textarea id="rObs" data-label="Observações" placeholder="Ex.: aniversário, cadeirinha para criança…"></textarea></div>
+<p class="error" role="alert"></p>
+<button class="btn btn-main" type="submit">Enviar reserva pelo WhatsApp</button>
+<p class="done" id="reservaFormDone" role="status">Reserva pronta no WhatsApp. Envie a mensagem e aguarde a confirmação. Não abriu? <a href="#">Toque aqui</a>.</p>
+</form>
+  </div>
+</section>
+
+<section id="ajuda">
+  <div class="wrap split">
+    <div class="faq">
+      <h2>Dúvidas rápidas</h2>
+      <p class="intro">Não achou a sua? Fale com a equipe.</p>
+      <details><summary>Qual o horário?</summary><p>Terça a quinta, das 18h às 23h. Sexta e sábado, das 18h à meia-noite. Domingo, almoço das 11h às 15h. Segunda fechado.</p></details><details><summary>Dá para reservar?</summary><p>Dá. Use o formulário de reserva ou chame no WhatsApp. No fim de semana vale reservar antes.</p></details><details><summary>Posso adiantar o pedido?</summary><p>Pode. Monte o bilhete de pedido com o prato de cada pessoa e a hora da chegada, e a equipe confirma pelo WhatsApp.</p></details><details><summary>Tem música ao vivo?</summary><p>Os clientes citam música ao vivo nas avaliações. Pergunte pelo WhatsApp quem toca e em quais dias.</p></details><details><summary>Fazem entrega?</summary><p>O Google indica entrega sem contato. Confirme pelo WhatsApp como funciona.</p></details>
+    </div>
+    <form class="panel" id="ajudaForm" data-wa-form data-title="Olá! Mensagem pelo site da Estação da Barra." data-done="ajudaFormDone" novalidate>
+<div class="field"><label for="hAssunto">Assunto</label><select id="hAssunto" data-label="Assunto" ><option>Dúvida</option><option>Cardápio</option><option>Reserva</option><option>Elogio</option><option>Reclamação</option></select></div><div class="field"><label for="hNome">Seu nome</label><input id="hNome" type="text" data-label="Nome" autocomplete="name"></div><div class="field"><label for="hMsg">Mensagem</label><textarea id="hMsg" data-label="Mensagem" data-required="Escreva sua mensagem antes de enviar." ></textarea></div>
+<p class="error" role="alert"></p>
+<button class="btn btn-main" type="submit">Enviar mensagem</button>
+<p class="done" id="ajudaFormDone" role="status">Mensagem pronta no WhatsApp. É só enviar. Não abriu? <a href="#">Toque aqui</a>.</p>
+</form>
+  </div>
+</section>
+
+<section id="onde">
+  <div class="wrap">
+    <h2>Onde fica</h2>
+    <div class="where">
+      <div>
+        <div class="facade" role="img" aria-label="Fachada de madeira da Estação da Barra"></div>
+        <p class="intro" style="margin-bottom:8px">Centro de Barra Bonita (SP). Procure o letreiro "Estação da Barra" na casa de madeira com varanda.</p>
+        <table class="hours" id="hoursTable" aria-label="Horário de funcionamento"></table>
+        <div class="ctas"><a class="btn btn-main btn-sm" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=-22.4936169,-48.5609419">Como chegar</a><a class="btn btn-line btn-sm" data-wa="Olá! Estou a caminho da Estação. Pode me mandar a localização?" href="#">Pedir a localização</a></div>
+      </div>
+      <iframe class="map" style="margin-top:0" title="Mapa da Estação da Barra" loading="lazy" src="https://www.google.com/maps?q=-22.4936169,-48.5609419&z=17&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+</main>
+<main id="embarque-view" class="page-view" hidden>
+<div class="page-hero"><div class="wrap">
+  <a class="back" href="#inicio">← Voltar para o site</a>
+  <h1>Bilhete de pedido</h1>
+  <p>Coloque quem vai, o prato de cada um e a hora da chegada. O pedido vai por escrito para o WhatsApp da Estação, e a equipe confirma antes de preparar.</p>
+</div></div>
+<section><div class="wrap emb">
+  <form class="panel" id="embForm" novalidate>
+    <div class="row">
+      <div class="field"><label for="eNome">Nome da reserva</label><input id="eNome" autocomplete="name"></div>
+      <div class="field"><label for="eHora">Chego às</label><input id="eHora" type="time" value="20:00"></div>
+    </div>
+    <div class="field"><label for="eQuando">Quando</label><select id="eQuando"><option>Hoje</option><option>Amanhã</option><option>Outro dia (digo na conversa)</option></select></div>
+    <p style="margin:4px 0 6px;font-weight:700">Quem vai e o que vai pedir</p>
+    <div class="pax" id="pax"></div>
+    <button type="button" class="addpax" id="addPax">+ Adicionar pessoa</button>
+    <div class="field" style="margin-top:14px"><label for="eObs">Para a mesa (opcional)</label><input id="eObs" placeholder="Ex.: porção de fritas para dividir, sem cebola…"></div>
+    <p class="error" id="eErr" role="alert"></p>
+    <button class="btn btn-main" type="submit">Enviar bilhete pelo WhatsApp</button>
+    <p class="done" id="eDone" role="status">Bilhete pronto no WhatsApp. Envie e aguarde a confirmação. Não abriu? <a href="#">Toque aqui</a>.</p>
+  </form>
+  <div class="sticky">
+    <div class="stub" aria-live="polite">
+      <h3>Bilhete de pedido</h3>
+      <div>Estação da Barra · Barra Bonita</div>
+      <div class="row2"><span id="tEmb">Embarque 20h00</span><span id="tMesa">Mesa p/ 1</span></div>
+      <ul id="tList"><li>Adicione os pratos ao lado</li></ul>
+    </div>
+    <p style="color:var(--muted);font-size:.9rem;margin-top:14px">Use o nome do prato como está no cardápio. Não tem o cardápio? <a href="#" data-wa="Olá! Pode me mandar o cardápio da Estação com os preços de hoje?">Peça aqui</a>.</p>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap"><span>Estação da Barra · Centro, Barra Bonita, SP · estacaodabarra@gmail.com</span><span>WhatsApp (14) 98133-2971</span></div></footer>
+<a class="btn btn-main wa-float" data-wa="Olá! Vim pelo site da Estação da Barra e gostaria de mais informações." href="#">WhatsApp</a>
+<dialog class="lb" id="lb" aria-label="Foto ampliada">
+  <img id="lbImg" alt="">
+  <div class="bar"><p id="lbCap"></p><div class="ctl">
+    <button class="round" type="button" id="lbPrev" aria-label="Foto anterior">‹</button>
+    <button class="round" type="button" id="lbNext" aria-label="Próxima foto">›</button>
+    <button class="round" type="button" id="lbClose" aria-label="Fechar">×</button>
+  </div></div>
+</dialog>
+<script>window.SITE = {"name": "Estação da Barra", "wa": "5514981332971", "email": null, "hours": {"0": [[660, 900]], "1": [], "2": [[1080, 1380]], "3": [[1080, 1380]], "4": [[1080, 1380]], "5": [[1080, 1440]], "6": [[1080, 1440]]}, "pages": ["embarque"], "pageTitles": {"embarque": "Bilhete de pedido"}, "hoursOrder": [2, 3, 4, 5, 6, 0, 1], "closedText": null};</script>
+<script>
+(function(){
+  var C = window.SITE;
+  function wa(text, number){
+    var url = C.wa ? ("https://wa.me/" + (number === undefined ? C.wa : number) + "?text=" + encodeURIComponent(text))
+                   : ("mailto:" + C.email + "?subject=" + encodeURIComponent(C.mailSubject || "Contato pelo site") + "&body=" + encodeURIComponent(text));
+    if (number === "") url = "https://wa.me/?text=" + encodeURIComponent(text);
+    try { var w = window.open(url, "_blank"); if (w) w.opener = null; } catch(_){}
+    return url;
+  }
+  window.siteWA = wa;
+  function done(id, url){
+    var el = document.getElementById(id); if (!el) return; el.classList.add("show");
+    var a = el.querySelector("a"); if (a){ a.href = url; a.target = "_blank"; a.rel = "noopener"; }
+  }
+  window.siteDone = done;
+  function bind(form, fn){
+    if (typeof form === "string") form = document.getElementById(form);
+    form.addEventListener("submit", function(e){ e.preventDefault(); });
+    var btn = form.querySelector("button[type=submit]");
+    if (btn){ btn.type = "button"; btn.addEventListener("click", fn); }
+    form.querySelectorAll("input:not([type=checkbox]):not([type=range]):not([type=radio]), select").forEach(function(i){
+      i.addEventListener("keydown", function(e){ if (e.key === "Enter"){ e.preventDefault(); fn(); } });
+    });
+  }
+  window.siteBind = bind;
+  document.querySelectorAll("[data-wa]").forEach(function(a){
+    a.href = C.wa ? "https://wa.me/" + C.wa + "?text=" + encodeURIComponent(a.dataset.wa) : "mailto:" + C.email + "?body=" + encodeURIComponent(a.dataset.wa);
+    a.target = "_blank"; a.rel = "noopener";
+  });
+
+  /* router: #<page> opens its own page, any other hash returns to the main page */
+  var home = document.getElementById("inicio"), pages = C.pages || [];
+  var curHash = location.hash;
+  function route(){
+    var h = curHash, pid = h.slice(1), isPage = pages.indexOf(pid) >= 0;
+    var wasHidden = home.hidden, changed = isPage ? !wasHidden || true : wasHidden;
+    home.hidden = isPage;
+    pages.forEach(function(p){
+      var v = document.getElementById(p + "-view"); if (v) v.hidden = p !== pid;
+      document.querySelectorAll('[data-page-link="' + p + '"]').forEach(function(l){ l.classList.toggle("on", p === pid); if (p === pid) l.setAttribute("aria-current","page"); else l.removeAttribute("aria-current"); });
+    });
+    document.title = isPage ? (C.pageTitles[pid] + " · " + C.name) : C.name;
+    var how = (isPage || wasHidden) ? "instant" : "smooth";
+    if (isPage || !h || h === "#inicio"){ window.scrollTo({top:0, behavior:how}); return; }
+    var t = document.getElementById(pid);
+    if (t) window.scrollTo({top: t.getBoundingClientRect().top + window.scrollY - 64, behavior:how});
+  }
+  function goTo(h, push){ curHash = h; if (push){ try { history.pushState(null, "", h); } catch(_){} } route(); }
+  document.addEventListener("click", function(e){
+    var a = e.target.closest && e.target.closest('a[href^="#"]'); if (!a) return;
+    var h = a.getAttribute("href"); if (h.length < 2) return;
+    e.preventDefault(); goTo(h, true);
+  });
+  window.addEventListener("hashchange", function(){ goTo(location.hash, false); });
+  window.addEventListener("popstate", function(){ goTo(location.hash, false); });
+  if (pages.indexOf(curHash.slice(1)) >= 0) route();
+
+  var dt = document.getElementById("demoToggle"), dn = document.getElementById("demoNotes");
+  dt.addEventListener("click", function(){ var o = dn.classList.toggle("open"); dt.setAttribute("aria-expanded", o); dt.textContent = o ? "Fechar notas" : "Ver notas"; });
+
+  /* hours: HOURS[dow] = [[openMin, closeMin], ...]; close may pass 1440 */
+  var H = C.hours, NAMES = ["Domingo","Segunda","Terça","Quarta","Quinta","Sexta","Sábado"];
+  function fmt(m){ m %= 1440; var h = Math.floor(m/60), mm = m%60; return h + "h" + (mm ? String(mm).padStart(2,"0") : ""); }
+  function endTxt(m){ return m === 1440 ? "meia-noite" : fmt(m); }
+  function spNow(){
+    var o = {}; new Intl.DateTimeFormat("en-US",{timeZone:"America/Sao_Paulo",weekday:"short",hour:"numeric",minute:"numeric",hour12:false}).formatToParts(new Date()).forEach(function(p){ o[p.type] = p.value; });
+    return {day:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].indexOf(o.weekday), min:(parseInt(o.hour,10)%24)*60 + parseInt(o.minute,10)};
+  }
+  window.siteHours = {H:H, fmt:fmt, NAMES:NAMES, spNow:spNow};
+  function status(){
+    var el = document.getElementById("status"); if (!el) return;
+    var tx = el.querySelector(".txt"), n = spNow(), today = H[n.day] || [], y = H[(n.day+6)%7] || [];
+    el.classList.remove("open");
+    for (var i = 0; i < y.length; i++) if (y[i][1] > 1440 && n.min < y[i][1]-1440){ el.classList.add("open"); tx.textContent = "Aberto agora, até " + fmt(y[i][1]); return; }
+    for (i = 0; i < today.length; i++) if (n.min >= today[i][0] && n.min < today[i][1]){ el.classList.add("open"); tx.textContent = "Aberto agora, até " + endTxt(today[i][1]); return; }
+    for (i = 0; i < today.length; i++) if (n.min < today[i][0]){ tx.textContent = "Fechado agora, abre hoje às " + fmt(today[i][0]); return; }
+    for (var k = 1; k <= 7; k++){ var d = (n.day+k)%7; if ((H[d]||[]).length){ tx.textContent = "Fechado agora, abre " + (k===1 ? "amanhã" : NAMES[d].toLowerCase()) + " às " + fmt(H[d][0][0]); return; } }
+    tx.textContent = C.closedText || "Consulte o horário";
+  }
+  status(); setInterval(status, 60000);
+  var tb = document.getElementById("hoursTable");
+  if (tb){
+    var td = spNow().day;
+    (C.hoursOrder || [1,2,3,4,5,6,0]).forEach(function(d){
+      var tr = document.createElement("tr"); if (d === td) tr.className = "today";
+      var iv = H[d] || [];
+      tr.innerHTML = "<td>" + NAMES[d] + "</td><td>" + (iv.length ? iv.map(function(x){ return fmt(x[0]) + " às " + endTxt(x[1]); }).join(" e ") : "Fechado") + "</td>";
+      tb.appendChild(tr);
+    });
+  }
+
+  /* lightbox */
+  var shots = Array.prototype.map.call(document.querySelectorAll("[data-shot]"), function(b){ var im = b.querySelector("img"); var cap = b.querySelector("figcaption"); return {src:im.getAttribute("src"), alt:im.alt, cap:cap ? cap.textContent : im.alt}; });
+  var lb = document.getElementById("lb"), cur = 0, lastBtn = null;
+  function show(i){ cur = (i + shots.length) % shots.length; var s = shots[cur]; var im = document.getElementById("lbImg"); im.src = s.src; im.alt = s.alt; document.getElementById("lbCap").textContent = s.cap; }
+  document.querySelectorAll("[data-shot]").forEach(function(b, i){ b.addEventListener("click", function(){ lastBtn = b; show(i); if (lb.showModal) lb.showModal(); else lb.setAttribute("open",""); }); });
+  document.getElementById("lbPrev").onclick = function(){ show(cur-1); };
+  document.getElementById("lbNext").onclick = function(){ show(cur+1); };
+  document.getElementById("lbClose").onclick = function(){ lb.close(); };
+  lb.addEventListener("click", function(e){ if (e.target === lb) lb.close(); });
+  lb.addEventListener("keydown", function(e){ if (e.key === "ArrowRight") show(cur+1); if (e.key === "ArrowLeft") show(cur-1); });
+  lb.addEventListener("close", function(){ if (lastBtn) lastBtn.focus(); });
+
+  /* generic WhatsApp forms */
+  function iso(d){ return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0"); }
+  function parse(s){ var p = s.split("-").map(Number); return new Date(p[0], p[1]-1, p[2]); }
+  function br(s){ var d = parse(s); return NAMES[d.getDay()].toLowerCase()+", "+String(d.getDate()).padStart(2,"0")+"/"+String(d.getMonth()+1).padStart(2,"0"); }
+  window.siteDate = {iso:iso, parse:parse, br:br};
+  document.querySelectorAll("input[type=date]").forEach(function(i){ if (!i.min) i.min = iso(new Date()); });
+  document.querySelectorAll("input[type=date][data-hours-for]").forEach(function(di){
+    var sel = document.getElementById(di.dataset.hoursFor), step = +(di.dataset.step || 30), last = +(di.dataset.lastBefore || 60);
+    di.addEventListener("change", function(){
+      sel.innerHTML = "";
+      if (!di.value){ sel.innerHTML = '<option value="">Escolha a data</option>'; return; }
+      var iv = H[parse(di.value).getDay()] || [];
+      if (!iv.length){ sel.innerHTML = '<option value="">Fechado neste dia</option>'; return; }
+      iv.forEach(function(x){ for (var m = x[0]; m <= x[1]-last; m += step){ var o = document.createElement("option"); o.value = o.textContent = fmt(m).replace(/h$/,"h00"); sel.appendChild(o); } });
+    });
+  });
+  document.querySelectorAll("input[type=range][data-out]").forEach(function(r){
+    var o = document.getElementById(r.dataset.out), suf = r.dataset.suffix || "";
+    function up(){ o.textContent = r.value + (r.value === r.max && r.dataset.plus ? "+" : "") + suf; } r.addEventListener("input", up); up();
+  });
+  document.querySelectorAll("form[data-wa-form]").forEach(function(f){
+    bind(f, function(){
+      var err = f.querySelector(".error"); err.textContent = "";
+      var reqs = f.querySelectorAll("[data-required]");
+      for (var i = 0; i < reqs.length; i++){
+        var el = reqs[i];
+        if (!el.value || !String(el.value).trim()){ err.textContent = el.dataset.required; el.focus(); return; }
+        if (el.type === "date" && el.dataset.openOnly && !(H[parse(el.value).getDay()] || []).length){ err.textContent = el.dataset.openOnly; el.focus(); return; }
+      }
+      var lines = [f.dataset.title, ""];
+      f.querySelectorAll("[data-label]").forEach(function(el){
+        if (el.tagName === "FIELDSET"){
+          var vals = Array.prototype.map.call(el.querySelectorAll("input:checked"), function(c){ return c.value; });
+          if (vals.length) lines.push(el.dataset.label + ": " + vals.join(", ")); return;
+        }
+        var v = el.type === "range" ? (document.getElementById(el.dataset.out).textContent) : String(el.value || "").trim();
+        if (!v) return;
+        if (el.type === "date") v = br(v);
+        lines.push(el.dataset.label + ": " + v);
+      });
+      var url = wa(lines.join("\n").replace(/\n\n$/, ""));
+      done(f.dataset.done, url);
+    });
+  });
+})();
+</script>
+<script>
+(function(){
+  /* split-flap board */
+  var CH = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789", still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function norm(s){ return s.normalize("NFD").replace(/[̀-ͯ]/g, "").toUpperCase(); }
+  function flap(el, text, delay){
+    var t = norm(text); el.innerHTML = "";
+    var cells = [];
+    t.split(" ").forEach(function(word){
+      var w = document.createElement("span"); w.className = "w"; el.appendChild(w);
+      for (var i = 0; i < word.length; i++){ var c = document.createElement("i"); c.textContent = still ? word[i] : CH[Math.floor(Math.random()*CH.length)]; w.appendChild(c); cells.push([c, word[i]]); }
+    });
+    if (still) return;
+    cells.forEach(function(p, i){
+      if (p[1] === " ") return;
+      var n = 6 + Math.floor(Math.random()*8) + i, k = 0;
+      setTimeout(function step(){ k++; p[0].textContent = k >= n ? p[1] : CH[Math.floor(Math.random()*CH.length)]; if (k < n) setTimeout(step, 45); }, delay);
+    });
+  }
+  var rows = document.querySelectorAll("[data-flap]");
+  rows.forEach(function(r, i){ flap(r, r.getAttribute("data-flap"), 300 + i*350); });
+  function clock(){
+    var o = {}; new Intl.DateTimeFormat("pt-BR",{timeZone:"America/Sao_Paulo",hour:"2-digit",minute:"2-digit",hour12:false}).formatToParts(new Date()).forEach(function(p){ o[p.type] = p.value; });
+    var el = document.getElementById("boardClock"); if (el) el.textContent = o.hour + ":" + o.minute;
+  }
+  clock(); setInterval(clock, 20000);
+  setTimeout(function(){
+    var st = document.querySelector("#status .txt"), fs = document.getElementById("flapStatus");
+    if (st && fs){ var open = document.getElementById("status").classList.contains("open"); flap(fs, open ? "Estação aberta" : "Estação fechada", 0); document.getElementById("flapStatusTxt").textContent = st.textContent.replace(/^(Aberto agora|Fechado agora)[,.]?\s*/i, "") || "Agora"; }
+  }, 1600);
+
+  /* bilhete de pedido */
+  var pax = document.getElementById("pax"), idn = 0;
+  function row(name){
+    idn++;
+    var d = document.createElement("div"); d.className = "paxrow";
+    d.innerHTML = '<div><label for="pn'+idn+'">Pessoa</label><input id="pn'+idn+'" class="pn" placeholder="Nome" value="'+(name||"")+'"></div>' +
+      '<div><label for="pp'+idn+'">Prato ou bebida</label><input id="pp'+idn+'" class="pp" placeholder="Ex.: Escondidinho"></div>' +
+      '<div><label for="po'+idn+'">Observação</label><input id="po'+idn+'" class="po" placeholder="Ex.: ao ponto"></div>' +
+      '<button type="button" class="del" aria-label="Remover pessoa">×</button>';
+    d.querySelector(".del").addEventListener("click", function(){ if (pax.children.length > 1){ d.remove(); upd(); } });
+    d.querySelectorAll("input").forEach(function(x){ x.addEventListener("input", upd); });
+    pax.appendChild(d); upd(); return d;
+  }
+  function items(){
+    return [].map.call(pax.children, function(d){ return {n:d.querySelector(".pn").value.trim(), p:d.querySelector(".pp").value.trim(), o:d.querySelector(".po").value.trim()}; });
+  }
+  function upd(){
+    var h = (document.getElementById("eHora").value || "20:00").replace(":", "h"), it = items();
+    document.getElementById("tEmb").textContent = "Embarque " + h;
+    document.getElementById("tMesa").textContent = "Mesa p/ " + it.length;
+    var ul = document.getElementById("tList"), f = it.filter(function(x){ return x.p; });
+    ul.innerHTML = f.length ? f.map(function(x){ var li = document.createElement("li"); li.textContent = (x.n || "Pessoa") + " · " + x.p + (x.o ? " (" + x.o + ")" : ""); return li.outerHTML; }).join("") : "<li>Adicione os pratos ao lado</li>";
+  }
+  if (pax){
+    row(""); row("");
+    document.getElementById("addPax").addEventListener("click", function(){ row("").querySelector(".pn").focus(); });
+    document.getElementById("eHora").addEventListener("input", upd);
+    window.siteBind("embForm", function(){
+      var err = document.getElementById("eErr"); err.textContent = "";
+      var nome = document.getElementById("eNome").value.trim();
+      if (!nome){ err.textContent = "Informe o nome da reserva."; document.getElementById("eNome").focus(); return; }
+      var it = items().filter(function(x){ return x.p; });
+      if (!it.length){ err.textContent = "Coloque pelo menos um prato ou bebida."; pax.querySelector(".pp").focus(); return; }
+      var t = "Olá! Quero adiantar meu pedido na Estação da Barra.\n\nNome da reserva: " + nome + "\nQuando: " + document.getElementById("eQuando").value + "\nChego às: " + (document.getElementById("eHora").value || "a combinar") + "\nMesa para: " + items().length + "\n\nPedido:";
+      it.forEach(function(x, i){ t += "\n" + (i+1) + ". " + (x.n || "Pessoa " + (i+1)) + ": " + x.p + (x.o ? " (" + x.o + ")" : ""); });
+      var ob = document.getElementById("eObs").value.trim(); if (ob) t += "\n\nPara a mesa: " + ob;
+      window.siteDone("eDone", window.siteWA(t));
+    });
+  }
+})();
+</script>
+</body>
+</html>
